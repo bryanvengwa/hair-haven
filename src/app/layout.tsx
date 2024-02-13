@@ -1,7 +1,16 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
+import Head from 'next/head';
+
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
+import Header from "@/components/Header"
 
+config.autoAddCss = false; // Prevent duplicate loading in Next.js
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +25,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+            <Head>
+            <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:wght@500;600;900&display=swap')
+</style>
+
+      </Head>
+      <body className={inter.className}>
+        <Header/>
+        
+        {children}
+        </body>
     </html>
   );
 }
