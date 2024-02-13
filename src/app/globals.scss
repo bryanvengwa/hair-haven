@@ -1,3 +1,51 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,9 +58,12 @@ $cairo: "Cairo", sans-serif;
     .bar{background: black; height: 5px; width: 70%;}
 
 }
-.navigation{ width: 100%;  display: flex; align-items: center; justify-content: space-around; gap: 1em; margin-top: 1em; 
-    .logo-container{ width: 11rem;
+.navigation{ width: 100%;  display: flex;  flex-wrap: wrap; align-items: center;
+    .navlinks{display: none;}
+    .logo-container{ width: 6rem; flex: 1 0 30%; 
+        // img{object-fit: cover;}
     }
+
 }
 
 .icon-container{ display: flex; width: 100%; margin-top: 1em; justify-content: center; align-items: center; height: 3rem; gap: 1em;
@@ -25,4 +76,114 @@ $cairo: "Cairo", sans-serif;
     span{color: black;  font-weight: 900;}
     }
       
+}
+
+.home{
+    .flex-container{
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        .box-container{ display:flex;  flex-direction:column; width:100%; gap:1em;
+            
+        }
+    }
+
+}
+
+
+
+
+
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+
+/* 
+Extra small devices (portrait phones, less than 576px) 
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 568px) {  
+
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+    .home{
+        .flex-container{
+     
+            flex-wrap: wrap; 
+            .box-container{ display:flex;  flex-direction:row; width:100%; gap:1em; flex-wrap: wrap; 
+                .header-container{
+                    flex: 1 0 100%;
+                }
+    
+                .searchbar-container{flex: 1 0 60%;}
+              .support-container{  flex: 1 0 30%; }
+            }
+        }
+    
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .home{
+        .flex-container{
+     
+            flex-wrap: no-wrap; 
+            .box-container{ display:flex;  flex-direction:row; width:100%; gap:1em; flex-wrap: wrap; 
+                .header-container{ position:relative; 
+                    flex: 1 0 20%;
+                    .section-container{
+                        position:absolute;
+                    }
+                }
+    
+                .searchbar-container{flex: 1 0 55%;}
+              .support-container{  flex: 1 0 15%; }
+            }
+        }
+    
+    }
+
+
+    .navigation{ width: 100%;  display: flex;  flex-wrap: no-wrap !important; align-items: center;
+        .menu{display: none;}
+        .logo-container{ width: 6rem; flex: 1 0 20%; 
+            // img{object-fit: cover;}
+        }
+        .navlinks{display: block;flex: 1 0 auto;
+        display: flex; gap: 1.5em;
+        }
+        .navlinks:hover{color: $light-green;}
+        .icon-container{width: unset; flex: 1 0 10%; }
+    
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    
+}
+
+
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
+
+/* Set width to make card deck cards 100% width */
+@media (max-width: 950px) { 
+
 }

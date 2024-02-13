@@ -49,6 +49,7 @@ table {
 	border-spacing: 0;
 }
 
+$grey: #f5f5f5;
 $light-green: #7fad39;
 $cairo: "Cairo", sans-serif;
 
@@ -56,8 +57,26 @@ $cairo: "Cairo", sans-serif;
     border: 2px solid rgba(60, 60, 60, 0.077); 
     .g{height: 3rem;}
     input{width: 70%; text-align: center; }
-    .search-text{background: $light-green; width: 30%;  display: flex; justify-content: center; align-items: center; color: white; }
+    .search-text{background: $light-green;    border: 2px solid $light-green;  width: 30%;  display: flex; justify-content: center; align-items: center; color: white; }
 
+}
+
+.support-container{ display:flex; align-items:center;  gap:1em;
+	// .phone{transform: rotate(180deg);}
+	.left{background:$grey; color:$light-green; 
+	    height: 50px;
+    width: 50px;
+	line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+	}
+
+	.right{ h2{font-weight:900;}
+		span{
+			font-size: 14px;
+    		color: #6f6f6f;
+		}
+	}
 }
 
 

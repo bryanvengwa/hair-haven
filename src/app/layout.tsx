@@ -2,8 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
-import Head from 'next/head';
-
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -25,12 +23,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-            <Head>
-            <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:wght@500;600;900&display=swap')
-</style>
-
-      </Head>
       <body className={inter.className}>
         <Header/>
         

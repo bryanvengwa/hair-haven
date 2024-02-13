@@ -14,18 +14,19 @@ export default function Departments() {
   return (
         <>
           <div className='header-container ' >
-          <div className='header' onClick={toggle} >
-            <div>
+          <div className='header ' onClick={toggle} >
+            <div className="flex align-center gap-2 " >
             <FontAwesomeIcon icon={faBars} />
 
 
 
-            </div>
             <div>
               <h2>All Departments</h2>
             </div>
-            <div>
-            <FontAwesomeIcon icon={faChevronDown} />
+
+            </div>
+            <div className=" flex align-center  chev justify-center">
+            <FontAwesomeIcon icon={faChevronDown} className={`${isopen? "": "chevron" }`} />
             </div>
 
           </div>

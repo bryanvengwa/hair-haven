@@ -52,29 +52,32 @@ table {
 $light-green: #7fad39;
 $cairo: "Cairo", sans-serif;
 
-.header{  background: $light-green;  height: 3rem; color: white; font-family: $cairo;  display: flex; align-items: center;  gap: 4em; justify-content: center;
+.header{ padding:1em; background: $light-green;  height: 3rem; color: white; font-family: $cairo;  display: flex; align-items: center;  gap: 4em; justify-content: space-between;
 
 
 
 }
-.header-container{ width: 100%; border-bottom: 2px solid rgba(60, 60, 60, 0.077); 
-    border-left: 2px solid rgba(60, 60, 60, 0.077); 
-    border-right: 2px solid rgba(60, 60, 60, 0.077); 
+.header-container{ width: 100%; 
+
 }
 
-.collapsed{max-height: 0 !important; display: none; transition: all; transition-duration: 1s; }
-.section-container{    transition: all; transition-duration: 1s;
-    ul{ display: flex; flex-direction: column; gap: 0.7em;
+.collapsed{max-height: 0 !important; display: none; transition: all; transition-duration: 0.7s;
+
+}
+.section-container{    transition: all; transition-duration: 0.7s;
+    ul{ display: flex; flex-direction: column; gap: 0.7em; padding:1em;
     }
-}
-
-.home{
-    .flex-container{
-        display: flex; flex-direction: column; align-items: center; justify-content: center;
-    }
+	width: 100%;
+	border-left: 2px solid rgba(60, 60, 60, 0.077); 
+    border-right: 2px solid rgba(60, 60, 60, 0.077);
+	border-bottom: 2px solid rgba(60, 60, 60, 0.077);  
 
 }
 
+.chev{height: 100%;}
+.chevron{ transform:rotate(180deg)
+
+}
 
 /*
 ####################################################
