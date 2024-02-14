@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	
 }
 ol, ul {
 	list-style: none;
@@ -48,11 +49,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
 
 $light-green: #7fad39;
 $cairo: "Cairo", sans-serif;
 
-.header{ padding:1em; background: $light-green;  height: 3rem; color: white; font-family: $cairo;  display: flex; align-items: center;  gap: 4em; justify-content: space-between;
+
+
+.header{ padding:1em; background: $light-green;  height: 3rem; color: white; font-family: $cairo; font-weight: 700;  display: flex; align-items: center;  gap: 4em; justify-content: space-between;
 
 
 

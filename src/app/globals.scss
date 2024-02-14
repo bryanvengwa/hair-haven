@@ -49,10 +49,11 @@ table {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
 // Variables
 $light-green: #7fad39;
 $cairo: "Cairo", sans-serif;
+body{font-family: $cairo;}
 
 .menu{ display: flex; flex-direction: column; gap: 4px;  height: 2.8rem; width: 2.8rem; border: 1px solid black; align-items: center; justify-content: center;
     .bar{background: black; height: 5px; width: 70%;}
@@ -165,7 +166,11 @@ No media query since this is the default in Bootstrap because it is "mobile firs
         .navlinks{display: block;flex: 1 0 auto;
         display: flex; gap: 1.5em;
         }
-        .navlinks:hover{color: $light-green;}
+        .navlinks li{font-family: $cairo;  font-weight: 700;     letter-spacing: 2px; cursor: pointer; 
+        a{    transition: all, 0.3s; color: #252525;;
+           }
+        }
+        .navlinks li:hover{color: $light-green;}
         .icon-container{width: unset; flex: 1 0 10%; }
     
     }

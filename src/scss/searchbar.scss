@@ -56,14 +56,15 @@ $cairo: "Cairo", sans-serif;
 .searchbar-container{ display: flex; width: 100%;
     border: 2px solid rgba(60, 60, 60, 0.077); 
     .g{height: 3rem;}
-    input{width: 70%; text-align: center; }
-    .search-text{background: $light-green;    border: 2px solid $light-green;  width: 30%;  display: flex; justify-content: center; align-items: center; color: white; }
+    input{width: 70%; text-align: center; font-family: $cairo; font-size: 1.1em; }
+    .search-text{background: $light-green; font-family: $cairo; font-weight: 700;     border: 2px solid $light-green;  width: 30%;  display: flex; justify-content: center; align-items: center; color: white; }
 
 }
 
 .support-container{ display:flex; align-items:center;  gap:1em;
-	// .phone{transform: rotate(180deg);}
-	.left{background:$grey; color:$light-green; 
+	
+
+	.left{background:$grey; color:$light-green; font-family: $cairo; 
 	    height: 50px;
     width: 50px;
 	line-height: 50px;
@@ -71,10 +72,12 @@ $cairo: "Cairo", sans-serif;
     border-radius: 50%;
 	}
 
-	.right{ h2{font-weight:900;}
+	.right{ h2{font-weight:900; font-family: $cairo; }
 		span{
 			font-size: 14px;
+			font-family: $cairo; 
     		color: #6f6f6f;
+			font-weight: 300;
 		}
 	}
 }

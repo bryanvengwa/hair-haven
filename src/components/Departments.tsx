@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 export default function Departments() {
-  const [isopen, setIsOpen] = useState(false);
+  const [isopen, setIsOpen] = useState(!false);
   function toggle(){
     setIsOpen(!isopen);
   }
@@ -37,6 +37,14 @@ export default function Departments() {
               <li>Sprays</li>
               <li>Conditioners</li>
               <li>Scalp treatments</li>
+              <li>Shampo</li>
+              <li>Gels & mousses</li>
+              <li>Sprays</li>
+              <li>Conditioners</li>
+              <li>Scalp treatments</li>
+              <li>Sprays</li>
+              <li>Conditioners</li>
+              
             </ul>
 
           </div>

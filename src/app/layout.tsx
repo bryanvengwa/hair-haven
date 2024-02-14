@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import { Cairo } from 'next/font/google';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
 
 import type { Metadata } from "next";
@@ -10,6 +11,10 @@ import Header from "@/components/Header"
 
 config.autoAddCss = false; // Prevent duplicate loading in Next.js
 const inter = Inter({ subsets: ["latin"] });
+const cairo = Cairo({
+  subsets: ['latin'], // Specify supported characters
+ display: 'swap', // Preload font for faster rendering
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -4,6 +4,10 @@ import Departments from '@/components/Departments'
 import SearchBar from '@/components/SearchBar'
 import Support from '@/components/Support'
 import Banner from '@/components/Banner'
+import Heading from '@/components/Heading'
+import Tabbed from '@/components/Tabbed'
+import Card from '@/components/Card'
+
 
 
 export default function Home() {
@@ -24,6 +28,7 @@ export default function Home() {
 </div>
 
       </div>
+      <br />
   <div className="container" >
   <div className="banner-container" >
         <div className="left-side" ></div>
@@ -35,7 +40,13 @@ export default function Home() {
       </div>
 
   </div>
+  <div className="container" >
+    <Heading/>
+  <br/>
+<Tabbed/>
+  </div>
 
+<Card/>
 
   </div>
   )
