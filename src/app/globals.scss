@@ -138,20 +138,21 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+
     .home{
         .flex-container{
      
             flex-wrap: no-wrap; 
             .box-container{ display:flex;  flex-direction:row; width:100%; gap:1em; flex-wrap: wrap; 
                 .header-container{ position:relative; 
-                    flex: 1 0 20%;
+                    flex: 1 0 22%;
                     .section-container{
                         position:absolute;
                     }
                 }
     
-                .searchbar-container{flex: 1 0 55%;}
-              .support-container{  flex: 1 0 15%; }
+                .searchbar-container{flex: 1 0 50%;}
+              .support-container{  flex: 1 0 20%; }
             }
         }
     
@@ -178,7 +179,24 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  
+    .home{
+        .flex-container{
+     
+            flex-wrap: no-wrap; 
+            .box-container{ display:flex;  flex-direction:row; width:100%; gap:1em; flex-wrap: wrap; 
+                .header-container{ position:relative; 
+                    flex: 1 0 20%;
+                    .section-container{
+                        position:absolute;
+                    }
+                }
     
+                .searchbar-container{flex: 1 0 55%;}
+              .support-container{  flex: 1 0 15%; }
+            }
+        }
+    
+    }
 }
 
 

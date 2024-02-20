@@ -5,11 +5,11 @@ export default function Navlinks() {
   return (
 <ul className='navlinks flex flex-row' >
   
-    <li><Link href={''}>HOME</Link></li>
-    <li><Link href={''}>SHOP</Link></li>
+    <li><Link href={'/'}>HOME</Link></li>
+    <li><Link href={'/shop'}>SHOP</Link></li>
     <li>PAGES</li>
-    <li><Link href={''}>BLOG</Link></li>
-    <li><Link href={''}>CONTACT</Link></li>
+    <li><Link href={'/blog'}>BLOG</Link></li>
+    <li><Link href={'/contact'}>CONTACT</Link></li>
 </ul>
   )
 }

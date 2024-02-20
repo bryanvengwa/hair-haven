@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 export default function Departments() {
-  const [isopen, setIsOpen] = useState(!false);
+  const [isopen, setIsOpen] = useState(true);
   function toggle(){
     setIsOpen(!isopen);
   }
@@ -26,11 +26,11 @@ export default function Departments() {
 
             </div>
             <div className=" flex align-center  chev justify-center">
-            <FontAwesomeIcon icon={faChevronDown} className={`${isopen? "": "chevron" }`} />
+            <FontAwesomeIcon icon={faChevronDown} className={`${isopen? "chevron": "" } ${!isopen? "chevron2": "" } `} />
             </div>
 
           </div>
-          <div className={`section-container ${isopen? "": "collapsed" }`} >
+          <div className={`section-container ${isopen? "collapsed": "" } section-container ${!isopen? "collapsed2": "" } `} >
             <ul>
               <li>Shampo</li>
               <li>Gels & mousses</li>

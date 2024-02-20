@@ -61,7 +61,21 @@ $cairo: "Cairo", sans-serif;
 .tabbed{font-family:$cairo;    cursor: pointer;     font-size: 18px;
 .active{text-decoration:underline; text-decoration-color:$light-green; text-decoration-thickness:0.3rem; }
 }
-
+.bread-crumb{ position: relative;
+	height: 10rem; background-color: red;
+	img{height: 100%;
+	object-fit: cover;
+	}
+	.over-head{position: absolute; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 0.7em;
+	bottom: 0; left: 0; height: 100%; width: 100%; background: rgba(0, 0, 0, 0.641);
+	color: white; font-family: $cairo;
+	h1{font-weight: 900; font-size: 2rem;  }
+	h5{font-weight: 700; 
+	span{font-weight: 100; }
+	 }
+	
+	}
+}
 
 
 /*

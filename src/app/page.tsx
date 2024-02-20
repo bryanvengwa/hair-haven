@@ -8,7 +8,7 @@ import Heading from '@/components/Heading'
 import Tabbed from '@/components/Tabbed'
 import Card from '@/components/Card'
 import BlogCard from '@/components/BlogCard'
-
+import Slider from '@/components/Slider'
 
 
 export default function Home() {
@@ -17,10 +17,10 @@ export default function Home() {
       <div className='container ' >
         <br />
       <div className=" flex-container ">
-    {/* <br /> */}
+    
     <div className="box-container" >
     <Departments/>
-    {/* <br /> */}
+
     <SearchBar/>
   
   <Support/>
@@ -42,6 +42,7 @@ export default function Home() {
 
   </div>
   <br /><br />
+  <Slider/>
   <div className="container" >
     <Heading title='Featured Product' />
   <br/>
@@ -68,7 +69,7 @@ export default function Home() {
   <Heading title='From The Blog' />
   <br />
   <br />
-  <div className='blog-card-container flex gap-6 align-center justify-center ' >
+  <div className='blog-card-container flex flex-row flex-wrap gap-6 align-center justify-center ' >
 
       <BlogCard/>
       <BlogCard/>
