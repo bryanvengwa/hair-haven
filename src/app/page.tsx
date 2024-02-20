@@ -7,6 +7,7 @@ import Banner from '@/components/Banner'
 import Heading from '@/components/Heading'
 import Tabbed from '@/components/Tabbed'
 import Card from '@/components/Card'
+import BlogCard from '@/components/BlogCard'
 
 
 
@@ -40,13 +41,30 @@ export default function Home() {
       </div>
 
   </div>
+  <br /><br />
   <div className="container" >
-    <Heading/>
+    <Heading title='Featured Product' />
   <br/>
 <Tabbed/>
   </div>
-
+  <br />
+  <br />
+  <br />
+  <div className="container">
+    <div className="row">
+      <div className="card-container flex gap-4 flex-wrap align-center justify-center">
+      <Card/>
 <Card/>
+<Card/>
+<Card/>
+<Card/>
+<Card/>
+      </div>
+    </div>
+  </div>
+
+<BlogCard/>
+
 
   </div>
   )
