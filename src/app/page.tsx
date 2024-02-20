@@ -62,8 +62,22 @@ export default function Home() {
       </div>
     </div>
   </div>
+  <br /><br />
 
-<BlogCard/>
+  <section className='blog-section container' >
+  <Heading title='From The Blog' />
+  <br />
+  <br />
+  <div className='blog-card-container flex gap-6 align-center justify-center ' >
+
+      <BlogCard/>
+      <BlogCard/>
+      <BlogCard/>
+  </div>
+
+
+  </section>
+
 
 
   </div>
