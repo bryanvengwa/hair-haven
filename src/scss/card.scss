@@ -55,20 +55,30 @@ $grey: #f5f5f5;
 $light-green: #7fad39;
 $cairo: "Cairo", sans-serif;
 $fade-grey:#7c7c7c;
+$light-blue: rgb(244,245,252);
 
 
 
-.product-card{ 
+.product-card{  min-height: 20rem;
     max-width:20rem; border:none;
     .body{text-align:center; font-family:$cairo; 
     h4{font-weight:800}
     }
-    .img-container{width:100%; height:80%; background:$grey; position: relative;}
+    .img-container{width:100%; height:80%; background:$light-blue !important ; position: relative; display: flex; justify-content: center; align-items: center; }
 	.icons-container{ left: 0; bottom: 0; width: 100%; gap: 0.5em; opacity: 0;  display: flex; align-items: center; justify-content: center;
 		position: absolute;
 		form{ border: 1px solid $grey;
-			height: 2rem; width: 2rem; background-color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+			height: 2.4rem; width: 2.4rem; background-color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+			.icon{font-size: 1.2rem;}
+
+		
 		}
+		form:hover{ background: $light-green;
+				.icon{  animation: rotate 0.2s linear;
+			color: white; transition: all 0.6s linear;
+			}
+		}
+
 	}
 
 
@@ -76,7 +86,7 @@ $fade-grey:#7c7c7c;
 
 }
 .product-card:hover {
-	.icons-container{opacity: 1; display: flex;}
+	.icons-container{opacity: 1; display: flex; transition: all 1s ;   }
 }
 
 
@@ -97,6 +107,14 @@ $fade-grey:#7c7c7c;
 
 
 
+@keyframes rotate {
+	from {
+	  transform: rotate(0deg);
+	}
+	to {
+	  transform: rotate(360deg);
+	}
+  }
 /*
 ####################################################
 M E D I A  Q U E R I E S

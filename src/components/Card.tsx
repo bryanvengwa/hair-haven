@@ -17,19 +17,19 @@ export default function Card(){
             <div className="icons-container">
             <form action="">
 
-            <FontAwesomeIcon icon={faHeart} />
+            <FontAwesomeIcon  className='icon' icon={faHeart} />
 
             </form>
             <form action="">
-            <FontAwesomeIcon icon={faShoppingCart}  />
+            <FontAwesomeIcon className='icon' icon={faShoppingCart}  />
 
             </form>
             <form action="">
-            <FontAwesomeIcon icon={faRepeat}  />
+            <FontAwesomeIcon className='icon' icon={faRepeat}  />
             </form>
            </div>
            </div>
-           <div className="body flex flex-col gap-3 p-1">
+           <div className="body flex flex-col gap-3 p-1 pt-2">
                 <h3>Vaida dye</h3>
                 <h4>$ 30.00</h4>
            </div>
