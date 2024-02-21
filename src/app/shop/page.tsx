@@ -1,10 +1,14 @@
+'use client'
 import React from 'react'
 import BreadCrumb from '@/components/BreadCrumb'
+import Header from "@/components/Header"
 
 export default function page() {
   return (
     <div>
-        <BreadCrumb/>
+         <Header/>
+
+        <BreadCrumb pageFull='Hair Haven Shop' page='shop' />
       
     </div>
   )

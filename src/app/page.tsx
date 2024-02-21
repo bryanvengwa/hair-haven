@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Header from "@/components/Header"
 import Departments from '@/components/Departments'
 import SearchBar from '@/components/SearchBar'
 import Support from '@/components/Support'
@@ -13,7 +14,9 @@ import Slider from '@/components/Slider'
 
 export default function Home() {
   return (
-    <div className='home' >
+ <>
+ <Header/>
+ <div className='home' >
       <div className='container ' >
         <br />
       <div className=" flex-container ">
@@ -82,5 +85,6 @@ export default function Home() {
 
 
   </div>
+ </>
   )
 }
