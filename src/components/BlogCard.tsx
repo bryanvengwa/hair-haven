@@ -1,5 +1,5 @@
 import React from 'react'
-import bannerImg from '../../public/images/banner.png'
+import bannerImg from '../../public/images/blog1.jpg'
 import Image from 'next/image'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar, faCalendarTimes,  faCalendarCheck,  } from '@fortawesome/free-solid-svg-icons';

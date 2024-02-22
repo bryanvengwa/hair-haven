@@ -90,7 +90,7 @@ $light-blue: rgb(244,245,252);
 }
 
 
-.blog-card{ min-width:18rem;
+.blog-card{ min-width:18rem;  max-height: 18rem !important; min-width:18rem;
 	max-width: 24rem;
     .body{font-family:$cairo; align-items: flex-start; text-align: left;
     h4{font-weight:900}

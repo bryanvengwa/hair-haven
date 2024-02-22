@@ -7,7 +7,7 @@ export default function page() {
   return (
     <div>
         <Header />
-        <BreadCrumb pageFull='Contact Us' page='Contact us' / >
+        <BreadCrumb pageFull='Contact Us' page='Contact us' imageUrl='/images/contact-us.jpg' / >
       
     </div>
   )

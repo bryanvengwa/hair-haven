@@ -11,11 +11,14 @@ import Card from '@/components/Card'
 import BlogCard from '@/components/BlogCard'
 import Slider from '@/components/Slider'
 import Footer from '@/components/Footer'
+import Top from '@/components/Top'
 
 
 export default function Home() {
   return (
  <>
+
+ <Top/>
  <Header/>
  <div className='home' >
       <div className='container ' >
