@@ -90,15 +90,15 @@ body{font-family: $cairo;}
 }
 
 .slide-menu{ position:absolute; left:0; bottom:0; height:100%; width:75vw; background: white; z-index:3;
-    transition: all, 3s; 
+    transition: all 3s; 
 
 
 }
 .slide-menu-overlay { position:absolute; left:0; bottom:0; height:100%; width:100%; background: rgba(0, 0, 0, 0.4); z-index:1;
-
+    transition: all 3s; 
 
 }
-.closed-menu{ display:none; left:-100vw; 
+.closed-menu{ display:none; left:-100vw;     transition: all 3s; 
 
 }
 
