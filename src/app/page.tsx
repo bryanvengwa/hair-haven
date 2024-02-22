@@ -7,6 +7,8 @@ import Banner from '@/components/Banner'
 import Heading from '@/components/Heading'
 import Tabbed from '@/components/Tabbed'
 import Card from '@/components/Card'
+import Footer from '@/components/Footer'
+
 
 
 
@@ -47,6 +49,12 @@ export default function Home() {
   </div>
 
 <Card/>
+
+<div className="container">
+<Footer/>
+</div>
+
+
 
   </div>
   )
