@@ -3,7 +3,8 @@ import bannerImg from '../../public/images/banner.png'
 import Image from 'next/image'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar, faCalendarTimes,  faCalendarCheck,  } from '@fortawesome/free-solid-svg-icons';
-import { faComment } from '@fortawesome/free-solid-svg-icons';
+import { faComment  } from '@fortawesome/free-solid-svg-icons';
+
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
