@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar, faCalendarTimes,  faCalendarCheck,  } from '@fortawesome/free-solid-svg-icons';
 import { faComment  } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
