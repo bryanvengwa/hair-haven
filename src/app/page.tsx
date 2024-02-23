@@ -82,7 +82,7 @@ export default function Home() {
 
 
   </section>
-  <div className="container">
+  <div>
     <Footer/>
   </div>
 
