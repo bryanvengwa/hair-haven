@@ -3,6 +3,7 @@ import React from 'react'
 import BreadCrumb from '@/components/BreadCrumb'
 import Header from "@/components/Header"
 import ContactHeader from "@/components/ContactHeader"
+import ContactForm from '@/components/ContactForm'
 
 export default function page() {
   return (
@@ -15,6 +16,7 @@ export default function page() {
         </div>
         <br />
         <ContactHeader />
+        <ContactForm />
     </div>
   )
 }

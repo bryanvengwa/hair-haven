@@ -92,7 +92,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
-    .contact-container1{flex-direction: row; gap: 4.5em; margin-top: 2em; }
+    .contact-container1{flex-direction: row; gap: unset; justify-content: space-evenly; margin-top: 2em; }
 
 }
 
