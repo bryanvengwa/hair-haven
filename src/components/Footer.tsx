@@ -45,7 +45,7 @@ function Footer() {
     <div className="contfour col-lg-4 .col-md-12">
     <ul>
                 <p className="headlink">Join Our Newsletter Now</p>
-                <li className="informationone">Get E-mail updates about our latest shop and special offers.</li>
+                <li className="informationone">Get E-mail updates about our latest shop <br /> and special offers.</li>
                 <li className="informationone">About Our Shop</li>
                 <li className="informationone">Secure Shopping</li>
                 <li className="informationone">Delivery infomation</li>
