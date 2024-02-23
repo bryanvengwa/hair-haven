@@ -78,9 +78,9 @@ export default function Home() {
   <br />
   <div className='blog-card-container flex flex-row flex-wrap gap-6 align-center justify-center ' >
 
-      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5} imgUrl='/images/blog1.jpg' />
-      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5} imgUrl='/images/blog1.jpg' />
-      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5} imgUrl='/images/care.jpg' />
+      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5}  />
+      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5}  />
+      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5} />
    
   </div>
 
