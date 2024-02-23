@@ -10,11 +10,15 @@ import Tabbed from '@/components/Tabbed'
 import Card from '@/components/Card'
 import BlogCard from '@/components/BlogCard'
 import Slider from '@/components/Slider'
+import Footer from '@/components/Footer'
+import Top from '@/components/Top'
 
 
 export default function Home() {
   return (
  <>
+
+ <Top/>
  <Header/>
  <div className='home' >
       <div className='container ' >
@@ -24,7 +28,7 @@ export default function Home() {
     <div className="box-container" >
     <Departments/>
 
-    <SearchBar/>
+    <SearchBar placeholder='What do you need ?' text='Search' />
   
   <Support/>
 
@@ -74,13 +78,17 @@ export default function Home() {
   <br />
   <div className='blog-card-container flex flex-row flex-wrap gap-6 align-center justify-center ' >
 
-      <BlogCard/>
-      <BlogCard/>
-      <BlogCard/>
+      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5}  />
+      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5}  />
+      <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5} />
+   
   </div>
 
 
   </section>
+  <div className="container">
+    <Footer/>
+  </div>
 
 
 
