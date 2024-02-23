@@ -45,12 +45,16 @@ function Footer() {
     <div className="contfour col-lg-4 .col-md-12">
     <ul>
                 <p className="headlink">Join Our Newsletter Now</p>
-                <li className="informationone">Get E-mail updates about our latest shop <br /> and special offers.</li>
-                <li className="informationone">About Our Shop</li>
-                <li className="informationone">Secure Shopping</li>
-                <li className="informationone">Delivery infomation</li>
-                <li className="informationone">Privacy Policy</li>
-                <li className="informationone">Our Sitemap</li>
+                <li className="informationone">Get E-mail updates about our latest shop and special offers.</li>
+                <br />
+                <br />
+                <div className='searchbar-container flex ' >
+                <input type="search" placeholder='ENTER YOUR EMAIL ?' className='g' />
+                    <div className='search-text g' >
+                        <h3>SUBSCRIBE</h3>
+                    </div>
+
+                    </div>
 
             </ul>
     </div>
