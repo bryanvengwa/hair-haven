@@ -28,7 +28,7 @@ export default function Home() {
     <div className="box-container" >
     <Departments/>
 
-    <SearchBar/>
+    <SearchBar placeholder='What do you need ?' text='Search' />
   
   <Support/>
 
