@@ -10,7 +10,7 @@ import Tabbed from '@/components/Tabbed'
 import Card from '@/components/Card'
 import BlogCard from '@/components/BlogCard'
 import Slider from '@/components/Slider'
-// import Footer from '@/components/Footer'
+import Footer from '@/components/Footer'
 import Top from '@/components/Top'
 
 
@@ -86,6 +86,8 @@ export default function Home() {
 
 
   </section>
+  <div>
+    <Footer/>
   <div className="container">
     {/* <Footer/> */}
   </div>
@@ -93,6 +95,9 @@ export default function Home() {
 
 
   </div>
+ </div>
  </>
+ 
+
   )
 }
