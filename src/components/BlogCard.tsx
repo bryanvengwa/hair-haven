@@ -8,6 +8,7 @@ import { FaRegCalendar , FaRegComment} from 'react-icons/fa';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import BlogImage from './BlogImage';
 
 interface blogProps {
   title : string;
@@ -23,7 +24,7 @@ export default function BlogCard({title, date, comments, description}:blogProps)
     <div>
               <div className='card product-card blog-card ' >
            <div className='img-container' >
-            <Image src={bannerImg} alt='product' />
+            <BlogImage imageUrl={"/images/blog1.jpg"}/>
             
            </div>
            <div className="body flex flex-col gap-3  pt-3 ">
