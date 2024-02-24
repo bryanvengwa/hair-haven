@@ -16,6 +16,7 @@ export default function page() {
     <div className='cart-page' >
                    <Header />
          <BreadCrumb pageFull='Shopping cart' page='shopping cart' imageUrl='/images/blog.jpg' /> 
+         <div className="pb-4"></div>
          
 <div className="container">
     <div className='heading-container pb-3' >
