@@ -16,6 +16,7 @@ export default function page() {
         </div>
         <br />
         <ContactHeader />
+        
         <ContactForm />
     </div>
   )
