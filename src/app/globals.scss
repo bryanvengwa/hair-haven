@@ -189,13 +189,39 @@ No media query since this is the default in Bootstrap because it is "mobile firs
             // img{object-fit: cover;}
         }
         .navlinks{display: block;flex: 1 0 auto;
+            .hide-element{
+                display: none;
+            }
         display: flex; gap: 1.5em;
+        .drop{position:relative;}
+        .drop-down{ position: absolute;
+          li{  margin-bottom: 0.5em;
+            a{ 
+                text-transform: capitalize;
+                color: #ffffff;
+                font-weight: 400;
+                padding: 5px 15px;
+            }
+          }
+            background: #222222;
+    width: 180px;
+    z-index: 9;
+    padding: 5px 0;
         }
+
+
+        }
+        .navlinks .drop-down li a:hover {color: $light-green;}
+
         .navlinks li{font-family: $cairo;  font-weight: 700;     letter-spacing: 2px; cursor: pointer; 
         a{    transition: all, 0.3s; color: #252525;;
            }
         }
-        .navlinks li:hover{color: $light-green;}
+        .navlinks li a:hover{color: $light-green;
+            a{color: $light-green;}
+     
+        
+        }
         .icon-container{width: unset; flex: 1 0 10%; }
     
     }
