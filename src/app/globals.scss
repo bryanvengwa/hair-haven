@@ -102,11 +102,39 @@ $grey: #f5f5f5;
 
 .slide-menu{ position:absolute; left:0; bottom:0; height:100%; width:75vw; background: white; z-index:3;
     transition: all 3s; 
-
+    // .logo-container{
+    //     di
+    // }
+    .menu-container{ display: flex; justify-content: flex-end; width: 90%;
+        .menu{ border-color: white;
+            .bar{background: white;}
+        }
+        
+        font-size: 16px;
+        background: #4c4c4c;
+        padding: 5px;
+       
+    }
+.menu-section{ display: flex; flex-direction: column; justify-content: center; align-items: center;
+    .hide-ul{display: none;}
+    ul{display: flex; flex-direction: column; gap: 0.6em;  width: 90%;
+        li{
+            h4{font-weight: 800; text-decoration: underline; text-decoration-color:$light-green ; font-size: 23px;  }
+            a{font-weight: 400;}
+        }
+   
+    }
+}
 
 }
 .slide-menu-overlay { position:absolute; left:0; bottom:0; height:100%; width:100%; background: rgba(0, 0, 0, 0.4); z-index:1;
     transition: all 3s; 
+    .country-icon{ justify-content: center;
+        display: flex;
+    .line{width: 1px; height: 1.4em; background-color: rgba(0, 0, 0, 0.111); }
+        
+    }
+
 
 }
 .closed-menu{ display:none; left:-100vw;     transition: all 3s; 
