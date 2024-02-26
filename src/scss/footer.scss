@@ -54,43 +54,243 @@ $grey: #f5f5f5;
 $light-green: #7fad39;
 $cairo: "Cairo", sans-serif;
 
-.footer{
-    background-color:#F3F6FA; margin-top: 50px; width: 100%;display: flex;height:50vh;
-    .contone{
-            padding: 43px 80px 0px 60px;
-    }
+// .footer{
+//     background-color:#F3F6FA; margin-top: 115px; width: 100%;display: flex;height:50vh;
+//     .contone{
+//             padding: 43px 80px 0px 60px;
+//     }
+//     .logo{
+//        width: 100%;object-fit: contain;
+//     }
+//     .information{
+//         padding-top: 30px;color: black;font-weight: 400;font-size: 14px;
+//     }
+//     .conttwo{
+//         padding: 43px 80px 0px 60px;
+//     }
+//     .headlink{
+//         font-size: 17px;color: black;font-weight: 800;font-family: $cairo;padding-top: 5px;
+//     }
+//     .informationone{
+//         cursor: pointer;font-size: 14px; margin-top: 10px;
+//     }
+//     .contthree{
+//         margin-top: 64px;
+//     }
+//     .contfour{
+//         padding-left: 150px;
+//         margin-top: 30px;
+//     }
+//     .containermain {
+//         display: flex;
+//         width: 90%;
+//         margin-left: 100px;
+//     }
+//     .informationone{
+//         line-height: 30px;
+//     }
+//     .g{
+//         font-size: 10px;
+//         color: white;
+//         width: 60%;
+//         text-align: center;
+//     }
+    
+// }
+
+
+
+.footer {
+    background: #F3F6FA;
+    padding-top: 70px;
+    padding-bottom: 0;
+    margin-top: 90px;
     .logo{
-        object-fit: contain;width: 70%;
+        max-width: 100%;
     }
-    .information{
-        padding-top: 30px;color: black;font-weight: 400;font-size: 14px;
-    }
-    .conttwo{
-        padding: 43px 80px 0px 60px;
-    }
-    .headlink{
-        font-size: 17px;color: black;font-weight: 800;font-family: $cairo;padding-top: 5px;
-    }
-    .informationone{
-        margin-top: 17px;cursor: pointer;font-size: 14px;
-    }
-    .contthree{
-        margin-top: 64px;
-    }
-    .contfour{
-        padding-left: 150px;
-        margin-top: 30px;
-    }
-    .containermain {
+    .row {
+        display: -ms-flexbox;
         display: flex;
-        width: 90%;
-        margin-left: 100px;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
     }
-    .informationone{
-        line-height: 30px;
+    .footer__about {
+        margin-bottom: 30px;
+        font-family: "Cairo", sans-serif;   
+         box-sizing: border-box;
     }
     
+    .footer__about__logo {
+        margin-bottom: 15px;
+    }
+    .footer__about ul li {
+        font-size: 16px;
+        color: #1c1c1c;
+        line-height: 36px;
+        list-style: none;
+    }
+    .footer__widget {
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+    .footer__widget h6 {
+        color: #1c1c1c;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .footer__widget ul {
+        width: 50%;
+        float: left;
+    }
+    .footer__widget ul li {
+        list-style: none;
+        box-sizing: border-box;
+    }
+    .footer__widget ul li a {
+        color: #1c1c1c;
+        font-size: 14px;
+        line-height: 32px;
+    }
+    .footer__copyright {
+        border-top: 1px solid #ebebeb;
+        padding: 15px 0;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+    .footer__copyright__text {
+        font-size: 14px;
+        color: #1c1c1c;
+        float: left;
+        line-height: 25px;
+    }
+    p {
+        font-size: 16px;
+        font-family: "Cairo", sans-serif;
+        color: black;
+        font-weight: 400;
+        line-height: 26px;
+        margin: 0 0 15px 0;
+    }
+    .footer__widget p {
+        font-size: 14px;
+        color: rgb(28, 28, 28);
+        margin-bottom: 30px;
+    }
+    .footer__widget form {
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .footer__widget form input {
+        width: 100%;
+        font-size: 16px;
+        padding-left: 20px;
+        color: rgb(28, 28, 28);
+        height: 46px;
+        border: 1px solid rgb(237, 237, 237);
+    }
+    .footer__widget form button {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding: 0px 26px;
+        height: 100%;
+    }
+    .site-btn {
+        font-size: 14px;
+        color: rgb(255, 255, 255);
+        font-weight: 800;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 13px 30px 12px;
+        background: rgb(127, 173, 57);
+        border: none;
+    }
+    .footer__widget .footer__widget__social a {
+        display: inline-block;
+        height: 41px;
+        width: 41px;
+        font-size: 16px;
+        color: rgb(64, 64, 64);
+        border: 1px solid rgb(237, 237, 237);
+        border-radius: 50%;
+        line-height: 38px;
+        text-align: center;
+        background: rgb(255, 255, 255);
+        transition: all 0s ease 0s, all 0.3s ease 0s;
+        margin-right: 10px;
+    }
+
+ 
 }
+
+
+// <footer className="footer spad">
+//         <div className="container">
+//         <div className="row">
+//     <div className="col-lg-3 col-md-6 col-sm-6">
+//     <div className="footer__about">
+//     <div className="footer__about__logo">
+//     <a href="./index.html"><Image className='logo' src={Logo} alt='Logo' /></a>
+//     </div>
+//     <ul>
+//     <li>Address: 60-49 Road 11378 New York</li>
+//     <li>Phone: +65 11.188.888</li>
+//     <li>Email: hello@colorlib.com</li>
+//     </ul>
+//     </div>
+//     </div>
+//     <div className="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+//     <div className="footer__widget">
+//     <h6>Useful Links</h6>
+//     <ul>
+//     <li><a href="#">About Us</a></li>
+//     <li><a href="#">About Our Shop</a></li>
+//     <li><a href="#">Secure Shopping</a></li>
+//     <li><a href="#">Delivery infomation</a></li>
+//     <li><a href="#">Privacy Policy</a></li>
+//     <li><a href="#">Our Sitemap</a></li>
+//     </ul>
+//     <ul>
+//     <li><a href="#">Who We Are</a></li>
+//     <li><a href="#">Our Services</a></li>
+//     <li><a href="#">Projects</a></li>
+//     <li><a href="#">Contact</a></li>
+//     <li><a href="#">Innovation</a></li>
+//     <li><a href="#">Testimonials</a></li>
+//     </ul>
+//     </div>
+//     </div>
+//     <div className="col-lg-4 col-md-12">
+//     <div className="footer__widget">
+//     <h6>Join Our Newsletter Now</h6>
+//     <p>Get E-mail updates about our latest shop and special offers.</p>
+//     <form action="#">
+//         <input type="text" placeholder='Enter your mail'/>
+//     <button type="submit" className="site-btn">Subscribe</button>
+//     </form>
+//     <div className="footer__widget__social">
+//     <a href="#"><i className="fa fa-facebook"></i></a>
+//     <a href="#"><i className="fa fa-instagram"></i></a>
+//     <a href="#"><i className="fa fa-twitter"></i></a>
+//     <a href="#"><i className="fa fa-pinterest"></i></a>
+//     </div>
+//     </div>
+//     </div>
+//     </div>
+//     <div className="row">
+//     <div className="col-lg-12">
+//     <div className="footer__copyright">
+//     <div className="footer__copyright__text">
+
+//     <div className="footer__copyright__payment"><Image className='logo' src={Logo} alt='Logo' /></div>
+//     </div>
+//     </div>
+//     </div>
+//         </div>
+//     </footer>
 
 
 /*
@@ -117,17 +317,37 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
+    .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+    .col-lg-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .offset-lg-1 {
+        margin-left: 8.333333%;
+    }
+    .col-lg-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  
-    
+    .container {
+        max-width: 1170px;
+    }
 }
 
 
