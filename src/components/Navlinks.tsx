@@ -17,8 +17,8 @@ export default function Navlinks() {
       <ul className={`drop-down ${open ? 'hide-element' : '' } `} >
         <li> <Link href={'/cart'}  >Shopping cart </Link></li>
         <li> <Link href={'/checkout'}   >Checkout  </Link></li>
-        <li> <Link href={'/blog-details'}   >Blog Details </Link></li>
-        <li> <Link href={'/shop-details'}   >Shop Details  </Link></li>
+        <li> <Link href={'/blog/details'}   >Blog Details </Link></li>
+        <li> <Link href={'/shop/details'}   >Shop Details  </Link></li>
       </ul>
     </li>
 

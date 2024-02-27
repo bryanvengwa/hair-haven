@@ -208,8 +208,7 @@ $cairo: "Cairo", sans-serif;
         background: rgb(127, 173, 57);
         border: none;
     }
-    .footer__widget .footer__widget__social a {
-        display: inline-block;
+    .footer__widget .icon-container {
         height: 41px;
         width: 41px;
         font-size: 16px;
@@ -217,10 +216,20 @@ $cairo: "Cairo", sans-serif;
         border: 1px solid rgb(237, 237, 237);
         border-radius: 50%;
         line-height: 38px;
-        text-align: center;
         background: rgb(255, 255, 255);
         transition: all 0s ease 0s, all 0.3s ease 0s;
         margin-right: 10px;
+    }
+    .footer__widget__social{
+        display: flex;
+        justify-content:center ;
+        align-items: center;
+    }
+    .icon-container:hover{
+        background: rgb(127, 173, 57);
+    }
+    .iconn:hover{
+        color: #F3F6FA;
     }
 
  
