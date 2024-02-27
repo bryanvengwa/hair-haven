@@ -13,6 +13,7 @@ import Slider from '@/components/Slider'
 import Footer from '@/components/Footer'
 import Top from '@/components/Top'
 import RecentCard from '@/components/RecentCard'
+import Micheal from '@/components/Micheal'
 
 
 export default function Home() {
@@ -89,8 +90,12 @@ export default function Home() {
   </section>
   <div>
     <Footer/>
-    <RecentCard/>
+    
+  
+   
+    
   <div className="container">
+    
     {/* <Footer/> */}
   </div>
 

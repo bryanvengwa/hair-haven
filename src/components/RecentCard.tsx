@@ -4,18 +4,24 @@ import blogimage from '../../public/images/blog1.jpg'
 import '@/scss/recentcard.scss'
 
 
+interface recentCardProps{
+    heading : string;
+    date: string;
+    imageUrl : string;
+}
 
 
-function RecentCard() {
+
+function RecentCard( {heading , date, imageUrl}: recentCardProps ) {
   return (
     <div>
-        <a href="#" className="blog__sidebar__recent__item">
+        <a href="#" className="blog__sidebar__recent__item blog__details__author">
             <div className="blog__sidebar__recent__item__pic">
-                <Image className='blogimage' src={blogimage} alt='blogimage' />
+                <Image className='blogimage' width={300} height={300} src={imageUrl} alt='blogimage' />
             </div>
             <div className="blog__sidebar__recent__item__text">
-                <h6>09 Kinds Of Vegetables<br/> Protect The Liver</h6>
-                <span>MAR 05, 2019</span>
+                <h6> {heading} </h6>
+                <span>{date}</span>
             </div>
             </a>
         </div>

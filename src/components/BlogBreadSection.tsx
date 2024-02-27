@@ -7,6 +7,7 @@ import RecentCard from './RecentCard';
 import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedinIn} from 'react-icons/fa';
 
 import blogimage from '../../public/images/blog1.jpg'
+import Micheal from './Micheal'; // Assuming Micheal is in the same directory
 
 function BlogBreadSection() {
   return (
@@ -37,9 +38,9 @@ function BlogBreadSection() {
 <h4>Recent News</h4>
 <div className="blog__sidebar__recent">
     
-<RecentCard/>
-<RecentCard/>
-<RecentCard/>
+<RecentCard heading='09 Kinds Of Vegetables Protect The Live' date='MAR 05, 2019' imageUrl='/images/blog1.jpg' />
+<RecentCard heading='4 Principles Help You Lose Weight With Vegetables' date='MAR 05, 2019' imageUrl='/images/blog1.jpg' />
+<RecentCard heading='' date='MAR 05, 2019' imageUrl='/images/blog1.jpg' />
 
 </div>
 </div>
@@ -78,14 +79,10 @@ function BlogBreadSection() {
      <div className="row">
      <div className="col-lg-6">
      <div className="blog__details__author">
-     <div className="blog__details__author__pic">
-     <Image className='logo' src={blogimage} alt='blogimage' />
+     <Micheal author='Admin' title='Michael Scofield' imageUrl='/images/blog1.jpg'  />
     </div>
-    <div className="blog__details__author__text">
-        <h6>Michael Scofield</h6>
-            <span>Admin</span>
-    </div>
-    </div>
+
+
     </div>
   <div className="col-lg-6">
   <div className="blog__details__widget">
