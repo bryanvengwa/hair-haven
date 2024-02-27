@@ -102,39 +102,7 @@ $cairo: "Cairo", sans-serif;
     h4 {
         font-size: 24px;
     }
-    .blog__sidebar__recent .blog__sidebar__recent__item {
-        display: block;
-    }
-    .blog__sidebar__recent__item {
-        overflow: hidden; margin-bottom: 20px;
-    }
-    .blog__sidebar__recent__item__pic {
-        float: left;margin-right: 20px;
-    }
-    .blogimage{
-        width: 100px;
-    }
-    .blog__sidebar__recent__item__text {
-        overflow: hidden;
-    }
-    .blog__sidebar__recent__item__text h6 {
-        font-weight: 700;color: #333333;
-        line-height: 20px;
-        margin-bottom: 5px;
-        font-family: "Cairo", sans-serif;
-    }
-    h6 {
-        font-size: 16px;
-    }
-    .blog__sidebar__recent__item__text span {
-        font-size: 12px;color: #999999;text-transform: uppercase;font-family: "Cairo", sans-serif;
-    }
-    .blog__sidebar__recent .blog__sidebar__recent__item {
-        display: block;
-    }
-    .blog__sidebar__recent__item {
-        overflow: hidden; margin-bottom: 20px;
-    }
+   
     .blog__sidebar__item {
         margin-bottom: 50px;
     }
@@ -200,6 +168,12 @@ $cairo: "Cairo", sans-serif;
     }
     .footer__widget__social{
         display: flex;justify-content:center ;align-items: center;
+    }
+    .cont-recent{
+        display: block;
+    }
+    .blog__sidebar__item {
+        margin-bottom: 50px;
     }
 }
 

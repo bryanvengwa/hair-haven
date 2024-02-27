@@ -3,6 +3,7 @@ import Image from 'next/image';
 import '@/scss/blogbreadsection.scss'; 
 import '@/scss/footer.scss';// assuming this file exists and styles the component
 import blog from '../../public/images/blog.jpg';
+import RecentCard from './RecentCard';
 import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedinIn} from 'react-icons/fa';
 
 import blogimage from '../../public/images/blog1.jpg'
@@ -35,33 +36,11 @@ function BlogBreadSection() {
 <div className="blog__sidebar__item">
 <h4>Recent News</h4>
 <div className="blog__sidebar__recent">
-<a href="#" className="blog__sidebar__recent__item">
-<div className="blog__sidebar__recent__item__pic">
-<Image className='blogimage' src={blogimage} alt='blogimage' />
-</div>
-<div className="blog__sidebar__recent__item__text">
-<h6>09 Kinds Of Vegetables<br /> Protect The Liver</h6>
-<span>MAR 05, 2019</span>
-</div>
-</a>
-<a href="#" className="blog__sidebar__recent__item">
-<div className="blog__sidebar__recent__item__pic">
-<Image className='blogimage' src={blogimage} alt='blogimage' />
-</div>
-<div className="blog__sidebar__recent__item__text">
-<h6>Tips You To Balance<br /> Nutrition Meal Day</h6>
-<span>MAR 05, 2019</span>
-</div>
-</a>
-<a href="#" className="blog__sidebar__recent__item">
-<div className="blog__sidebar__recent__item__pic">
-<Image className='blogimage' src={blogimage} alt='blogimage' />
-</div>
-<div className="blog__sidebar__recent__item__text">
-<h6>4 Principles Help You Lose <br/>Weight With Vegetables</h6>
-<span>MAR 05, 2019</span>
-</div>
-</a>
+    
+<RecentCard/>
+<RecentCard/>
+<RecentCard/>
+
 </div>
 </div>
     </div>
