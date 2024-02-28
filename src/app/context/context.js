@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 export const GlobalContext = createContext({});
 
 export const GlobalContextProvider = ({children})=>{
+    const url = 'http://127.0.0.1:8000'
     let [user, setUser] = useState( ()=>localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens') ): null ); 
     let [authTokens, setAuthTokens] = useState(()=>  localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
     let [loading, setLoading] = useState(true);
@@ -15,9 +16,8 @@ export const GlobalContextProvider = ({children})=>{
 
     let loginUser = async (e)=>{
         e.preventDefault();
-        // console.log('form submitted');
         
-        let response = await fetch('http://127.0.0.1:8000/api/token/', {
+        let response = await fetch( `${url}http://127.0.0.1:8000/api/token/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export const GlobalContextProvider = ({children})=>{
 
     let updateToken = async ()=> {
 
-        let response = await fetch('http://127.0.0.1:8000/api/token/refresh/', {
+        let response = await fetch(`${url}/api/token/refresh/`, {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
