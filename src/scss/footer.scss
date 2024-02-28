@@ -231,6 +231,26 @@ $cairo: "Cairo", sans-serif;
     .iconn:hover{
         color: #F3F6FA;
     }
+    .footer__copyright {
+        border-top: 1px solid #ebebeb;
+        padding: 15px 0;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+    .footer__copyright__text {
+        font-size: 14px; color: #1c1c1c;float: left;line-height: 25px;
+
+        p {
+            font-size: 16px;font-family: "Cairo", sans-serif;color: #6f6f6f;
+            font-weight: 400;line-height: 26px;margin: 0 0 15px 0;
+        }
+    }
+    .footer__copyright__payment {
+        float: right;
+    }
+   .colo{
+    color: blue;
+   }
 
  
 }
