@@ -1,4 +1,5 @@
 import React from 'react'
+import { GlobalContextProvider } from '@/app/context/context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedinIn} from 'react-icons/fa';
 import { faChevronDown, faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +8,7 @@ import { faChevronDown, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 export default function Top() {
     
   return (
+    <GlobalContextProvider>
     <div className='top ' >
         <div className="container flex items-center justify-center justify-between ">
         <div className="leftie flex gap-2">
@@ -47,5 +49,6 @@ export default function Top() {
       
         </div>
     </div>
+    </GlobalContextProvider>
   )
 }

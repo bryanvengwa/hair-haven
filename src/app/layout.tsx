@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {GlobalContextProvider} from  './context/context'
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { Cairo } from 'next/font/google';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
@@ -29,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+              
              {children}
+         
         </body>
     </html>
   );
