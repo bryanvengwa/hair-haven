@@ -1,6 +1,7 @@
 'use client'
 import { createContext , useEffect, useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+import { jwtDecode } from "jwt-decode";
 
 
 export const GlobalContext = createContext({});

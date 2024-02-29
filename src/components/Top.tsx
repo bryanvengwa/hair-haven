@@ -3,7 +3,7 @@ import { GlobalContextProvider } from '@/app/context/context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedinIn} from 'react-icons/fa';
 import { faChevronDown, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-
+import Link from 'next/link'
 
 export default function Top() {
     
@@ -42,7 +42,7 @@ export default function Top() {
 
             </div>
             <div className="login-container flex items-center gap-1">
-                <FaUser/> <p>Login</p>
+                <FaUser/> <Link href={'/login'} >Login</Link>
 
             </div>
         </div>
