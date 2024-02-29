@@ -45,9 +45,18 @@ const SignUpForm = () =>{
     <input type="text" id='username' name='username' className='form-control' />
 
     </label>
+    <label htmlFor="email" className='flex flex-col gap-2'>
+      Email
+    <input type="text" id='email' name='email' className='form-control' />
+
+    </label>
     <label htmlFor="password" className='flex flex-col gap-2' >
       Password
     <input type="password" className='form-control' />
+    </label>
+    <label htmlFor="password-retype" className='flex flex-col gap-2' >
+      Password Retype
+    <input type="password-retype" className='form-control' />
     </label>
     <button  >Submit</button>
 </form>
@@ -76,7 +85,7 @@ const toggleLogin = ()=>{
               <div className="toggle-container">
                 <button onClick={toggleLogin} > { !login ?'Login ?' : 'Sign up ?' }  </button>
               </div>
-           <LoginForm/>
+          { login ?  <LoginForm/> :  <SignUpForm/>  }
             </div>
         </div>
     </div>
