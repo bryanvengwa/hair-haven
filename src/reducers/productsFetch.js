@@ -37,7 +37,16 @@ const useFetch = (url) => {
 		const fetchData = async () => {
 			dispatch({ type: "FETCH START" });
 			try {
-				const response = await fetch(url);
+				const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                  });
+
+
+
+
 				const data = await response.json();
 				if (data.total_results === 0) {
 					throw new Error("no results");

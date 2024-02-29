@@ -64,11 +64,7 @@ export default function Home() {
     <div className="row">
       <div className="card-container flex gap-4 flex-wrap align-center justify-center">
       <Card/>
-<Card/>
-<Card/>
-<Card/>
-<Card/>
-<Card/>
+
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {GlobalContextProvider} from  './context/context'
+import{ ProductContextProvider }from './context/ProductContext'
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { Cairo } from 'next/font/google';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
@@ -28,6 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <GlobalContextProvider>
+      <ProductContextProvider>
 
     
     <html lang="en">
@@ -38,6 +40,7 @@ export default function RootLayout({
          
         </body>
     </html>
+    </ProductContextProvider>
     </GlobalContextProvider>
   );
 }
