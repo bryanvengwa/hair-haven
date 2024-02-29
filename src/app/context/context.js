@@ -4,12 +4,33 @@ import { useRouter } from 'next/navigation';
 import { jwtDecode } from "jwt-decode";
 
 
-export const GlobalContext = createContext({});
+
+  export const GlobalContext = createContext();
+
+
 
 export const GlobalContextProvider = ({children})=>{
     const url = 'http://127.0.0.1:8000'
-    let [user, setUser] = useState( ()=>localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens') ): null ); 
-    let [authTokens, setAuthTokens] = useState(()=>  localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
+    const [shouldRedirect, setShouldRedirect] = useState(false);
+
+    const [user, setUser] = useState(() => {
+        try {
+          const storedTokens = localStorage.getItem('authTokens');
+          return storedTokens ? jwtDecode(storedTokens) : null;
+        } catch (error) {
+         
+          return null;
+        }
+      });
+      const [authTokens, setAuthTokens] = useState(() => {
+        try {
+          const storedTokens = localStorage.getItem('authTokens');
+          return storedTokens ? JSON.parse(storedTokens) : null;
+        } catch (error) {
+      
+          return null;
+        }
+      });
     let [loading, setLoading] = useState(true);
     const router = useRouter();
 
@@ -18,7 +39,7 @@ export const GlobalContextProvider = ({children})=>{
     let loginUser = async (e)=>{
         e.preventDefault();
         
-        let response = await fetch( `${url}http://127.0.0.1:8000/api/token/`, {
+        let response = await fetch( `${url}/api/token/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -65,18 +86,49 @@ export const GlobalContextProvider = ({children})=>{
     }
 
 
-    let logOutUser = ( ) => {
+    let logOutUser = () => {
+        setShouldRedirect(true);
         setUser(null);
         setAuthTokens(null);
-        localStorage.removeItem('authTokens' )
-        useEffect(() => {
-            myFunction();
-            router.push('/'); // Redirect to "/" after function execution
-          }, []); // Run only once on component mount
-        
-     
+        localStorage.removeItem('authTokens');
+    
+        // Redirect to "/" after logout
+      
 
-    }
+      };
+
+      useEffect(() => {
+          if (shouldRedirect) {
+    router.push('/');
+    setShouldRedirect(false); // Reset flag after redirect
+  }
+    }, [shouldRedirect, router]); // Run only once on component mount
+
+    let registerUser = async (event) => {
+
+        event.preventDefault();
+        const apiUrl = `${url}/api/register/`;
+        try {
+            const response = await fetch(apiUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                username: event.target.username.value,
+                email: event.target.email.value,
+                password: event.target.password.value,
+              }),
+            });
+
+
+    }catch (error) {
+        console.error('Error during registration:', error);
+        // You can handle other errors here.
+      }
+
+
+    };
 
     let contextData = {
         user: user,
