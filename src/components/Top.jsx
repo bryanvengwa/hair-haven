@@ -45,7 +45,7 @@ export default function Top() {
             </div>
             <div className="login-container flex items-center gap-1">
             <FaUser/> 
-            { user == null ? <Link href={'/login'} >Login</Link> :(  <p> {user.username}   </p>  )}
+            { user == null ? <Link href={'/login'} >{'Login'}</Link> :(  <Link href={''}> {user.username}   </Link>  )}
 
             </div>
         </div>
