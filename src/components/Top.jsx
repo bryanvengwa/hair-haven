@@ -25,7 +25,6 @@ export default function Top() {
 
             <div className="icon-contianer flex gap-3 items-center justify-center ">
                 <FaFacebook/>
-                <FaInstagram/>
                 <FaLinkedinIn/>
                 <FaPinterest/>
             <div>
@@ -46,7 +45,7 @@ export default function Top() {
             </div>
             <div className="login-container flex items-center gap-1">
             <FaUser/> 
-            { user == null ? <Link href={'/login'} >Login</Link> :  <p> {user.username} </p> }
+            { user == null ? <Link href={'/login'} >Login</Link> :(  <p> {user.username}   </p>  )}
 
             </div>
         </div>
