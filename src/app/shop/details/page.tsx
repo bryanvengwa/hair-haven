@@ -2,18 +2,16 @@
 import React from 'react'
 import Header from "@/components/Header"
 import '@/scss/checkout.scss'
-import BlogBreadCrub from '@/components/BlogBreadCrub'
-import BlogBreadSection from '@/components/BlogBreadSection'
+import BreadCrumb from '@/components/BreadCrumb'
 import Footer from '@/components/Footer'
-import ShoppingCart from '@/components/ShoppingDetails'
-
+import ShoppingDetails from '@/components/ShoppingDetails'
 function page() {
   return (
     <div className="blogdetails">
       <Header />
-      {/* <BlogBreadCrub pageFull='blogdetails' page='pagedetails' imageUrl='/images/blog.jpg' /> */}
-      <BlogBreadCrub />
-      <ShoppingCart/>
+      <BreadCrumb pageFull='Contact Us' page='Contact us' imageUrl='/images/contact-us.jpg' / >
+      <ShoppingDetails />
+      
       <Footer />
       
     </div>

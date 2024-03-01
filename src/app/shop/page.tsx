@@ -8,7 +8,7 @@ export default function page() {
     <div>
          <Header/>
 
-        <BreadCrumb pageFull='Hair Haven Shop' page='shop' imageUrl='/images/care.jpg' />
+         <BreadCrumb pageFull='Checkout' page='checkout' imageUrl='/images/blog.jpg' />
       
     </div>
   )
