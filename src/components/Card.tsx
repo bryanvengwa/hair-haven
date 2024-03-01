@@ -8,12 +8,18 @@ import { faRepeat} from '@fortawesome/free-solid-svg-icons';
 
 
 
+interface CardProps {
+    image: string;
+    title : string;
+    price : number;
+}
 
-export default function Card(){
+
+export default function Card({image, title, price}: CardProps){
     return (
         <div className='card product-card' >
            <div className='img-container' >
-            <Image src={bannerImg} alt='product' />
+            <Image src={image} alt='product' />
             <div className="icons-container">
             <form action="">
 
@@ -30,8 +36,8 @@ export default function Card(){
            </div>
            </div>
            <div className="body flex flex-col gap-2 p-1 pt-2">
-                <h3 style={{textTransform:'capitalize'}} >Vaida dye</h3>
-                <h4>$ 30.00</h4>
+                <h3 style={{textTransform:'capitalize'}} > {title} </h3>
+                <h4>$ {price}</h4>
            </div>
 
         </div>

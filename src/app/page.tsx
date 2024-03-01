@@ -12,8 +12,6 @@ import BlogCard from '@/components/BlogCard'
 import Slider from '@/components/Slider'
 import Footer from '@/components/Footer'
 import Top from '@/components/Top'
-import RecentCard from '@/components/RecentCard'
-import Micheal from '@/components/Micheal'
 
 
 export default function Home() {
@@ -63,7 +61,8 @@ export default function Home() {
   <div className="container">
     <div className="row">
       <div className="card-container flex gap-4 flex-wrap align-center justify-center">
-      <Card/>
+
+
 
       </div>
     </div>

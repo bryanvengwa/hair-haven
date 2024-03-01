@@ -12,9 +12,9 @@ const {data , error , isLoading} =  useFetch(url)
 
 
 const productsData ={
-    data : data,
-    error : error,
-    isLoading : isLoading,
+    products : data,
+    productsError : error,
+    productLoad : isLoading,
 }
 console.log(url)
 console.log(data, 'products')
