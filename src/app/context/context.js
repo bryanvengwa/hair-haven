@@ -150,7 +150,7 @@ export const GlobalContextProvider = ({children})=>{
         }, fourMinutes)
         return ()=> clearInterval(interval)
 
-    }, [authTokens, loading])
+    }, [authTokens, loading , updateToken])
 
     return (
         <GlobalContext.Provider value={contextData}  >
