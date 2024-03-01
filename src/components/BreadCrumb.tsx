@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import '@/scss/heading.scss'; // assuming this file exists and styles the component
+import '@/scss/heading.scss'; 
 
 interface BreadCrumbProps {
   page: string;
   pageFull: string;
-  imageUrl: string; // new prop for image URL
+  imageUrl: string; 
 }
 
 export default function BreadCrumb({ page, pageFull, imageUrl }: BreadCrumbProps) {
