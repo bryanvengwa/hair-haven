@@ -12,7 +12,7 @@ export default function BreadCrumb({ page, pageFull, imageUrl }: BreadCrumbProps
   return (
     <div className='bread-crumb'>
       <Image src={imageUrl} alt='header image'   layout="fill"
-  objectFit="cover"  /> // use the imageUrl prop
+  objectFit="cover"  /> 
       <div className="over-head">
         <h1>{pageFull}</h1>
         <h5>Home   <span>  -   {page}</span> </h5>
