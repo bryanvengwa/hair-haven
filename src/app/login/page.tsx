@@ -65,7 +65,7 @@ const SignUpForm = (props : any ) =>{
 }
 
 
-export default function page() {
+export default function Page() {
 const [login, setLogin] = useState(true);
 
 const toggleLogin = ()=>{
