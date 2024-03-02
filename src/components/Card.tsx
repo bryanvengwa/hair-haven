@@ -19,7 +19,7 @@ export default function Card({image, title, price}: CardProps){
     return (
         <div className='card product-card' >
            <div className='img-container' >
-            <Image src={image} alt='product' />
+            <Image src={image} layout='fill' className='img-fluid' alt='product' />
             <div className="icons-container">
             <form action="">
 

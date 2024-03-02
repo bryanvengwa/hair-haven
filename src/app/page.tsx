@@ -12,13 +12,14 @@ import BlogCard from '@/components/BlogCard'
 import Slider from '@/components/Slider'
 import Footer from '@/components/Footer'
 import Top from '@/components/Top'
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
+import useFetch from '@/reducers/productsFetch'
 
 
 export default function Home() {
+  const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/")
+
+
   const loading = true
 
   return (
@@ -69,7 +70,7 @@ export default function Home() {
       <div className="card-container flex gap-4 flex-wrap align-center justify-center">
 
    
-      {loading ?
+      {isLoading &&
             (<>
             <Skeleton variant="rectangular" width={310} height={250} />
             <Skeleton variant="rectangular" width={310} height={250} />
@@ -82,8 +83,16 @@ export default function Home() {
   
             </>
             
-            ): <h1>ni</h1>
+            )
        
+      }
+
+      {
+        data && (<>
+        { data.map((product : any )=>{
+              return <Card key={product.id} title={product.title} image={product.image} price={product.unit_price}  />
+            })}
+        </>)
       }
 
 
