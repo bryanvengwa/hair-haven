@@ -12,9 +12,15 @@ import BlogCard from '@/components/BlogCard'
 import Slider from '@/components/Slider'
 import Footer from '@/components/Footer'
 import Top from '@/components/Top'
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Skeleton from '@mui/material/Skeleton';
 
 
 export default function Home() {
+  const loading = true
+
   return (
  <>
 
@@ -62,6 +68,23 @@ export default function Home() {
     <div className="row">
       <div className="card-container flex gap-4 flex-wrap align-center justify-center">
 
+   
+      {loading ?
+            (<>
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+      
+            
+  
+            </>
+            
+            ): <h1>ni</h1>
+       
+      }
 
 
       </div>
