@@ -20,11 +20,12 @@ interface CardProps {
 
 export default function Card({image, title, price , product_id}: CardProps){
     const {addCartItem } = useContext(CartContext);
-    const handleAddToCart = (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+    const handleAddToCart = (event: React.FormEvent<HTMLFormElement>) => {
         alert('clicked')
-        // event.preventDefault(); // Prevent the default form submission
-        // // Assuming addCartItem takes product_id and quantity as arguments
-        // addCartItem(product_id, 1); // Adjust the quantity as needed
+        console.log('code ran')
+        event.preventDefault(); // Prevent the default form submission
+        // Assuming addCartItem takes product_id and quantity as arguments
+        addCartItem(product_id, 1); // Adjust the quantity as needed
     };
     return (
         <div className='card product-card' >
@@ -36,13 +37,15 @@ export default function Card({image, title, price , product_id}: CardProps){
             <FontAwesomeIcon  className='icon' icon={faHeart} />
 
             </form>
-            <div>
-                
-            <FontAwesomeIcon onClick={handleAddToCart}  className='icon' icon={faShoppingCart}  />
+            <form onSubmit={handleAddToCart}>
+                <button>
+                <FontAwesomeIcon  className='icon' icon={faShoppingCart}  />
+                </button>
+           
             <input type="hidden" name='product_id' value={product_id} />
                 <input type="hidden" name='quantity' value={product_id} />
 
-            </div>
+            </form>
             <form action="">
             <FontAwesomeIcon className='icon' icon={faRepeat}  />
             </form>

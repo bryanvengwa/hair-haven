@@ -20,7 +20,7 @@ export default function Home() {
   const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/")
 
 
- 
+
   return (
  <>
 
@@ -89,7 +89,7 @@ export default function Home() {
       {
         data && (<>
         { data.map((product : any )=>{
-              return <Card key={product.id} title={product.title} image={product.image} price={product.unit_price} product_id={product.product_id} />
+              return <Card key={product.id} title={product.title} image={product.image} price={product.unit_price} product_id={product.id} />
             })}
         </>)
       }

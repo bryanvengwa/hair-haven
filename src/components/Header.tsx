@@ -27,6 +27,11 @@ function toggle(number :  string){
     setOpen(!open)
   }
 }
+if(items){
+  console.log(items)
+  console.log(items.length)
+  console.log(totalPrice)
+}
 
 
   return (
@@ -57,7 +62,7 @@ function toggle(number :  string){
         <div className='bubble-container' >
       <FontAwesomeIcon icon={faShoppingCart} className='icon' />
         <div className='bubble' >
-  { items ? items.length : 0 }
+  { items ? items.length : 0}
         </div>
         </div>
   
