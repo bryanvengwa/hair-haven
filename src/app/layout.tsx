@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {GlobalContextProvider} from  './context/context'
 import{ ProductContextProvider }from './context/ProductContext'
+import {CartContextProvider }from './context/CartContext'
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { Cairo } from 'next/font/google';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
@@ -28,6 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <CartContextProvider>
+
     <GlobalContextProvider>
       <ProductContextProvider>
 
@@ -42,5 +45,6 @@ export default function RootLayout({
     </html>
     </ProductContextProvider>
     </GlobalContextProvider>
+    </CartContextProvider>
   );
 }

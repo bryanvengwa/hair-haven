@@ -75,7 +75,7 @@ export const GlobalContextProvider = ({children})=>{
         if (response.status === 200){
             setAuthTokens(data)
             setUser(jwtDecode(data.access))
-            localStorage.setItem('authTokens', JSON.stringify(data))
+             localStorage.setItem('authTokens', JSON.stringify(data))
         }else{
             logOutUser();
         }
@@ -140,11 +140,12 @@ export const GlobalContextProvider = ({children})=>{
         if(loading){
             updateToken()
         }
-
-        let fourMinutes = 1000 * 60 * 4
+        console.log('run')
+        let fourMinutes = 1000 * 60 * 1
 
         let interval =  setInterval(()=> {
             if(authTokens){
+              console.log('run 4')
                 updateToken()
             }
         }, fourMinutes)

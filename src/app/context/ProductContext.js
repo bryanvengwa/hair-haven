@@ -16,6 +16,7 @@ const productsData ={
     productsError : error,
     productLoad : isLoading,
 }
+
 console.log(url)
 console.log(data, 'products')
 console.log(error, 'products')

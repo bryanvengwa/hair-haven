@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image'
 import logo from '../../public/images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,11 +9,13 @@ import { useState } from 'react';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FaUser } from 'react-icons/fa';
 import Link from 'next/link';
+import { CartContext } from '@/app/context/CartContext';
 
 
 
 
 export default function Header() {
+const {totalPrice, items} = useContext(CartContext)
 const [isOpen , setIsOpen] = useState(false)
 const [open , setOpen] = useState(false)
 
@@ -55,11 +57,11 @@ function toggle(number :  string){
         <div className='bubble-container' >
       <FontAwesomeIcon icon={faShoppingCart} className='icon' />
         <div className='bubble' >
-  3
+  { items ? items.length : 0 }
         </div>
         </div>
   
-  <p>Item : <span>$150.00</span></p>
+  <p>Item : <span>$ {totalPrice}</span></p>
       </div>
 
     </div>
@@ -85,7 +87,7 @@ function toggle(number :  string){
         </div>
         </div>
   
-  <p>Item : <span>$150.00</span></p>
+  <p>Item : <span>$ {totalPrice}</span></p>
       </div>
 <div className="middle-container flex items-center justify-center pt-1">
 <div className="country-container flex items-center gap-3">
