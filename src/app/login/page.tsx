@@ -29,7 +29,7 @@ const LoginForm = (props : any)=> {
                           Password
                         <input type="password" name='password'  className='form-control' />
                         </label>
-                        <button  >Logino</button>
+                        <button  >Login</button>
                     </form>
     </>
   )
