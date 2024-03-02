@@ -40,7 +40,7 @@ export default function page() {
     </div>
     {items && items.map((item : any) =>{
         return (
-            <CartItem key={item.id}  price={item.product.unit_price} title={item.product.title} />
+            <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} title={item.product.title} />
         )
     } )}
 </div>
