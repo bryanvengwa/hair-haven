@@ -76,7 +76,8 @@ export const CartContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (cart) {
-            updateCartData();
+            // COMMENTED THIS CODE BECAUSE WAS GETTING MULTIPLE ERRORS
+            // updateCartData();
         } else {
             getCart();
         }

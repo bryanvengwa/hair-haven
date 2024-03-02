@@ -27,11 +27,6 @@ function toggle(number :  string){
     setOpen(!open)
   }
 }
-if(items){
-  console.log(items)
-  console.log(items.length)
-  console.log(totalPrice)
-}
 
 
   return (
