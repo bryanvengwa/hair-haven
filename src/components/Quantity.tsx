@@ -1,23 +1,25 @@
 import React from 'react'
 import '@/scss/checkout.scss'
 import { useState } from 'react'
+import { cursorTo } from 'readline';
 
-export default function Quantity() {
-    const [value, setValue] = useState(0)
-    function decrease(){
-        setValue((value)=> value - 1 )
-    }
-    function increase(){
-        setValue((value)=> value + 1 )
-    }
+interface QuantityProps{
+    value: number;
+    decrease: any;
+    increase :any;
+}
+
+
+export default function Quantity( {value , decrease, increase  }: QuantityProps) {
+
   return (
     <div>
         <div className='quantity-container' >
-            <div onClick={decrease} className="box"> - </div>
+            <div onClick={decrease} style={{cursor : value == 0 ? 'not-allowed' : 'pointer' }} className="box"> - </div>
             <div className="box">
-                <input type="text" value={value} readOnly />
+                <input type="text" value={value} />
             </div>
-            <div onClick={increase}  className="box"> + </div>
+            <div onClick={increase} style={{cursor : 'pointer'}}  className="box"> + </div>
         </div>
       
     </div>

@@ -141,7 +141,7 @@ export const GlobalContextProvider = ({children})=>{
             updateToken()
         }
         console.log('run')
-        let fourMinutes = 1000 * 60 * 1
+        let fourMinutes = 1000 * 60 * 4
 
         let interval =  setInterval(()=> {
             if(authTokens){

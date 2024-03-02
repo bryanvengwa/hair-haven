@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useContext , useState  } from 'react'
 import Image from 'next/image'
 import Header from "@/components/Header"
 import '@/scss/cart.scss'
@@ -7,11 +7,14 @@ import BreadCrumb from "@/components/BreadCrumb"
 import CartImage from '@/components/CartImg'
 import { FaTimes } from 'react-icons/fa';
 import Quantity from "@/components/Quantity"
-
+import CartItem from '@/components/CartItem'
+import { CartContext } from '../context/CartContext'
 
 
 
 export default function page() {
+    const {cartId , items , totalPrice} = useContext(CartContext)
+
   return (
     <div className='cart-page' >
                    <Header />
@@ -35,28 +38,11 @@ export default function page() {
         </div>
         <div className="same price header "></div>
     </div>
-    
-    <div className='heading-container pb-3' >
-        <div className='products  image-container' >
-            <CartImage imageUrl='/images/banner.png' />
-            <h5>Vaida hair food</h5>
-        </div>
-        <div className="same price header ">
-        <h5>Price</h5>
-        </div>
-        <div className='quantity header ' >
-          <Quantity />
-        </div>
-
-        <div className="same price header ">
-            <h5>Total</h5>
-        </div>
-        <div className="same price header ">
-            <h5><FaTimes size={24} /></h5>
-        </div>
-
-
-    </div>
+    {items && items.map((item : any) =>{
+        return (
+            <CartItem key={item.id}  price={item.product.unit_price} title={item.product.title} />
+        )
+    } )}
 </div>
       
       <div className="container">
