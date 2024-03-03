@@ -13,8 +13,29 @@ import { CartContext } from '../context/CartContext'
 
 
 export default function page() {
-    const {cartId , items , totalPrice} = useContext(CartContext)
+    const {cartId , items , createdAt ,postCartData } = useContext(CartContext)
 
+    const handleFormSubmission = (event: React.FormEvent<HTMLFormElement>): void => {
+        event.preventDefault();
+
+        // Type-guard to ensure event.target is a form element
+            let status = null;
+        if (event.target instanceof HTMLFormElement) {
+            const formData = new FormData(event.target);
+            alert(createdAt)
+            for (const [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+                status = postCartData(key, value)
+            }
+            console.log(status)
+            if(!status){
+                alert('failed to update cart data');
+            }
+        } else {
+            // Handle potential errors or unexpected cases
+            console.error("Invalid form event target");
+        }
+    };
   return (
     <div className='cart-page' >
                    <Header />
@@ -38,10 +59,12 @@ export default function page() {
         </div>
         <div className="same price header "></div>
     </div>
-    <form action="">
+    <form onSubmit={ handleFormSubmission }>
     {items && items.map((item : any) =>{
+        console.log(item);
+        console.log(item.product.id);
         return (
-            <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} title={item.product.title} />
+            <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} title={item.product.title} quantity={item.quantity} />
         )
     } )}
     <div className="button-container">

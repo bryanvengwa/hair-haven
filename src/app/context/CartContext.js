@@ -74,6 +74,36 @@ export const CartContextProvider = ({ children }) => {
         }
     };
 
+    const postCartData = async function(key , value){
+        if(!cart){
+            getCart();
+        }
+        try{
+            response = await fetch(url + cart.id + '/items', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    "product_id": key,
+                    "quantity": value,
+                }),
+                
+    
+    
+            })
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }else{
+                return true;
+            }
+        }catch(error){
+            return false
+
+        }
+    }
+
     useEffect(() => {
         if (cart) {
             // COMMENTED THIS CODE BECAUSE WAS GETTING MULTIPLE ERRORS
@@ -116,10 +146,11 @@ export const CartContextProvider = ({ children }) => {
         if (cart) {
             setContextData({
                 cartId: cart.id,
-                createdAt: cart.created_at,
+                createdAt: cart,
                 items: cart.items,
                 totalPrice: cart.total_price,
                 addCartItem: addCartItem,
+                postCartData,
             });
         }
     }, [cart]);

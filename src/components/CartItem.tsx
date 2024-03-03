@@ -8,10 +8,11 @@ interface CartItemProps {
     price : number;
     title: string;
     productId : number;
+    quantity :number;
 }
 
-export default function CartItem(  {price , title , productId} : CartItemProps) {
-    const [value, setValue] = useState(0)
+export default function CartItem(  {price , title , productId, quantity} : CartItemProps) {
+    const [value, setValue] = useState(quantity ? quantity : 0)
     function decrease(){
         setValue((value)=> {
             if(value == 0) return value;
@@ -22,7 +23,7 @@ export default function CartItem(  {price , title , productId} : CartItemProps) 
     function increase(){
         setValue((value)=> value + 1 )
     }
-
+console.log(productId)
   return (
     <div className='heading-container pb-3' >
     <div className='products  image-container' >
