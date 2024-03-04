@@ -1,5 +1,5 @@
 import React, {useState , useContext, useEffect } from 'react'
-import { CartPageContext } from '@/app/context/CartPageContext';
+import { CartPageContext } from '../app/context/CartPageContext';
 import CartImage from './CartImg'
 import Quantity from './Quantity'
 import { FaTimes } from 'react-icons/fa';
@@ -33,7 +33,7 @@ export default function CartItem(  {price , title , productId, quantity} : CartI
     useEffect(()=>{
 
         updateFormData(productId, value);
-        alert(formData.length)
+   
 
     },[value])
 

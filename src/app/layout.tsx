@@ -10,6 +10,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import React from 'react';
 
 
 config.autoAddCss = false; // Prevent duplicate loading in Next.js

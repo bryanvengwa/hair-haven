@@ -1,16 +1,16 @@
 'use client'
 import React, { useContext  } from 'react';
 import { CartPageContext } from '../context/CartPageContext';
-import Header from "@/components/Header";
+import Header from "../../components/Header";
 import '@/scss/cart.scss';
-import BreadCrumb from "@/components/BreadCrumb";
-import CartItem from '@/components/CartItem';
+import BreadCrumb from "../../components/BreadCrumb";
+import CartItem from '../../components/CartItem';
 import { CartContext } from '../context/CartContext';
 
 
 
 export default function page() {
-    const {cartId , items , createdAt ,postCartData } = useContext(CartContext);
+    const {cartId , items , createdAt ,postCartData , updateCartData} = useContext(CartContext);
     const {formData, updateFormData } = useContext(CartPageContext);
     const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
@@ -20,10 +20,11 @@ export default function page() {
         if(formData.length > 0 ){
             formData.forEach((data : any)=> {
                 const currentData = data
-                alert('update cart')
+                alert('updating  cart with ' + data.quantity )
                 postCartData(data.product_id, data.quantity)
                 
             });
+            updateCartData();
             updateFormData(null, null , true )
         }else{
             console.log('nothing to update')

@@ -36,6 +36,7 @@ export const CartContextProvider = ({ children }) => {
             });
 
             if (!response.ok) {
+                alert('failed to update cart  because request failedw')
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
@@ -45,6 +46,8 @@ export const CartContextProvider = ({ children }) => {
      
         } catch (error) {
             console.error('Error fetching cart:', error);
+            alert('failed to update cart   ')
+
         }
     };
 
