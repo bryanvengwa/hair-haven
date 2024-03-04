@@ -1,5 +1,6 @@
 'use client'
-import React, { useContext , useState  } from 'react'
+import React, { useContext  } from 'react'
+import { CartPageContext } from '../context/CartPageContext'
 import Image from 'next/image'
 import Header from "@/components/Header"
 import '@/scss/cart.scss'
@@ -13,8 +14,8 @@ import { CartContext } from '../context/CartContext'
 
 
 export default function page() {
-    const {cartId , items , createdAt ,postCartData } = useContext(CartContext)
-
+    const {cartId , items , createdAt ,postCartData } = useContext(CartContext);
+    const {formData, updateFormData } = useContext(CartPageContext);
     const handleFormSubmission = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
 
@@ -61,8 +62,8 @@ export default function page() {
     </div>
     <form onSubmit={ handleFormSubmission }>
     {items && items.map((item : any) =>{
-        console.log(item);
-        console.log(item.product.id);
+            updateFormData(item.product.id , item.quantity)
+
         return (
             <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} title={item.product.title} quantity={item.quantity} />
         )

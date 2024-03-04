@@ -8,7 +8,15 @@ export const CartPageContextProvider = function({children}){
     const [formData , setFormData] = useState([])
     const updateFormData = function (productId , quantity){
         setFormData((formData)=>{
-            return [...formData , {product_id: productId, quantity: quantity} ]
+            let oldFormData = [ ...formData]
+
+            const updatedFormData = oldFormData.map((data)=>{
+                if(data.productId === productId){
+                    return data.quantity = quantity
+                }
+                
+            })
+            return updateFormData
         })
     }
     

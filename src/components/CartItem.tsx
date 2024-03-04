@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState , useContext, useEffect } from 'react'
+import { CartPageContext } from '@/app/context/CartPageContext';
 import CartImage from './CartImg'
 import Quantity from './Quantity'
 import { FaTimes } from 'react-icons/fa';
@@ -17,7 +18,7 @@ interface CartItemProps {
 // }
 export default function CartItem(  {price , title , productId, quantity} : CartItemProps) {
     const [value, setValue] = useState(quantity ? quantity : 0)
-    // const [formData , setFormData] = useState<FormDataItem[]>([]);
+    const { updateFormData} = useContext(CartPageContext)
 
     function decrease(){
         setValue((value)=> {
@@ -29,11 +30,11 @@ export default function CartItem(  {price , title , productId, quantity} : CartI
     function increase(){
         setValue((value)=> value + 1 )
     }
-    // setFormData((formData) => {
-    //     // Assuming you want to update formData based on its previous state
-    //     // For example, adding a new item to the array
-    //     return [...formData, { product_id: productId.toString(), quantity: value.toString() }];
-    // });
+    useEffect(()=>{
+
+        updateFormData(productId, value);
+    },[value])
+
 
 console.log(productId)
   return (
