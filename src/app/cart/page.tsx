@@ -57,25 +57,22 @@ export default function page() {
         </div>
         <div className="same price header "></div>
     </div>
-    <form >
+   
     {items && items.map((item : any) =>{
 
         return (
             <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} title={item.product.title} quantity={item.quantity} />
         )
     } )}
-    <div className="button-container">
-            <button>CONTINUE SHOPPING</button>
-            <button onClick={handleCartUpdate} >UPDATE CART</button>
-        </div>
-    </form>
+
+
 </div>
       
       <div className="container">
-        {/* <div className="button-container">
+        <div className="button-container">
             <button>CONTINUE SHOPPING</button>
             <button >UPDATE CART</button>
-        </div> */}
+        </div>
         <div className="bottom-container">
             <div className="left">
             <div className="coupon-container">
