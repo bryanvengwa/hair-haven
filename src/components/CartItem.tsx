@@ -39,7 +39,7 @@ export default function CartItem(  {price , title , productId, quantity} : CartI
 
 
   return (
-    <div className='heading-container pb-3' >
+    <div className='headings-container pb-3' >
     <div className='products  image-container' >
         <CartImage imageUrl='/images/banner.png' />
         <h5> {title} </h5>

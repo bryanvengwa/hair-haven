@@ -41,7 +41,7 @@ export default function page() {
          <div className="pb-4"></div>
          
 <div className="container">
-    <div className='heading-container pb-3' >
+    <div className='headings-container pb-3' >
         <div className='products   ' >
             <h2>Products</h2>
         </div>

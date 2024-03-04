@@ -14,7 +14,7 @@ export default function Departments() {
   return (
         <>
           <div className='header-container ' >
-          <div className='header ' onClick={toggle} >
+          <div className='headers'  onClick={toggle} >
             <div className="flex align-center gap-2 " >
             <FontAwesomeIcon icon={faBars} />
 
