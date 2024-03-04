@@ -1,7 +1,7 @@
 'use client'
 import React , {createContext, useState} from 'react'
 
-export const CartpageContext = createContext();
+export const CartPageContext = createContext();
 
 
 export const CartPageContextProvider = function({children}){
@@ -19,8 +19,8 @@ const contextData ={
 
 }
     return (
-        <CartpageContext.Provider value={contextData} >
+        <CartPageContext.Provider value={contextData} >
             {children}
-        </CartpageContext.Provider>
+        </CartPageContext.Provider>
     )
 }

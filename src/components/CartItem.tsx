@@ -4,6 +4,7 @@ import Quantity from './Quantity'
 import { FaTimes } from 'react-icons/fa';
 
 
+
 interface CartItemProps {
     price : number;
     title: string;
