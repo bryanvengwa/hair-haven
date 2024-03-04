@@ -154,6 +154,7 @@ export const CartContextProvider = ({ children }) => {
                 totalPrice: cart.total_price,
                 addCartItem: addCartItem,
                 postCartData,
+                updateCartData,
             });
         }
     }, [cart]);
