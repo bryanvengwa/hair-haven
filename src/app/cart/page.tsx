@@ -1,41 +1,37 @@
 'use client'
-import React, { useContext  } from 'react'
-import { CartPageContext } from '../context/CartPageContext'
-import Image from 'next/image'
-import Header from "@/components/Header"
-import '@/scss/cart.scss'
-import BreadCrumb from "@/components/BreadCrumb"
-import CartImage from '@/components/CartImg'
-import { FaTimes } from 'react-icons/fa';
-import Quantity from "@/components/Quantity"
-import CartItem from '@/components/CartItem'
-import { CartContext } from '../context/CartContext'
+import React, { useContext  } from 'react';
+import { CartPageContext } from '../context/CartPageContext';
+import Header from "@/components/Header";
+import '@/scss/cart.scss';
+import BreadCrumb from "@/components/BreadCrumb";
+import CartItem from '@/components/CartItem';
+import { CartContext } from '../context/CartContext';
 
 
 
 export default function page() {
     const {cartId , items , createdAt ,postCartData } = useContext(CartContext);
     const {formData, updateFormData } = useContext(CartPageContext);
-    const handleFormSubmission = (event: React.FormEvent<HTMLFormElement>): void => {
+    const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
+        alert(formData.length)
 
-        // Type-guard to ensure event.target is a form element
-            let status = null;
-        if (event.target instanceof HTMLFormElement) {
-            const formData = new FormData(event.target);
-            alert(createdAt)
-            for (const [key, value] of formData.entries()) {
-                console.log(`${key}: ${value}`);
-                status = postCartData(key , value)
-            }
-            console.log(status)
-            if(!status){
-                alert('failed to update cart data');
-            }
-        } else {
-            // Handle potential errors or unexpected cases
-            console.error("Invalid form event target");
+        
+        if(formData.length > 0 ){
+            formData.forEach((data : any)=> {
+                const currentData = data
+                alert('update cart')
+                postCartData(data.product_id, data.quantity)
+                
+            });
+            updateFormData(null, null , true )
+        }else{
+            console.log('nothing to update')
+            alert('clicked but nothing to update')
         }
+       
+    
+      
     };
   return (
     <div className='cart-page' >
@@ -60,9 +56,8 @@ export default function page() {
         </div>
         <div className="same price header "></div>
     </div>
-    <form onSubmit={ handleFormSubmission }>
+    <form >
     {items && items.map((item : any) =>{
-            updateFormData(item.product.id , item.quantity)
 
         return (
             <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} title={item.product.title} quantity={item.quantity} />
@@ -70,7 +65,7 @@ export default function page() {
     } )}
     <div className="button-container">
             <button>CONTINUE SHOPPING</button>
-            <button type='submit' >UPDATE CART</button>
+            <button onClick={handleCartUpdate} >UPDATE CART</button>
         </div>
     </form>
 </div>

@@ -18,7 +18,7 @@ interface CartItemProps {
 // }
 export default function CartItem(  {price , title , productId, quantity} : CartItemProps) {
     const [value, setValue] = useState(quantity ? quantity : 0)
-    const { updateFormData} = useContext(CartPageContext)
+    const {formData, updateFormData} = useContext(CartPageContext)
 
     function decrease(){
         setValue((value)=> {
@@ -33,10 +33,11 @@ export default function CartItem(  {price , title , productId, quantity} : CartI
     useEffect(()=>{
 
         updateFormData(productId, value);
+        alert(formData.length)
+
     },[value])
 
 
-console.log(productId)
   return (
     <div className='heading-container pb-3' >
     <div className='products  image-container' >
