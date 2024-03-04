@@ -5,7 +5,7 @@ export const CartpageContext = createContext();
 
 
 export const CartPageContextProvider = function({children}){
-    const [formdata , setFormData] = useState([])
+    const [formData , setFormData] = useState([])
     const updateFormData = function (productId , quantity){
         setFormData((formData)=>{
             return [...formData , {product_id: productId, quantity: quantity} ]
@@ -13,10 +13,13 @@ export const CartPageContextProvider = function({children}){
     }
     
 const contextData ={
-    
+    formData,
+    updateFormData,
+
+
 }
     return (
-        <CartpageContext.Provider>
+        <CartpageContext.Provider value={contextData} >
             {children}
         </CartpageContext.Provider>
     )
