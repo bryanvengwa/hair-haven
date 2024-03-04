@@ -17,10 +17,7 @@ const productsData ={
     productLoad : isLoading,
 }
 
-console.log(url)
-console.log(data, 'products')
-console.log(error, 'products')
-console.log(isLoading, 'products')
+
 
     return(
         <ProductContext.Provider  value={productsData} >

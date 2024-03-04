@@ -10,7 +10,7 @@ import { CartContext } from '../context/CartContext';
 
 
 export default function page() {
-    const {cartId , items , createdAt ,postCartData , updateCartData} = useContext(CartContext);
+    const {cartId , items , removeCartItem, postCartData , updateCartData} = useContext(CartContext);
     const {formData, updateFormData } = useContext(CartPageContext);
     const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
@@ -54,14 +54,14 @@ export default function page() {
 
         <div className="same price header ">
             <h2>Total</h2>
-        </div>
+        </div> 
         <div className="same price header "></div>
     </div>
    
     {items && items.map((item : any) =>{
 
         return (
-            <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} title={item.product.title} quantity={item.quantity} />
+            <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} instanceId={item.id} title={item.product.title} quantity={item.quantity}  removeCartItem={removeCartItem}/>
         )
     } )}
 

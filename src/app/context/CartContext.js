@@ -24,7 +24,10 @@ export const CartContextProvider = ({ children }) => {
         }
     });
 
+
+
     const updateCartData = async () => {
+        alert('Cart data updated')
         if (!cart) return;
 
         try {
@@ -76,6 +79,26 @@ export const CartContextProvider = ({ children }) => {
             }
         }
     };
+
+    const removeCartItem = async function(instanceId){
+        try{
+            const response = await fetch( `${url}${cart.id}/items/${instanceId}`,  {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }else{
+                updateCartData()
+            }
+
+        }catch(error){
+                console.log('failed to delete')
+        }
+    }
 
     const postCartData = async function(key , value){
         if(cart == null ){
@@ -155,6 +178,7 @@ export const CartContextProvider = ({ children }) => {
                 addCartItem: addCartItem,
                 postCartData,
                 updateCartData,
+                removeCartItem,
             });
         }
     }, [cart]);

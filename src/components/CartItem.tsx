@@ -11,12 +11,14 @@ interface CartItemProps {
     title: string;
     productId : number;
     quantity :number;
+    removeCartItem: any;
+    instanceId : any;
 }
 // interface FormDataItem {
 //     product_id: string;
 //     quantity: string;
 // }
-export default function CartItem(  {price , title , productId, quantity} : CartItemProps) {
+export default function CartItem(  {price , title , productId, quantity , removeCartItem , instanceId} : CartItemProps) {
     const [value, setValue] = useState(quantity ? quantity : 0)
     const {formData, updateFormData} = useContext(CartPageContext)
 
@@ -56,8 +58,9 @@ export default function CartItem(  {price , title , productId, quantity} : CartI
     <h5> $  <span className='cart-price' > {value * price} </span> </h5>
     </div>
     <div className="same price header ">
-        <h5><FaTimes size={24} /></h5>
+        <h5 onClick={()=>removeCartItem(instanceId)} ><FaTimes size={24} /></h5>
     </div>
+
 
 
 </div>
