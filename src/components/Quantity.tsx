@@ -17,7 +17,9 @@ export default function Quantity( {value , decrease, increase  }: QuantityProps)
         <div className='quantity-container' >
             <div onClick={decrease} style={{cursor : value == 0 ? 'not-allowed' : 'pointer' }} className="box"> - </div>
             <div className="box">
-                <input type="text" value={value} />
+                <input type="text" value={value}  name='quantity' />
+    
+
             </div>
             <div onClick={increase} style={{cursor : 'pointer'}}  className="box"> + </div>
         </div>

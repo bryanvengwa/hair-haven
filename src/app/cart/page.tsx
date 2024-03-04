@@ -25,7 +25,7 @@ export default function page() {
             alert(createdAt)
             for (const [key, value] of formData.entries()) {
                 console.log(`${key}: ${value}`);
-                status = postCartData(key, value)
+                status = postCartData(key , value)
             }
             console.log(status)
             if(!status){

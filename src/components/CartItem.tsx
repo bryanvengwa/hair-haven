@@ -10,9 +10,14 @@ interface CartItemProps {
     productId : number;
     quantity :number;
 }
-
+// interface FormDataItem {
+//     product_id: string;
+//     quantity: string;
+// }
 export default function CartItem(  {price , title , productId, quantity} : CartItemProps) {
     const [value, setValue] = useState(quantity ? quantity : 0)
+    // const [formData , setFormData] = useState<FormDataItem[]>([]);
+
     function decrease(){
         setValue((value)=> {
             if(value == 0) return value;
@@ -23,6 +28,12 @@ export default function CartItem(  {price , title , productId, quantity} : CartI
     function increase(){
         setValue((value)=> value + 1 )
     }
+    // setFormData((formData) => {
+    //     // Assuming you want to update formData based on its previous state
+    //     // For example, adding a new item to the array
+    //     return [...formData, { product_id: productId.toString(), quantity: value.toString() }];
+    // });
+
 console.log(productId)
   return (
     <div className='heading-container pb-3' >
@@ -36,7 +47,6 @@ console.log(productId)
     </div>
     <div className='quantity header ' >
       <Quantity value={value} increase={increase} decrease={decrease} />
-      <input type="hidden" value={value} name='quantity'  />
     </div>
 
     <div className="same price header ">

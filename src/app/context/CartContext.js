@@ -75,11 +75,11 @@ export const CartContextProvider = ({ children }) => {
     };
 
     const postCartData = async function(key , value){
-        if(!cart){
+        if(cart == null ){
             getCart();
         }
         try{
-            response = await fetch(url + cart.id + '/items', {
+            response = await fetch(url + cart.id + '/items/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
