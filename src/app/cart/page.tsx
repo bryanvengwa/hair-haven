@@ -6,11 +6,12 @@ import '@/scss/cart.scss';
 import BreadCrumb from "../../components/BreadCrumb";
 import CartItem from '../../components/CartItem';
 import { CartContext } from '../context/CartContext';
+import Link from 'next/link';
 
 
 
 export default function page() {
-    const {cartId , items , removeCartItem, postCartData , updateCartData} = useContext(CartContext);
+    const { totalPrice , items , removeCartItem, postCartData , updateCartData} = useContext(CartContext);
     const {formData, updateFormData } = useContext(CartPageContext);
     const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
@@ -70,8 +71,8 @@ export default function page() {
       
       <div className="container">
         <div className="button-container">
-            <button>CONTINUE SHOPPING</button>
-            <button >UPDATE CART</button>
+            <Link href={'/checkout'} ><button>CONTINUE SHOPPING</button></Link>
+            <button onClick={handleCartUpdate}  >UPDATE CART</button>
         </div>
         <div className="bottom-container">
             <div className="left">
@@ -92,12 +93,12 @@ export default function page() {
 
 <div className="heading-container pb-3 flex justify-between">
     <h4>Subtotal</h4>
-    <h4>$450</h4>
+    <h4>$ {totalPrice} </h4>
 </div>
 <hr className="pt-3 " />
 <div className="heading-container pt-1 flex justify-between">
     <h4>Total</h4>
-    <h4 style={{color:'red'}} >$450</h4>
+    <h4 style={{color:'red'}} >$ {totalPrice}</h4>
 </div>
 
 
