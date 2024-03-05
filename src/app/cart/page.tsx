@@ -105,7 +105,7 @@ export default function page() {
 
 
 
-<button>PROCEED TO CHECKOUT</button>
+<Link href={'/checkout'} ><button>PROCEED TO CHECKOUT</button></Link>
 </div>
 
             </div>
