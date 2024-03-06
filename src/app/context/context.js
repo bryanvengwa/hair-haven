@@ -10,6 +10,7 @@ import { jwtDecode } from "jwt-decode";
 
 
 export const GlobalContextProvider = ({children})=>{
+  const router = useRouter();
     const url = 'http://127.0.0.1:8000'
     const [shouldRedirect, setShouldRedirect] = useState(false);
 
@@ -32,7 +33,7 @@ export const GlobalContextProvider = ({children})=>{
         }
       });
     let [loading, setLoading] = useState(true);
-    const router = useRouter();
+    
 
     
 
@@ -54,7 +55,7 @@ export const GlobalContextProvider = ({children})=>{
             setAuthTokens(data);
             setUser(jwtDecode(data.access))
             localStorage.setItem('authTokens', JSON.stringify(data ))
-            navigate('/');
+            router.push('/');
         }else{
             alert('something went wrong')
         }

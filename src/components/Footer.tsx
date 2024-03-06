@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState }  from 'react'
 import Image from 'next/image'
 import Logo from '../../public/images/logo.png'
 import '@/scss/footer.scss';
@@ -9,6 +9,10 @@ import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedin
 
 
 function Footer() {
+    
+    // const [currentYear, setCurrentYear] = useState(new Date().getFullYear()); // Get the current year
+    const [currentYear] = useState(new Date().getFullYear());
+
   return (
     <footer className="footer spad">
         <div className="container">
@@ -65,10 +69,21 @@ function Footer() {
             </div>
             <div className="row">
                 <div className="col-lg-12">
-                    <div className="footer__copyright">
-                    </div>
+                <div className="footer__copyright">
+                <div className="footer__copyright__text">
+                    <p>
+                        Copyright © {currentYear} All rights reserved | This template is made with{" "}
+                        <i className="fa fa-heart" aria-hidden="true">
+                            </i> by{" "}
+                            <a href="https://colorlib.com" target="_blank">
+                            <span className="colo">Colorlib</span>
+                            </a>
+                    </p>
                 </div>
+                <div className="footer__copyright__payment"><Image className='logo' src={Logo} alt='Logo' /></div>
             </div>
+        </div>
+        </div>
         </div>
     </footer>    
   )
