@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 
 
-export default function page() {
+export default function Page() {
     const { totalPrice , items , removeCartItem, postCartData , updateCartData} = useContext(CartContext);
     const {formData, updateFormData } = useContext(CartPageContext);
     const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
