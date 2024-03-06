@@ -61,30 +61,38 @@ export const GlobalContextProvider = ({children})=>{
         }
     }
 
-    let updateToken = async ()=> {
-
+    let updateToken = async () => {
+      try {
+        if (!authTokens?.refresh) {
+          throw new Error('Refresh token not found');
+        }
+  
         let response = await fetch(`${url}/api/token/refresh/`, {
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify({'refresh':authTokens?.refresh})
-        })
-
-        let data = await response.json()
-        
-        if (response.status === 200){
-            setAuthTokens(data)
-            setUser(jwtDecode(data.access))
-             localStorage.setItem('authTokens', JSON.stringify(data))
-        }else{
-            logOutUser();
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ refresh: authTokens.refresh }),
+        });
+  
+        let data = await response.json();
+  
+        if (response.status === 200) {
+          setAuthTokens(data);
+          setUser(jwtDecode(data.access));
+          localStorage.setItem('authTokens', JSON.stringify(data));
+        } else {
+          logOutUser();
         }
-
-        if(loading){
-            setLoading(false)
+      } catch (error) {
+        console.error('Error during token refresh:', error);
+        // Handle specific errors here, e.g., redirect to login if refresh fails permanently
+      } finally {
+        if (loading) {
+          setLoading(false);
         }
-    }
+      }
+    };
 
 
     let logOutUser = () => {
