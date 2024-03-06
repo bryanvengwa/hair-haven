@@ -1,19 +1,19 @@
 'use client'
 import React from 'react'
-import Header from "@/components/Header"
-import Departments from '@/components/Departments'
-import SearchBar from '@/components/SearchBar'
-import Support from '@/components/Support'
-import Banner from '@/components/Banner'
-import Heading from '@/components/Heading'
-import Tabbed from '@/components/Tabbed'
-import Card from '@/components/Card'
-import BlogCard from '@/components/BlogCard'
-import Slider from '@/components/Slider'
-import Footer from '@/components/Footer'
-import Top from '@/components/Top'
+import Header from "../components/Header"
+import Departments from '../components/Departments'
+import SearchBar from '../components/SearchBar'
+import Support from '../components/Support'
+import Banner from '../components/Banner'
+import Heading from '../components/Heading'
+import Tabbed from '../components/Tabbed'
+import Card from '../components/Card'
+import BlogCard from '../components/BlogCard'
+import Slider from '../components/Slider'
+import Footer from '../components/Footer'
+import Top from '../components/Top'
 import Skeleton from '@mui/material/Skeleton';
-import useFetch from '@/reducers/productsFetch'
+import useFetch from '../reducers/productsFetch'
 
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
 
  <Top/>
  <Header/>
- <div className='home' >
+ <div  className='home' >
       <div className='container ' >
         <br />
       <div className=" flex-container ">
