@@ -1,5 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {GlobalContextProvider} from  './context/context'
+import{ ProductContextProvider }from './context/ProductContext'
+import {CartContextProvider }from './context/CartContext'
+import {CartPageContextProvider} from './context/CartPageContext'
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { Cairo } from 'next/font/google';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
@@ -7,6 +10,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import React from 'react';
 
 
 config.autoAddCss = false; // Prevent duplicate loading in Next.js
@@ -27,10 +31,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <CartContextProvider>
+
+    <GlobalContextProvider>
+      <ProductContextProvider>
+        <CartPageContextProvider>
+
+    
     <html lang="en">
       <body className={inter.className}>
+
+              
              {children}
+         
         </body>
     </html>
+    </CartPageContextProvider>
+    </ProductContextProvider>
+    </GlobalContextProvider>
+    </CartContextProvider>
   );
 }

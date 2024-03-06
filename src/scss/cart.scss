@@ -60,7 +60,7 @@ $cairo: "Cairo", sans-serif;
     img{display: inline-block;}
     }
 
-    .heading-container{display: flex; margin-top: 1em;    border-bottom: 2px solid #ebebeb;
+    .headings-container{display: flex; margin-top: 1em;    border-bottom: 2px solid #ebebeb; background: unset !important;
 
         .header{display: flex; align-items: center; justify-content: center; }
     .products{ flex: 0 0 40%; }

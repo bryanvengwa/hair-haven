@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState }  from 'react'
 import Image from 'next/image'
 import Logo from '../../public/images/logo.png'
 import '@/scss/footer.scss';
@@ -9,6 +9,10 @@ import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedin
 
 
 function Footer() {
+    
+    // const [currentYear, setCurrentYear] = useState(new Date().getFullYear()); // Get the current year
+    const [currentYear] = useState(new Date().getFullYear());
+
   return (
     <footer className="footer spad">
         <div className="container">

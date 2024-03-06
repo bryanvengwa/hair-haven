@@ -1,28 +1,32 @@
 'use client'
 import React from 'react'
-import Header from "@/components/Header"
-import Departments from '@/components/Departments'
-import SearchBar from '@/components/SearchBar'
-import Support from '@/components/Support'
-import Banner from '@/components/Banner'
-import Heading from '@/components/Heading'
-import Tabbed from '@/components/Tabbed'
-import Card from '@/components/Card'
-import BlogCard from '@/components/BlogCard'
-import Slider from '@/components/Slider'
-import Footer from '@/components/Footer'
-import Top from '@/components/Top'
-import RecentCard from '@/components/RecentCard'
-import Micheal from '@/components/Micheal'
+import Header from "../components/Header"
+import Departments from '../components/Departments'
+import SearchBar from '../components/SearchBar'
+import Support from '../components/Support'
+import Banner from '../components/Banner'
+import Heading from '../components/Heading'
+import Tabbed from '../components/Tabbed'
+import Card from '../components/Card'
+import BlogCard from '../components/BlogCard'
+import Slider from '../components/Slider'
+import Footer from '../components/Footer'
+import Top from '../components/Top'
+import Skeleton from '@mui/material/Skeleton';
+import useFetch from '../reducers/productsFetch'
 
 
 export default function Home() {
+  const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/")
+
+
+
   return (
  <>
 
  <Top/>
  <Header/>
- <div className='home' >
+ <div  className='home' >
       <div className='container ' >
         <br />
       <div className=" flex-container ">
@@ -63,12 +67,36 @@ export default function Home() {
   <div className="container">
     <div className="row">
       <div className="card-container flex gap-4 flex-wrap align-center justify-center">
-      <Card/>
-<Card/>
-<Card/>
-<Card/>
-<Card/>
-<Card/>
+
+   
+      {isLoading &&
+            (<>
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+      
+            
+  
+            </>
+            
+            )
+       
+      }
+
+      {
+        data && (<>
+        { data.map((product : any )=>{
+              return <Card key={product.id} title={product.title} image={product.image} price={product.unit_price} product_id={product.id} />
+            })}
+        </>)
+      }
+  {error &&     <div>
+        error
+        </div>}
+
       </div>
     </div>
   </div>

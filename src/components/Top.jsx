@@ -1,12 +1,17 @@
-import React from 'react'
+'use client'
+import React, {useContext} from 'react'
+import { GlobalContext} from '@/app/context/context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedinIn} from 'react-icons/fa';
 import { faChevronDown, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-
-
+import Link from 'next/link'
 export default function Top() {
-    
+
+    const { user, loginUser, logOutUser } = useContext(GlobalContext) 
+   console.log(user)
   return (
+
+    
     <div className='top ' >
         <div className="container flex items-center justify-center justify-between ">
         <div className="leftie flex gap-2">
@@ -20,7 +25,6 @@ export default function Top() {
 
             <div className="icon-contianer flex gap-3 items-center justify-center ">
                 <FaFacebook/>
-                <FaInstagram/>
                 <FaLinkedinIn/>
                 <FaPinterest/>
             <div>
@@ -40,12 +44,14 @@ export default function Top() {
 
             </div>
             <div className="login-container flex items-center gap-1">
-                <FaUser/> <p>Login</p>
+            <FaUser/> 
+            { user == null ? <Link href={'/login'} >{'Login'}</Link> :(  <Link href={''}> {user.username}   </Link>  )}
 
             </div>
         </div>
       
         </div>
     </div>
+
   )
 }

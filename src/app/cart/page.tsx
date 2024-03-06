@@ -1,17 +1,40 @@
 'use client'
-import React from 'react'
-import Image from 'next/image'
-import Header from "@/components/Header"
-import '@/scss/cart.scss'
-import BreadCrumb from "@/components/BreadCrumb"
-import CartImage from '@/components/CartImg'
-import { FaTimes } from 'react-icons/fa';
-import Quantity from "@/components/Quantity"
-
+import React, { useContext  } from 'react';
+import { CartPageContext } from '../context/CartPageContext';
+import Header from "../../components/Header";
+import '@/scss/cart.scss';
+import BreadCrumb from "../../components/BreadCrumb";
+import CartItem from '../../components/CartItem';
+import { CartContext } from '../context/CartContext';
+import Link from 'next/link';
 
 
 
 export default function page() {
+    const { totalPrice , items , removeCartItem, postCartData , updateCartData} = useContext(CartContext);
+    const {formData, updateFormData } = useContext(CartPageContext);
+    const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
+        event.preventDefault();
+        alert(formData.length)
+
+        
+        if(formData.length > 0 ){
+            formData.forEach((data : any)=> {
+                const currentData = data
+                alert('updating  cart with ' + data.quantity )
+                postCartData(data.product_id, data.quantity)
+                
+            });
+            updateCartData();
+            updateFormData(null, null , true )
+        }else{
+            console.log('nothing to update')
+            alert('clicked but nothing to update')
+        }
+       
+    
+      
+    };
   return (
     <div className='cart-page' >
                    <Header />
@@ -19,7 +42,7 @@ export default function page() {
          <div className="pb-4"></div>
          
 <div className="container">
-    <div className='heading-container pb-3' >
+    <div className='headings-container pb-3' >
         <div className='products   ' >
             <h2>Products</h2>
         </div>
@@ -32,37 +55,24 @@ export default function page() {
 
         <div className="same price header ">
             <h2>Total</h2>
-        </div>
+        </div> 
         <div className="same price header "></div>
     </div>
-    
-    <div className='heading-container pb-3' >
-        <div className='products  image-container' >
-            <CartImage imageUrl='/images/banner.png' />
-            <h5>Vaida hair food</h5>
-        </div>
-        <div className="same price header ">
-        <h5>Price</h5>
-        </div>
-        <div className='quantity header ' >
-          <Quantity />
-        </div>
+   
+    {items && items.map((item : any) =>{
 
-        <div className="same price header ">
-            <h5>Total</h5>
-        </div>
-        <div className="same price header ">
-            <h5><FaTimes size={24} /></h5>
-        </div>
+        return (
+            <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} instanceId={item.id} title={item.product.title} quantity={item.quantity}  removeCartItem={removeCartItem}/>
+        )
+    } )}
 
 
-    </div>
 </div>
       
       <div className="container">
         <div className="button-container">
-            <button>CONTINUE SHOPPING</button>
-            <button>UPDATE CART</button>
+            <Link href={'/checkout'} ><button>CONTINUE SHOPPING</button></Link>
+            <button onClick={handleCartUpdate}  >UPDATE CART</button>
         </div>
         <div className="bottom-container">
             <div className="left">
@@ -83,19 +93,19 @@ export default function page() {
 
 <div className="heading-container pb-3 flex justify-between">
     <h4>Subtotal</h4>
-    <h4>$450</h4>
+    <h4>$ {totalPrice} </h4>
 </div>
 <hr className="pt-3 " />
 <div className="heading-container pt-1 flex justify-between">
     <h4>Total</h4>
-    <h4 style={{color:'red'}} >$450</h4>
+    <h4 style={{color:'red'}} >$ {totalPrice}</h4>
 </div>
 
 
 
 
 
-<button>PROCEED TO CHECKOUT</button>
+<Link href={'/checkout'} ><button>PROCEED TO CHECKOUT</button></Link>
 </div>
 
             </div>
