@@ -91,7 +91,7 @@ $light-blue: rgb(244,245,252);
 
 
 .blog-card{ min-width:18rem;  max-height: 18rem !important; min-width:18rem;
-	max-width: 24rem;
+	max-width: 18rem;
     .body{font-family:$cairo; align-items: flex-start; text-align: left;
     h4{font-weight:900}
 	p{color:$fade-grey;}
@@ -156,8 +156,8 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  
-	.blog-card{ min-width:22rem;
-	max-width: 24rem;}
+	.blog-card{ min-width:18rem;
+	max-width: 22rem;}
     
 }
 

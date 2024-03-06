@@ -24,7 +24,8 @@ export default function BlogCard({title, date, comments, description}:blogProps)
     <div>
               <div className='card product-card blog-card ' >
            <div className='img-container' >
-            <BlogImage imageUrl={"/images/blog1.jpg"}/>
+           
+            <Image src={bannerImg} alt=''/>
             
            </div>
            <div className="body flex flex-col gap-3  pt-3 ">
