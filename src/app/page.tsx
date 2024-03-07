@@ -13,7 +13,65 @@ import Slider from '../components/Slider'
 import Footer from '../components/Footer'
 import Top from '../components/Top'
 import Skeleton from '@mui/material/Skeleton';
-import useFetch from '../reducers/productsFetch'
+import 'rsuite/dist/rsuite-no-reset.min.css';
+import { Carousel } from 'rsuite';
+import useFetch from '../reducers/productsFetch';
+import bannerImg from '../../public/images/banner.png';
+import Image from 'next/image';
+
+const SliderComponent = () => (
+  <Carousel autoplay  className="custom-slider ">
+
+    <div id="slider-container"  className=' flex items-center justify-center'  >
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+
+
+
+    </div>
+    <div id="slider-container"  className=' flex items-center justify-center'  >
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+
+
+
+    </div>
+    <div id="slider-container"  className=' flex items-center justify-center'  >
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+    <div id='slider-item-container  flex items-center justify-center'  >
+    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    </div>
+
+
+
+    </div>
+
+
+
+    
+  </Carousel>
+);
+
+
 
 
 export default function Home() {
@@ -56,6 +114,14 @@ export default function Home() {
   </div>
   <br /><br />
   <Slider/>
+  <br/>
+  <div className='container' >
+  <SliderComponent/>
+
+
+  </div>
+  <br/>
+  
   <div className="container" >
     <Heading title='Featured Product' />
   <br/>

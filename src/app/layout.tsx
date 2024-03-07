@@ -4,7 +4,6 @@ import{ ProductContextProvider }from './context/ProductContext'
 import {CartContextProvider }from './context/CartContext'
 import {CartPageContextProvider} from './context/CartPageContext'
 import { config } from '@fortawesome/fontawesome-svg-core';
-import { Cairo } from 'next/font/google';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
 
 import type { Metadata } from "next";
@@ -15,10 +14,6 @@ import React from 'react';
 
 config.autoAddCss = false; // Prevent duplicate loading in Next.js
 const inter = Inter({ subsets: ["latin"] });
-const cairo = Cairo({
-  subsets: ['latin'], // Specify supported characters
- display: 'swap', // Preload font for faster rendering
-});
 
 export const metadata: Metadata = {
   title: "Hair Haven",
