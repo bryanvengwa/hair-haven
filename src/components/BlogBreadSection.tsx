@@ -18,7 +18,6 @@ function BlogBreadSection() {
                 <div className="blog__sidebar">
                     <div className="blog__sidebar__search">
         <form action="#">
-{/* <input type="text" placeholder="Search..."> */}
     <input type="text" placeholder='Search..' />
         <button type="submit"><span className="icon_search"></span></button>
             </form>
