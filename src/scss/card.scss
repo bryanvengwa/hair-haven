@@ -63,6 +63,8 @@ $light-blue: rgb(244,245,252);
     max-width:20rem; border:none;
     .body{text-align:center; font-family:$cairo; 
     h4{font-weight:800}
+		.flex-container{display: flex; align-items: center; justify-content: center; }
+
     }
     .img-container{width:100%; height:80%; background:$light-blue !important ; position: relative; display: flex; justify-content: center; align-items: center; }
 	.icons-container{ left: 0; bottom: 0; width: 100%; gap: 0.5em; opacity: 0;  display: flex; align-items: center; justify-content: center;
@@ -82,7 +84,9 @@ $light-blue: rgb(244,245,252);
 	}
 
 
-
+.discount-circle{ position: absolute; top: 0.6rem; left: 0.6rem;
+	height: 3.4rem; width: 3.4rem; background-color: red; border-radius: 50%; color: white; font-family: $cairo;
+}
 
 }
 .product-card:hover {

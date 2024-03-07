@@ -6,10 +6,12 @@ import { Carousel } from 'rsuite';
 import Image from 'next/image';
 import { Input, Stack} from 'rsuite';
 import 'rsuite/dist/rsuite-no-reset.min.css';
+import DiscountCard from '@/components/DiscountCard';
 import bannerImg from '../../../public/images/banner.png';
 
 const SliderComponent = () => (
   <Carousel autoplay  className="custom-slider ">
+
     <div id="slider-container"  className=' flex items-center justify-center'  >
     <div id='slider-item-container  flex items-center justify-center'  >
     <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
@@ -18,40 +20,13 @@ const SliderComponent = () => (
     <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
     </div>
     <div id='slider-item-container flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    <DiscountCard  title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
     </div>
 
 
 
     </div>
-    <div id="slider-container"  className=' flex items-center justify-center'  >
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-
-
-
-    </div>
-    <div id="slider-container"  className=' flex items-center justify-center'  >
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    {/* <div id='slider-item-container flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div> */}
-
-
-
-    </div>
+    
     <div id="slider-container"  className=' flex items-center justify-center'  >
     <div id='slider-item-container  flex items-center justify-center'  >
     <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
@@ -160,7 +135,7 @@ export default function page() {
    <h6> <span>19</span> Products Found</h6>
           </div>
           <div className="products-container">
-            
+
           </div>
           </div>
         </div>
