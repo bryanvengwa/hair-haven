@@ -20,7 +20,7 @@ const SliderComponent = () => (
     <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
     </div>
     <div id='slider-item-container flex items-center justify-center'  >
-    <DiscountCard  title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
+    <DiscountCard  discount={20} title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
     </div>
 
 
