@@ -159,6 +159,9 @@ export default function page() {
    </Stack>
    <h6> <span>19</span> Products Found</h6>
           </div>
+          <div className="products-container">
+            
+          </div>
           </div>
         </div>
 
