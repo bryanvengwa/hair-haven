@@ -3,7 +3,8 @@ import React from 'react'
 import BreadCrumb from '@/components/BreadCrumb'
 import Header from "@/components/Header"
 import { Carousel } from 'rsuite';
-import Image from 'next/image'
+import Image from 'next/image';
+import { Input, Stack} from 'rsuite';
 import 'rsuite/dist/rsuite-no-reset.min.css';
 import bannerImg from '../../../public/images/banner.png';
 
@@ -151,7 +152,11 @@ export default function page() {
           <SliderComponent/>
           <hr />
           <div className="shop-header">
-            
+          <Stack spacing={10} direction="column" alignItems="flex-start">
+
+    <Input readOnly value="Default Sort" className='input' />
+
+   </Stack>
           </div>
           </div>
         </div>

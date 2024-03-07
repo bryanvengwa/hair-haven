@@ -156,6 +156,10 @@ $grey: #f5f5f5;
     
 }
 .shop-page{ padding: 0.5em; margin-top: 4rem;
+    .shop-page{
+        display: flex;
+        .input{text-align: center;}
+    }
     .heading-container{
         h2{font-family: $cairo; font-size: 2rem; font-weight: 700; text-decoration: underline; text-decoration-color: $light-green ; margin-bottom: 1em; text-decoration-thickness: 0.4rem; }
     }
