@@ -156,15 +156,21 @@ $grey: #f5f5f5;
     
 }
 .shop-page{ padding: 0.5em; margin-top: 4rem;
+    h6{    font-size: 16px;
+        color: #b2b2b2;
+        font-weight: 300;
+        font-family: $cairo;
+        span{
+            color: black;
+                   font-weight: 900;
+
+        }
+    }
     .shop-page{
         display: flex;
        .shop-headers{
         .input{text-align: center;}
-        h6{    font-size: 16px;
-            color: red;
-            font-weight: 300;
-            font-family: $cairo;
-        }
+
        }
     }
     .heading-container{
