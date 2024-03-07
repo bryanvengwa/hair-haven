@@ -151,12 +151,13 @@ export default function page() {
             </div>
           <SliderComponent/>
           <hr />
-          <div className="shop-header">
+          <div className="shop-headers flex items-center justify-between pt-2">
           <Stack spacing={10} direction="column" alignItems="flex-start">
 
-    <Input readOnly value="Default Sort" className='input' />
+    <Input readOnly value="Default Sort" size='md' className='input' />
 
    </Stack>
+   <h6> <span>19</span> Products Found</h6>
           </div>
           </div>
         </div>
