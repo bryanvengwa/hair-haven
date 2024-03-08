@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react';
 import { BlogContext }from '../app/context/BlogContext'
 import Image from 'next/image';
 import '@/scss/blogbreadsection.scss'; 
@@ -10,12 +10,14 @@ import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedin
 import blogimage from '../../public/images/blog1.jpg'
 import Micheal from './Micheal'; // Assuming Micheal is in the same directory
 
-interface blogProps{
-    params : any;
-}
 
-function BlogBreadSection( {params} : blogProps ) {
-    const {blogData} = useContext(BlogContext);
+function BlogBreadSection( {params} ) {
+    const [blog, setBlog] = useState({});
+    const {blogData, threeBlogs} = useContext(BlogContext);
+
+    useEffect(()=>{
+        setBlog(blogData[params.productId])
+    },[])
 
   return (
     <div className="blog-details spad">
@@ -41,12 +43,16 @@ function BlogBreadSection( {params} : blogProps ) {
         </div>
 
 <div className="blog__sidebar__item">
-<h4>Recent News</h4>
+<h4>Popular Posts</h4>
 <div className="blog__sidebar__recent">
+{threeBlogs && threeBlogs.map(blog=>{
+        //   let blog = blogData[int]
     
-<RecentCard heading='09 Kinds Of Vegetables Protect The Live' date='MAR 05, 2019' imageUrl='/images/blog1.jpg' />
-<RecentCard heading='4 Principles Help You Lose Weight With Vegetables' date='MAR 05, 2019' imageUrl='/images/blog1.jpg' />
-<RecentCard heading='' date='MAR 05, 2019' imageUrl='/images/blog1.jpg' />
+      return   <RecentCard heading={blog.title1} date={blog.date} imageUrl='/images/blog1.jpg' />
+
+
+
+    })}
 
 </div>
 </div>
@@ -66,16 +72,8 @@ function BlogBreadSection( {params} : blogProps ) {
     <div className="col-lg-8 col-md-7 order-md-1 order-1">
     <div className="blog__details__text">
     <Image className='pic' src={blogimage} alt='blogimage' />
-            <p>Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-            dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit
-            aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur
-            sed, convallis at tellus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada.
-            Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.
-            Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis
-            quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada
-            feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
-            <h3>The corner window forms a place within a place that is a resting point within the large
-            space.</h3>
+            <p> {blog ? blog.paragraph : " "} </p>
+            <h3> {blog ? blog.title2 : " "} </h3>
             <p>The study area is located at the back with a view of the vast nature. Together with the other
             buildings, a congruent story has been managed in which the whole has a reinforcing effect on
             the components. The use of materials seeks connection to the main house, the adjacent
@@ -85,7 +83,7 @@ function BlogBreadSection( {params} : blogProps ) {
      <div className="row">
      <div className="col-lg-6">
      <div className="blog__details__author">
-     <Micheal author='Admin' title='Michael Scofield' imageUrl='/images/blog1.jpg'  />
+     <Micheal author={ blog ? blog.profile : "Admin"} title={blog ? blog.author : " "} imageUrl='/images/blog1.jpg'  />
     </div>
 
 

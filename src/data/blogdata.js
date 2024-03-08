@@ -45,7 +45,7 @@ export const blogData = [
                   title2: "Elevate Your Hair Game: A Deep Dive into Hair Care and Style Mastery",
                   tags: "I am passionate about empowering you with insights into optimal hair care, styling techniques, and the key elements for a foundation of vibrant, healthy hair. Drawing from extensive experience in the realm of hair, I've honed my skills to address the most intricate challenges. Embark on a journey with me as I share expert knowledge tailored to transform your hair. Discover the secrets to radiant, healthy locks that exude confidence and beauty. Your path to hair perfection starts here.",
                   author: "Amelia Rose Garcia",
-                  profile: "",
+                  profile: "User",
                   authorCategory: "Customer",
                   profilePic: ""
                 },
@@ -61,7 +61,7 @@ export const blogData = [
                   title2: "Elevate Your Wardrobe: A Guide to Timeless Fashion Choices",
                   tags: "Fashion is an art, and your wardrobe is the canvas. Learn how to paint it with colors of style and confidence. I'm here to guide you through the intricate world of fashion, providing insights that go beyond trends. Let's embark on a sartorial adventure that transforms your closet into a curated masterpiece.",
                   author: "Sophia Anderson",
-                  profile: "",
+                  profile: "User",
                   authorCategory: "Fashion Enthusiast",
                   profilePic: ""
                 },

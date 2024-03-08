@@ -26,14 +26,15 @@ useEffect(() => {
     setRandomIntArray(indices);
     setThreeBlogs((threeBlogs)=>{
     const  array = indices.map(indice=>blogData[indice]);
-        
+        return array;
     })
-  }, [blogData]); 
+  }, []); 
 
 
  const  contextData ={
     blogData,
     randomIntArray,
+    threeBlogs,
 };
     return(
         <BlogContext.Provider value={contextData} >

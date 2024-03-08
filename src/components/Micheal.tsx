@@ -17,9 +17,10 @@ function Micheal( {title, author,imageUrl}: MichealProps ) {
     <div className="blog__details__author__pic">
     <Image className='blogimage' width={300} height={300} src={imageUrl} alt='blogimage' />
    </div>
-   <div className="blog__details__author__text">
+   <div className="blog__details__author__text ">
        <h6>{title}</h6>
-           <span>{author}</span>
+       <br/>
+           <span >{author}</span>
    </div>
    </div>
   )
