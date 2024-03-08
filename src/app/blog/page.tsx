@@ -4,7 +4,8 @@ import BreadCrumb from '@/components/BreadCrumb'
 import Header from "@/components/Header"
 import careImg from 'public/images/care.jpg'
 import BlogBreadSection from '@/components/BlogBreadSection'
-export default function page() {
+
+export default function Page() {
   return (
     <div>
  <Header/>
