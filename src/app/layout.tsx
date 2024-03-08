@@ -3,6 +3,7 @@ import {GlobalContextProvider} from  './context/context'
 import{ ProductContextProvider }from './context/ProductContext'
 import {CartContextProvider }from './context/CartContext'
 import {CartPageContextProvider} from './context/CartPageContext'
+import {BlogContextProvider} from './context/BlogContext';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
 
