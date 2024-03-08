@@ -7,6 +7,7 @@ export  const BlogContext = createContext();
 
 export const BlogContextProvider = ({children})=>{
 const [randomIntArray, setRandomIntArray] = useState();
+const [threeBlogs, setThreeBlogs] = useState([]);
 
 function getRandomIndices(arrayLength) {
     const indices = [];
@@ -23,13 +24,17 @@ function getRandomIndices(arrayLength) {
 useEffect(() => {
     const indices = getRandomIndices(blogData.length);
     setRandomIntArray(indices);
+    setThreeBlogs((threeBlogs)=>{
+      array = indices.map(indice=>blogData[indice]);
+        
+    })
   }, [blogData]); 
 
 
 contextData ={
     blogData,
     randomIntArray,
-}
+};
     return(
         <BlogContext.Provider value={contextData} >
             {children}
