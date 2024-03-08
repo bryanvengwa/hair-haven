@@ -25,7 +25,7 @@ useEffect(() => {
     const indices = getRandomIndices(blogData.length);
     setRandomIntArray(indices);
     setThreeBlogs((threeBlogs)=>{
-      array = indices.map(indice=>blogData[indice]);
+    const  array = indices.map(indice=>blogData[indice]);
         
     })
   }, [blogData]); 

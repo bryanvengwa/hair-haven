@@ -1,6 +1,6 @@
 'use client'
 import React, {useContext} from 'react'
-import BlogContext from './context/BlogContext'
+import {BlogContext} from './context/BlogContext'
 import Header from "../components/Header"
 import Departments from '../components/Departments'
 import SearchBar from '../components/SearchBar'
