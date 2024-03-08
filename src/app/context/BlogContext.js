@@ -31,7 +31,7 @@ useEffect(() => {
   }, [blogData]); 
 
 
-contextData ={
+ const  contextData ={
     blogData,
     randomIntArray,
 };
