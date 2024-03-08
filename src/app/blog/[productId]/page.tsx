@@ -11,7 +11,7 @@ function Page({params}: any) {
     <div className="blogdetails">
       <Header />
       {/* <BlogBreadCrub pageFull='blogdetails' page='pagedetails' imageUrl='/images/blog.jpg' /> */}
-      <BlogBreadCrub />
+      <BlogBreadCrub params={params} />
       <BlogBreadSection params={params} />
       <Footer />
       
