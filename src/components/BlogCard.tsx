@@ -5,7 +5,7 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar, faCalendarTimes,  faCalendarCheck,  } from '@fortawesome/free-solid-svg-icons';
 // import { faComment  } from '@fortawesome/free-solid-svg-icons';
 import { FaRegCalendar , FaRegComment} from 'react-icons/fa';
-
+import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BlogImage from './BlogImage';
@@ -15,19 +15,20 @@ interface blogProps {
   date : string;
   comments : number;
   description : string;
+  id: number;
   
 }
 
 
-export default function BlogCard({title, date, comments, description}:blogProps) {
+export default function BlogCard({title, date, comments, description, id}:blogProps) {
   return (
     <div>
               <div className='card product-card blog-card ' >
-           <div className='img-container' >
+           <Link href={`/blog/${id}`} className='img-container' >
            
             <Image src={bannerImg} alt=''/>
             
-           </div>
+           </Link>
            <div className="body flex flex-col gap-3  pt-3 ">
                 <div  className="flex-container flex gap-10 ">
                <div className='flex flex-row  gap-2 ' >

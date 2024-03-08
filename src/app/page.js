@@ -181,7 +181,7 @@ export default function Home() {
     {randomIntArray && randomIntArray.map(int=>{
           let blog = blogData[int]
     
-      return   <BlogCard title={blog.title1} description={blog.exercept} date={blog.date} comments={blog.comment} />
+      return   <BlogCard key={blog.id} id={blog.id} title={blog.title1} description={blog.exercept} date={blog.date} comments={blog.comment} />
 
 
     })}

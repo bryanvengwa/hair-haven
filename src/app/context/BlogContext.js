@@ -19,6 +19,11 @@ function getRandomIndices(arrayLength) {
     }
     return indices;
   }
+
+  const findById = function(id) {
+    const blog = blogData.find((n)=>{n.id == id});
+    return blog;
+  }
   
 
 useEffect(() => {
@@ -35,6 +40,7 @@ useEffect(() => {
     blogData,
     randomIntArray,
     threeBlogs,
+    findById,
 };
     return(
         <BlogContext.Provider value={contextData} >
