@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { BlogContext }from '../app/context/BlogContext'
 import Image from 'next/image';
 import '@/scss/blogbreadsection.scss'; 
 import '@/scss/footer.scss';// assuming this file exists and styles the component
@@ -9,7 +10,13 @@ import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedin
 import blogimage from '../../public/images/blog1.jpg'
 import Micheal from './Micheal'; // Assuming Micheal is in the same directory
 
-function BlogBreadSection() {
+interface blogProps{
+    params : any;
+}
+
+function BlogBreadSection( {params} : blogProps ) {
+    const {blogData} = useContext(BlogContext);
+
   return (
     <div className="blog-details spad">
     <div className="container">

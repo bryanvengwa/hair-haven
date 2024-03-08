@@ -5,13 +5,14 @@ import Header from "@/components/Header"
 import careImg from 'public/images/care.jpg'
 import BlogBreadSection from '@/components/BlogBreadSection'
 
-export default function Page() {
+export default function Page({params } :any) {
+
   return (
     <div>
  <Header/>
 
         {/* <BreadCrumb pageFull='Blog' page='Blog' imageUrl='/images/blog.jpg' /> */}
-        <BlogBreadSection/>
+        <BlogBreadSection params={params}  />
     </div>
   )
 }
