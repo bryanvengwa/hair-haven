@@ -13,6 +13,7 @@ function getRandomIndices(arrayLength) {
     const indices = [];
     while (indices.length < 3) {
       const randomNumber = Math.floor(Math.random() * arrayLength);
+
       if (!indices.includes(randomNumber)) {
         indices.push(randomNumber);
       }
@@ -20,10 +21,7 @@ function getRandomIndices(arrayLength) {
     return indices;
   }
 
-  const findById = function(id) {
-    const blog = blogData.find((n)=>{n.id == id});
-    return blog;
-  }
+
   
 
 useEffect(() => {
@@ -35,6 +33,12 @@ useEffect(() => {
     })
   }, []); 
 
+  const findById = (id) => {
+    id = parseInt(id, 10);
+    console.log(typeof(id))
+    const blog = blogData.find((n)=>{ return n.id === id});
+    return blog;
+  }
 
  const  contextData ={
     blogData,

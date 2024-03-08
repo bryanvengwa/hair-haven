@@ -1,36 +1,36 @@
-const dataType = { id: null, 
-                category:" ",
-                Image:"",
-                exercept:"",
-                date:"",
-                comment:"",
-                paragraph:"",
-                title1:"",
-                title2:"",
-                tags:"",
-                author:"",
-                profile:"",
-                authorCategory:"",
-                profilePics:"" ,
-            };
+// const dataType = { id: null, 
+//                 category:" ",
+//                 Image:"",
+//                 exercept:"",
+//                 date:"",
+//                 comment:"",
+//                 paragraph:"",
+//                 title1:"",
+//                 title2:"",
+//                 tags:"",
+//                 author:"",
+//                 profile:"",
+//                 authorCategory:"",
+//                 profilePics:"" ,
+//             };
 
-            const categories =[
-                "beauty",
-                "healthy tips",
-                "hairstyle trends",
-                "hair type",
-                "hair care",
+//             const categories =[
+//                 "beauty",
+//                 "healthy tips",
+//                 "hairstyle trends",
+//                 "hair type",
+//                 "hair care",
 
-            ]
-            const tags = [
-                "life style",
-                "hair goals",
-                "hair styling",
-                "hair color",
-                "hair routine",
-                "scalp care",
+//             ]
+//             const tags = [
+//                 "life style",
+//                 "hair goals",
+//                 "hair styling",
+//                 "hair color",
+//                 "hair routine",
+//                 "scalp care",
 
-            ]
+//             ]
             
 export const blogData = [
                 {
