@@ -31,8 +31,8 @@ const dataType = { id: null,
                 "scalp care",
 
             ]
-
-            const blogData = [
+            
+export const blogData = [
                 {
                   id: 1,
                   category: "Lifestyle",
