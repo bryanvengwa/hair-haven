@@ -79,7 +79,7 @@ const SliderComponent = () => (
 
 export default function Home() {
   const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/")
-  const {randomIntArray  } = useContext(BlogContext);
+  const {randomIntArray , blogData } = useContext(BlogContext);
 
 
 // console.log(ra)
@@ -178,9 +178,10 @@ export default function Home() {
   <br />
   <div className='blog-card-container flex flex-wrap gap-6 align-center justify-center ' >
 
-    {randomIntArray && randomIntArray.map(blog=>{
+    {randomIntArray && randomIntArray.map(int=>{
+          let blog = blogData[int]
     
-      return   <BlogCard title='Your Guide to Smoother, Sleeker Hair' description='Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat' date='May 4,2019' comments={5} />
+      return   <BlogCard title={blog.title1} description={blog.exercept} date={blog.date} comments={blog.comment} />
 
 
     })}
