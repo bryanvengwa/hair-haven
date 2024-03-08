@@ -28,6 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <CartContextProvider>
+      <BlogContextProvider>
 
     <GlobalContextProvider>
       <ProductContextProvider>
@@ -45,6 +46,7 @@ export default function RootLayout({
     </CartPageContextProvider>
     </ProductContextProvider>
     </GlobalContextProvider>
+    </BlogContextProvider>
     </CartContextProvider>
   );
 }

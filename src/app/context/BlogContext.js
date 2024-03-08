@@ -3,9 +3,9 @@ import React, { createContext, useEffect, useState } from 'react';
 import { blogData } from '../../data/blogdata';
 
 
-const BlogContext = createContext();
+export  const BlogContext = createContext();
 
-const BlogContextProvider = ({children})=>{
+export const BlogContextProvider = ({children})=>{
 const [randomIntArray, setRandomIntArray] = useState();
 
 function getRandomIndices(arrayLength) {
