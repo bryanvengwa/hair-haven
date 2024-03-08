@@ -1,5 +1,6 @@
 'use client'
-import React from 'react'
+import React, {useContext} from 'react'
+import BlogContext from './context/BlogContext'
 import Header from "../components/Header"
 import Departments from '../components/Departments'
 import SearchBar from '../components/SearchBar'
@@ -20,6 +21,8 @@ import bannerImg from '../../public/images/banner.png';
 import Image from 'next/image';
 
 const SliderComponent = () => (
+
+
   <Carousel autoplay  className="custom-slider ">
 
     <div id="slider-container"  className=' flex items-center justify-center'  >
@@ -76,6 +79,7 @@ const SliderComponent = () => (
 
 export default function Home() {
   const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/")
+  const {randomIntArray  } = useContext(BlogContext);
 
 
 
@@ -154,7 +158,7 @@ export default function Home() {
 
       {
         data && (<>
-        { data.map((product : any )=>{
+        { data.map((product  )=>{
               return <Card key={product.id} title={product.title} image={product.image} price={product.unit_price} product_id={product.id} />
             })}
         </>)
