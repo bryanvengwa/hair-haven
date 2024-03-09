@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import bannerImg from '../../public/images/banner.png'
-import '@/scss/card.scss'
+import '@/scss/card.scss';
+import { useEffect, useState } from 'react';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -15,11 +16,41 @@ interface CardProps {
     title : string;
     price : number;
     product_id:number;
+    isActive: any;
+    product_type:string;
+
 }
 
 
-export default function Card({image, title, price , product_id}: CardProps){
+export default function Card({image, title, price , product_id , isActive=1, product_type='all'}: CardProps){
     const {addCartItem } = useContext(CartContext);
+    const [display , setDisplay] = useState(true)
+
+    useEffect(()=>{
+        if(isActive === 1   ){
+            setDisplay(true)
+
+        }else if( isActive === 2 && product_type.toLowerCase()  == 'dye' ){
+            setDisplay(true)
+
+        }else if( isActive === 3 && product_type.toLowerCase()  == 'shampoo' ){
+            setDisplay(true)
+
+        }else if( isActive === 4 && product_type.toLowerCase()  == 'conditioner' ){
+            setDisplay(true)
+
+        }else if( isActive === 5 && product_type.toLowerCase()  == 'treaters' ){
+            setDisplay(true);
+
+        }else{
+            setDisplay(false);
+        }
+
+
+    },[isActive, product_type])
+
+
+
     const handleAddToCart = (event: React.FormEvent<HTMLFormElement>) => {
         alert('clicked')
         console.log('code ran')
@@ -28,7 +59,9 @@ export default function Card({image, title, price , product_id}: CardProps){
         addCartItem(product_id, 1); // Adjust the quantity as needed
     };
     return (
-        <div className='card product-card' >
+   <>
+   <>
+   { display &&      <div className='card product-card'  >
            <div className='img-container' >
             <Image src={image} layout='fill' alt='product' />
             <div className="icons-container">
@@ -56,6 +89,8 @@ export default function Card({image, title, price , product_id}: CardProps){
                 <h4>$ {price}</h4>
            </div>
 
-        </div>
+        </div> }
+   </>
+   </>
     )
 }

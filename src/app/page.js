@@ -1,5 +1,5 @@
 'use client'
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {BlogContext} from './context/BlogContext'
 import Header from "../components/Header"
 import Departments from '../components/Departments'
@@ -20,59 +20,7 @@ import useFetch from '../reducers/productsFetch';
 import bannerImg from '../../public/images/banner.png';
 import Image from 'next/image';
 
-const SliderComponent = () => (
 
-
-  <Carousel autoplay  className="custom-slider ">
-
-    <div id="slider-container"  className=' flex items-center justify-center'  >
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-
-
-
-    </div>
-    <div id="slider-container"  className=' flex items-center justify-center'  >
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-
-
-
-    </div>
-    <div id="slider-container"  className=' flex items-center justify-center'  >
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-
-
-
-    </div>
-
-
-
-    
-  </Carousel>
-);
 
 
 
@@ -80,6 +28,11 @@ const SliderComponent = () => (
 export default function Home() {
   const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/")
   const {randomIntArray , blogData } = useContext(BlogContext);
+  const [isActive , setIsActive ] = useState(1);
+function toggler (number){
+    setIsActive(number)
+}
+
 
 
 // console.log(ra)
@@ -119,17 +72,13 @@ export default function Home() {
   <br /><br />
   <Slider/>
   <br/>
-  <div className='container' >
-  <SliderComponent/>
 
-
-  </div>
   <br/>
   
   <div className="container" >
     <Heading title='Featured Product' />
   <br/>
-<Tabbed/>
+<Tabbed toggler={toggler} isActive={isActive}  />
   </div>
   <br />
   <br />
@@ -159,7 +108,7 @@ export default function Home() {
       {
         data && (<>
         { data.map((product  )=>{
-              return <Card key={product.id} title={product.title} image={product.image} price={product.unit_price} product_id={product.id} />
+              return <Card key={product.id} isActive={isActive} title={product.title} image={product.image} price={product.unit_price} product_id={product.id} product_type={product.product_type} />
             })}
         </>)
       }

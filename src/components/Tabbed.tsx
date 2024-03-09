@@ -2,15 +2,16 @@
 import '@/scss/heading.scss'
 import{ useState} from 'react'
 
+interface TabbedProps{
+    isActive: any;
+    toggler: any;
+}
 
 
-export default function Tabbed(){
+export default function Tabbed({toggler ,  isActive}: TabbedProps){
     'use client';
 
-const [isActive , setIsActive ] = useState(1);
-function toggler (number: number):void{
-    setIsActive(number)
-}
+
 
     return (
         <div className="tabbed flex align-center justify-center" >
