@@ -1,19 +1,19 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, } from 'react';
 import { BlogContext }from '../app/context/BlogContext'
 import Image from 'next/image';
 import '@/scss/blogbreadsection.scss'; 
 import '@/scss/footer.scss';// assuming this file exists and styles the component
-import blog from '../../public/images/blog.jpg';
 import RecentCard from './RecentCard';
-import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedinIn} from 'react-icons/fa';
+import { FaInstagram , FaFacebook, FaPinterest, FaLinkedinIn} from 'react-icons/fa';
 import { formatArray} from '../utils/FormatArray';
+// import blog from '../../public/images/blog.jpg';
 
 import blogimage from '../../public/images/blog1.jpg'
 import Micheal from './Micheal'; 
 
 
 function BlogBreadSection( {params, currentBlog} ) {
-    const {blogData, threeBlogs} = useContext(BlogContext);
+    const {threeBlogs} = useContext(BlogContext);
 
   return (
     <div className="blog-details spad">
