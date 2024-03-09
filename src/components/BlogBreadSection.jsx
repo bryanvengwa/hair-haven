@@ -48,7 +48,7 @@ function BlogBreadSection( {params, currentBlog} ) {
 {threeBlogs && threeBlogs.map(blog=>{
         //   let blog = blogData[int]
     
-      return   <RecentCard heading={blog.title1} date={blog.date} imageUrl='/images/blog1.jpg' />
+      return   <RecentCard heading={blog.title1} date={blog.date} imageUrl='/images/blog1.jpg' id={blog.id} />
 
 
 
