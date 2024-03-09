@@ -5,6 +5,7 @@ import Header from "@/components/Header"
 import { Carousel } from 'rsuite';
 import Image from 'next/image';
 import { Input, Stack} from 'rsuite';
+import Card from '@/components/Card';
 import 'rsuite/dist/rsuite-no-reset.min.css';
 import DiscountCard from '@/components/DiscountCard';
 import bannerImg from '../../../public/images/banner.png';
@@ -139,7 +140,23 @@ export default function page() {
    </Stack>
    <h6> <span>19</span> Products Found</h6>
           </div>
-          <div className="products-container">
+          <div className="products-container flex flex-wrap gap-4  mt-8 ">
+
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
 
           </div>
           </div>
