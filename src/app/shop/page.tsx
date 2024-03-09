@@ -146,7 +146,9 @@ export default function Page() {
     <Input readOnly value="Default Sort" size='md' className='input' />
 
    </Stack>
-   <h6> <span>19</span> Products Found</h6>
+  {data && <h6> <span> ({data.length}) </span> Products Found</h6>}
+  {isLoading && <h6>Fetching products...</h6>}
+  {error && <h6>Failed to fetch producs</h6>}
           </div>
           <div className="products-container flex flex-wrap gap-4  mt-8 ">
 
