@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import '@/scss/banner.scss'
+import Link from 'next/link'
 import bannerImg from '../../public/images/banner.png'
 
 export default function Banner() {
@@ -17,9 +18,11 @@ export default function Banner() {
             <h1>Hair Goals ? <br /> We Got You</h1>
             <p>Free Pickup and Delivery Available</p>
 
+          <Link href={'/shop'} >
             <button>
                 SHOP NOW
             </button>
+          </Link>
             
 
         </div>

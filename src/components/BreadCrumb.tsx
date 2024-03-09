@@ -14,7 +14,7 @@ export default function BreadCrumb({ page, pageFull, imageUrl }: BreadCrumbProps
       <Image src={imageUrl} alt='header image'   layout="fill"
   objectFit="cover"  /> 
       <div className="over-head">
-        <h1>{pageFull}</h1>
+        <h1 style={{textAlign:'center'}} >{pageFull}</h1>
         <h5>Home   <span>  -   {page}</span> </h5>
       </div>
     </div>
