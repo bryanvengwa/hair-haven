@@ -186,7 +186,7 @@ export default function Home() {
 
     })}
 
-    {randomIntArray || (<>
+    { !randomIntArray &&  (<>
             <Skeleton variant="rectangular" width={310} height={250} />
             <Skeleton variant="rectangular" width={310} height={250} />
             <Skeleton variant="rectangular" width={310} height={250} />
