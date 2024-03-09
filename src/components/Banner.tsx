@@ -18,10 +18,10 @@ export default function Banner() {
             <h1>Hair Goals ? <br /> We Got You</h1>
             <p>Free Pickup and Delivery Available</p>
 
-          <Link href={'/shop'} >
-            <button>
+          <Link className='button' href={'/shop'} >
+          
                 SHOP NOW
-            </button>
+           
           </Link>
             
 

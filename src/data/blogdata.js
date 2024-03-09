@@ -33,7 +33,7 @@
 //             ]
 
 
-const blogData = [
+export const blogData = [
   {
     id: 1,
     category: "Lifestyle",

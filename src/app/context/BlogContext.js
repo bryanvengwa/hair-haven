@@ -25,13 +25,15 @@ function getRandomIndices(arrayLength) {
   
 
 useEffect(() => {
-    const indices = getRandomIndices(blogData.length);
-    setRandomIntArray(indices);
-    setThreeBlogs((threeBlogs)=>{
-    const  array = indices.map(indice=>blogData[indice]);
-        return array;
-    })
-  }, []); 
+if(blogData){
+  const indices = getRandomIndices(blogData.length);
+  setRandomIntArray(indices);
+  setThreeBlogs((threeBlogs)=>{
+  const  array = indices.map(indice=>blogData[indice]);
+      return array;
+  })
+}
+  }, [blogData]); 
 
   const findById = (id) => {
     id = parseInt(id, 10);
