@@ -184,7 +184,7 @@ export const blogData = [
     pargraph2: "Prepare your hair for the winter chill with a comprehensive guide to combating common seasonal challenges. I'll share expert tips on moisturizing, protecting against static, and maintaining a healthy scalp during the colder months. Say goodbye to winter hair woes and hello to beautiful, resilient locks all season long.",
     tags: ['Discover', 'hair tips' , 'Hair care'],
     author: "Ava Thompson",
-    profile: "",
+    profile: "Unkown",
     authorCategory: "Seasonal Hair Specialist",
     profilePic: ""
   },
