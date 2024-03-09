@@ -17,7 +17,7 @@
     "@mui/material": "^5.15.11",
     "@react-login-page/page11": "^1.0.4",
     "@react-login-page/page8": "^1.0.4",
-    "antd": "^5.14.2",
+    "antd": "^5.15.1",
     "bootstrap": "^5.3.3",
     "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
