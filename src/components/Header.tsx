@@ -34,7 +34,9 @@ function toggle(number :  string){
             <br />
       <div className='navigation p-1'>
         <div className='logo-container ' >
-      <Image src={logo} alt='logo' objectFit='cover' height={'50'} />
+          <Link href={'/'} > 
+              <Image src={logo} alt='logo' objectFit='cover' height={'50'} />
+           </Link>
 
       </div>
           <div onClick={()=>toggle('menu')} className='menu'>
@@ -68,7 +70,9 @@ function toggle(number :  string){
 
     <div className={`slide-menu ${ isOpen ? '' : 'closed-menu' } `} >
     <div className='logo-container mt-10 flex items-center  justify-center' >
-      <Image src={logo} alt='logo' objectFit='cover' height={'50'} />
+    <Link href={'/'} > 
+              <Image src={logo} alt='logo' objectFit='cover' height={'50'} />
+    </Link>
 
       </div>
       <div className='icon-container' >
