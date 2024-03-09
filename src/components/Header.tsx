@@ -74,7 +74,8 @@ function toggle(number :  string){
               <Image src={logo} alt='logo' objectFit='cover' height={'50'} />
     </Link>
 
-      </div>
+    </div>
+
       <div className='icon-container' >
       
       <div className='bubble-container'>
@@ -87,7 +88,8 @@ function toggle(number :  string){
         <div className='bubble-container' >
       <FontAwesomeIcon icon={faShoppingCart} className='icon' />
         <div className='bubble' >
-  3
+        { items ? items.length : 0}
+  
         </div>
         </div>
   
