@@ -142,22 +142,13 @@ export default function page() {
           </div>
           <div className="products-container flex flex-wrap gap-4  mt-8 ">
 
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} />
-
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all'  />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
+            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
+  
           </div>
           </div>
         </div>
