@@ -9,8 +9,14 @@ import Card from '@/components/Card';
 import 'rsuite/dist/rsuite-no-reset.min.css';
 import DiscountCard from '@/components/DiscountCard';
 import bannerImg from '../../../public/images/banner.png';
+import useFetch from '../../reducers/productsFetch';
+import Skeleton from '@mui/material/Skeleton';
+
+
+
 
 const SliderComponent = () => (
+
   <Carousel autoplay  className="custom-slider ">
 
     <div id="slider-container"  className=' flex items-center justify-center gap-4'   >
@@ -54,7 +60,9 @@ const SliderComponent = () => (
 
 
 
-export default function page() {
+export default function Page() {
+  const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/");
+
   return (
     <div>
          <Header/>
@@ -142,13 +150,29 @@ export default function page() {
           </div>
           <div className="products-container flex flex-wrap gap-4  mt-8 ">
 
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all'  />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
-            <Card image='/images/banner.png' title='Inecto Black Dye' price={90.00} product_id={900} isActive={1} product_type='all' />
+          {
+        data && (<>
+        { data.map((product : any  )=>{
+              return <Card key={product.id} isActive={1} title={product.title} image={product.image} price={product.unit_price} product_id={product.id} product_type={'all'} />
+            })}
+        </>)
+      }
+            {isLoading &&
+            (<>
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+      
+            
   
+            </>
+            
+            )
+       
+      }
           </div>
           </div>
         </div>
