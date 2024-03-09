@@ -172,7 +172,7 @@ export default function Home() {
   </div>
   <br /><br />
 
-  <section className='blog-section container' >
+  <section className='mb-10 blog-section container' >
   <Heading title='From The Blog' />
   <br />
   <br />
@@ -185,6 +185,14 @@ export default function Home() {
 
 
     })}
+
+    {randomIntArray || (<>
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+            <Skeleton variant="rectangular" width={310} height={250} />
+      
+            
+    </>) }
   </div>
 
 
