@@ -84,7 +84,7 @@ function BlogBreadSection( {params, currentBlog} ) {
   <div className="col-lg-6">
   <div className="blog__details__widget">
     <ul>
-    <li><span>Categories:</span> Food</li>
+    <li><span>Categories:</span> { currentBlog ? currentBlog.category : ' '  } </li>
     <li><span>Tags:</span> <div style={{textTransform :"capitalize"}} > All, { currentBlog ? formatArray(currentBlog.tags) : '' } </div>  </li>
     </ul>
     <div className="footer__widget__social">
