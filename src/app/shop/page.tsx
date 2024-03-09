@@ -12,13 +12,31 @@ import bannerImg from '../../../public/images/banner.png';
 const SliderComponent = () => (
   <Carousel autoplay  className="custom-slider ">
 
-    <div id="slider-container"  className=' flex items-center justify-center'  >
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
+    <div id="slider-container"  className=' flex items-center justify-center gap-4'   >
     <div id='slider-item-container flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
+    <DiscountCard  discount={20} title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
     </div>
+
+    <div id='slider-item-container flex items-center justify-center'  >
+    <DiscountCard  discount={20} title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
+    </div>
+
+    <div id='slider-item-container flex items-center justify-center'  >
+    <DiscountCard  discount={20} title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
+    </div>
+
+
+
+    </div>
+    <div id="slider-container"  className=' flex items-center justify-center gap-4'   >
+    <div id='slider-item-container flex items-center justify-center'  >
+    <DiscountCard  discount={20} title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
+    </div>
+
+    <div id='slider-item-container flex items-center justify-center'  >
+    <DiscountCard  discount={20} title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
+    </div>
+
     <div id='slider-item-container flex items-center justify-center'  >
     <DiscountCard  discount={20} title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
     </div>
@@ -27,20 +45,7 @@ const SliderComponent = () => (
 
     </div>
     
-    <div id="slider-container"  className=' flex items-center justify-center'  >
-    <div id='slider-item-container  flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
-    <div id='slider-item-container flex items-center justify-center'  >
-    <Image src={bannerImg} width={400} height={400} objectFit='cover' alt='img'/>
-    </div>
 
-
-
-    </div>
 
     
   </Carousel>
