@@ -6,18 +6,14 @@ import '@/scss/footer.scss';// assuming this file exists and styles the componen
 import blog from '../../public/images/blog.jpg';
 import RecentCard from './RecentCard';
 import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedinIn} from 'react-icons/fa';
+import { formatArray} from '../utils/FormatArray';
 
 import blogimage from '../../public/images/blog1.jpg'
-import Micheal from './Micheal'; // Assuming Micheal is in the same directory
+import Micheal from './Micheal'; 
 
 
 function BlogBreadSection( {params, currentBlog} ) {
-    const [blog, setBlog] = useState({});
     const {blogData, threeBlogs} = useContext(BlogContext);
-
-    useEffect(()=>{
-        setBlog(blogData[params.productId])
-    },[])
 
   return (
     <div className="blog-details spad">
@@ -74,16 +70,13 @@ function BlogBreadSection( {params, currentBlog} ) {
     <Image className='pic' src={blogimage} alt='blogimage' />
             <p> {currentBlog ? currentBlog.paragraph : " "} </p>
             <h3> {currentBlog ? currentBlog.title2 : " "} </h3>
-            <p>The study area is located at the back with a view of the vast nature. Together with the other
-            buildings, a congruent story has been managed in which the whole has a reinforcing effect on
-            the components. The use of materials seeks connection to the main house, the adjacent
-            stables</p>
+            <p> {currentBlog ? currentBlog.paragraph2 : ''} </p>
         </div>
      <div className="blog__details__content">
      <div className="row">
      <div className="col-lg-6">
      <div className="blog__details__author">
-     <Micheal author={ currentBlog ? currentBlog.profile : "Admin"} title={blog ? blog.author : " "} imageUrl='/images/blog1.jpg'  />
+     <Micheal author={ currentBlog ? currentBlog.profile : "Admin"} title={currentBlog ? currentBlog.author : " "} imageUrl='/images/blog1.jpg'  />
     </div>
 
 
@@ -92,7 +85,7 @@ function BlogBreadSection( {params, currentBlog} ) {
   <div className="blog__details__widget">
     <ul>
     <li><span>Categories:</span> Food</li>
-    <li><span>Tags:</span> All, Trending, Cooking, Healthy Food, Life Style</li>
+    <li><span>Tags:</span> <div style={{textTransform :"capitalize"}} > All, { currentBlog ? formatArray(currentBlog.tags) : '' } </div>  </li>
     </ul>
     <div className="footer__widget__social">
                     <div className='icon-container' ><FaFacebook className='iconn'/></div>
