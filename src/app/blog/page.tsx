@@ -12,7 +12,7 @@ export default function Page({params } :any) {
  <Header/>
 
         {/* <BreadCrumb pageFull='Blog' page='Blog' imageUrl='/images/blog.jpg' /> */}
-        <BlogBreadSection params={params}  />
+        {/* <BlogBreadSection params={params}  /> */}
     </div>
   )
 }

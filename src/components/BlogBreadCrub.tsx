@@ -7,7 +7,6 @@ import { BlogContext } from '@/app/context/BlogContext';
 
 
 function BlogBreadCrub({params, currentBlog } : any ) {
-  console.log(currentBlog);
 
   return (
 

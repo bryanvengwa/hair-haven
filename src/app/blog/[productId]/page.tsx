@@ -15,9 +15,7 @@ function Page({params}: any) {
 
 
   useEffect(()=>{
-    console.log(params)
     const data = findById(params.productId);
-    console.log(data)
     if (data) {
       setCurrentBlog(data)
     }
@@ -29,7 +27,7 @@ function Page({params}: any) {
       <Header />
       {/* <BlogBreadCrub pageFull='blogdetails' page='pagedetails' imageUrl='/images/blog.jpg' /> */}
       <BlogBreadCrub params={params} currentBlog ={currentBlog}  />
-      <BlogBreadSection params={params} />
+      <BlogBreadSection params={params} currentBlog ={currentBlog} />
       <Footer />
       
     </div>

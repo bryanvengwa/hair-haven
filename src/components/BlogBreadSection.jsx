@@ -11,7 +11,7 @@ import blogimage from '../../public/images/blog1.jpg'
 import Micheal from './Micheal'; // Assuming Micheal is in the same directory
 
 
-function BlogBreadSection( {params} ) {
+function BlogBreadSection( {params, currentBlog} ) {
     const [blog, setBlog] = useState({});
     const {blogData, threeBlogs} = useContext(BlogContext);
 
@@ -72,8 +72,8 @@ function BlogBreadSection( {params} ) {
     <div className="col-lg-8 col-md-7 order-md-1 order-1">
     <div className="blog__details__text">
     <Image className='pic' src={blogimage} alt='blogimage' />
-            <p> {blog ? blog.paragraph : " "} </p>
-            <h3> {blog ? blog.title2 : " "} </h3>
+            <p> {currentBlog ? currentBlog.paragraph : " "} </p>
+            <h3> {currentBlog ? currentBlog.title2 : " "} </h3>
             <p>The study area is located at the back with a view of the vast nature. Together with the other
             buildings, a congruent story has been managed in which the whole has a reinforcing effect on
             the components. The use of materials seeks connection to the main house, the adjacent
@@ -83,7 +83,7 @@ function BlogBreadSection( {params} ) {
      <div className="row">
      <div className="col-lg-6">
      <div className="blog__details__author">
-     <Micheal author={ blog ? blog.profile : "Admin"} title={blog ? blog.author : " "} imageUrl='/images/blog1.jpg'  />
+     <Micheal author={ currentBlog ? currentBlog.profile : "Admin"} title={blog ? blog.author : " "} imageUrl='/images/blog1.jpg'  />
     </div>
 
 

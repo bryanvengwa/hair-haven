@@ -35,7 +35,6 @@ useEffect(() => {
 
   const findById = (id) => {
     id = parseInt(id, 10);
-    console.log(typeof(id))
     const blog = blogData.find((n)=>{ return n.id === id});
     return blog;
   }
