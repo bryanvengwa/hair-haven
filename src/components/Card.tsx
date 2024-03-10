@@ -53,8 +53,7 @@ export default function Card({image, title, price , product_id , isActive=1, pro
 
 
     const handleAddToCart = (event: React.FormEvent<HTMLFormElement>) => {
-        alert('clicked')
-        console.log('code ran')
+     
         event.preventDefault(); // Prevent the default form submission
         // Assuming addCartItem takes product_id and quantity as arguments
         addCartItem(product_id, 1); // Adjust the quantity as needed
