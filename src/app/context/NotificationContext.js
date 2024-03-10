@@ -14,21 +14,20 @@ export const NotificationContextProvider = ({children})=>{
   
 
 
-    const message = (infoType='info')=>{
+    const message = ( text, infoType='info')=>{
         return(
             <Notification type={infoType ? infoType : 'info'} header={`${infoType}!`} closable>
-            <p>You have a {infoType} message, please check it.</p>
+            <p> {text} </p>
+            <br/>
+            <br/>
             <hr />
-            {/* <ButtonToolbar>
-              <Button appearance="primary">Ok</Button>
-              <Button appearance="default">Cancel</Button>
-            </ButtonToolbar> */}
+     
           </Notification>
         )
     }
 
       
-const notify = () => toaster.push(message(), { placement })
+const notify = (text, infoType) => toaster.push(message(text, infoType), { placement })
 
 const contextData={
     // message,

@@ -28,7 +28,6 @@ export const CartContextProvider = ({ children }) => {
 
 
     const updateCartData = async () => {
-        notify()
         if (!cart) return;
 
         try {
@@ -47,10 +46,12 @@ export const CartContextProvider = ({ children }) => {
             const data = await response.json();
             setCart(data);
             localStorage.setItem('cart', JSON.stringify(data));
-     
+            notify("Cart has been successfully Updated !!", 'success')
+            
         } catch (error) {
             console.error('Error fetching cart:', error);
-            alert('failed to update cart   ')
+            notify("Check your internet connection", 'error')
+
 
         }
     };
