@@ -19,7 +19,7 @@ import { Carousel } from 'rsuite';
 import useFetch from '../reducers/productsFetch';
 import bannerImg from '../../public/images/banner.png';
 import Image from 'next/image';
-
+import Notification from '../components/Notification';
 
 
 
@@ -71,6 +71,7 @@ function toggler (number){
   </div>
   <br /><br />
   <Slider/>
+  <Notification/>
   <br/>
 
   <br/>
