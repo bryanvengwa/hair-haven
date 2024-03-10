@@ -46,11 +46,11 @@ export const CartContextProvider = ({ children }) => {
             const data = await response.json();
             setCart(data);
             localStorage.setItem('cart', JSON.stringify(data));
-            notify("Cart has been successfully Updated !!", 'success')
+            notify("Cart has been successfully Updated !!", 'success');
             
         } catch (error) {
             console.error('Error fetching cart:', error);
-            notify("Check your internet connection", 'error')
+            notify("Check your internet connection", 'error');
 
 
         }
@@ -77,7 +77,8 @@ export const CartContextProvider = ({ children }) => {
                 setCart(data);
                 localStorage.setItem('cart', JSON.stringify(data));
             } catch (error) {
-                console.error('Error fetching cart:', error);
+                notify("Check your internet connection", 'error');
+
             }
         }
     };
@@ -98,7 +99,8 @@ export const CartContextProvider = ({ children }) => {
             }
 
         }catch(error){
-                console.log('failed to delete')
+            notify("Check your internet connection", 'error');
+
         }
     }
 
@@ -127,6 +129,8 @@ export const CartContextProvider = ({ children }) => {
                 return true;
             }
         }catch(error){
+            notify("Check your internet connection", 'error');
+
             return false
 
         }
@@ -166,7 +170,8 @@ export const CartContextProvider = ({ children }) => {
 
           updateCartData()
         } catch (error) {
-            console.log(error);
+            notify("Check your internet connection", 'error');
+
         }
     };
 
