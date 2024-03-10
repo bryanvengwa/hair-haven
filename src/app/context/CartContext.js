@@ -1,11 +1,12 @@
 'use client'
-import { createContext , useEffect, useState } from "react";
-
+import { createContext , useEffect, useState, useContext } from "react";
+import { NotificationContext } from "./NotificationContext";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
     const url = 'http://127.0.0.1:8000/store/carts/';
+    const {notify} = useContext(NotificationContext)
 
     const [CartContextData, setContextData] = useState({
         cartId: null,
@@ -27,7 +28,7 @@ export const CartContextProvider = ({ children }) => {
 
 
     const updateCartData = async () => {
-        alert('Cart data updated')
+        notify()
         if (!cart) return;
 
         try {

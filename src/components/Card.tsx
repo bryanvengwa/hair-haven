@@ -11,6 +11,7 @@ import { CartContext } from '@/app/context/CartContext';
 
 
 
+
 interface CardProps {
     image: string;
     title : string;

@@ -4,6 +4,7 @@ import{ ProductContextProvider }from './context/ProductContext'
 import {CartContextProvider }from './context/CartContext'
 import {CartPageContextProvider} from './context/CartPageContext'
 import {BlogContextProvider} from './context/BlogContext';
+import {NotificationContextProvider} from './context/NotificationContext';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
 
@@ -27,6 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <NotificationContextProvider>
     <CartContextProvider>
       <BlogContextProvider>
 
@@ -48,5 +50,6 @@ export default function RootLayout({
     </GlobalContextProvider>
     </BlogContextProvider>
     </CartContextProvider>
+    </NotificationContextProvider>
   );
 }
