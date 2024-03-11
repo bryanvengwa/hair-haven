@@ -19,7 +19,7 @@ import { Carousel } from 'rsuite';
 import useFetch from '../reducers/productsFetch';
 import bannerImg from '../../public/images/banner.png';
 import Image from 'next/image';
-import Notify from '../components/Notify'
+
 
 
 
@@ -54,7 +54,6 @@ function toggler (number){
     <SearchBar placeholder='What do you need ?' text='Search' />
   
   <Support/>
-  <Notify/>
 
     </div>
 </div>
