@@ -72,7 +72,7 @@ function Footer() {
                 <div className="col-lg-12">
                 <div className="footer__copyright">
                 <div className="footer__copyright__text"><p>
-                    Copyright © All rights reserved | Designed and Developed  <i className="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"><span className='colo'>Bryan Vengwa</span></a>
+                    Copyright © All rights reserved | Designed and Developed  <i className="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/bryanvengwa" target="_blank"><span className='colo'>Bryan Vengwa</span></a>
                 </p></div>
                 <div className="footer__copyright__payment"><Image className='logo' src={Logo} alt='Logo' /></div>
             </div>
