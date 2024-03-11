@@ -37,7 +37,7 @@ export default function CartItem(  {price , title , productId, quantity , remove
         updateFormData(productId, value);
    
 
-    },[value])
+    },[value, productId])
 
 
   return (

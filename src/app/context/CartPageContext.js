@@ -15,18 +15,22 @@ export const CartPageContextProvider = function({children}){
                 let updatedFormData;
                 if (form.length > 0) {
                     // Check if the productId already exists in the form data
-                    const existingProduct = form.find(data => data.product_id === productId);
+                    const existingProduct = form.find(data => data?.product_id === productId);
                     if (existingProduct) {
                         // If the productId exists, update its quantity
                         updatedFormData = form.map((data) => {
-                            if (data.product_id === productId) {
+                            if (data?.product_id === productId) {
                                 return { ...data, quantity: quantity };
                             }
-                            return data;
-                        });
+                            return data; 
+                            // commented out here experimental
+                        })
+                     return   updatedFormData = form.filter((data)=>data.quantity > 0)
                     } else {
                         // If the productId does not exist, add it as a new entry
                         updatedFormData = [...form, { product_id: productId, quantity: quantity }];
+                        updatedFormData = form.filter((data)=>data.quantity < 0)
+
                     }
                 } else {
                     // If there's no existing data, we add a new entry

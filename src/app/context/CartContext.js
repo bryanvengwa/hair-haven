@@ -27,6 +27,22 @@ export const CartContextProvider = ({ children }) => {
 
 
 
+    const getCartItemId =function findItemIdByProductId( productId) {
+        // Iterate over each item in the array
+        if(cart){
+            for (let item of cart.items) {
+                // Check if the product ID of the current item matches the provided product ID
+                if (item.product.id === productId) {
+                    // If a match is found, return the item ID
+                    return item.id;
+                }
+            }
+        }
+        // If no match is found after iterating through all items, return null or a suitable message
+        return null;
+    }
+    
+
     const updateCartData = async () => {
         if (!cart) return;
 
@@ -108,15 +124,18 @@ export const CartContextProvider = ({ children }) => {
         if(cart == null ){
             getCart();
         }
+        // before doing anything i want to clear data from the cart
+        const cartItemId = getCartItemId(key);
+        // removeCartItem(CartItemId);
         try{
-            response = await fetch(url + cart.id + '/items/', {
-                method: 'POST',
+            alert('running posting code logic with quantity ' + value)
+            response = await fetch(url + cart.id + '/items/' + cartItemId +'/', {
+                method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    "product_id": key,
-                    "quantity": value,
+                    "quantity": value
                 }),
                 
     

@@ -15,18 +15,19 @@ export default function Page() {
     const {formData, updateFormData } = useContext(CartPageContext);
     const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
-        alert(formData.length)
+        alert(formData?.length)
 
         
         if(formData.length > 0 ){
             formData.forEach((data : any)=> {
                 const currentData = data
-                alert('updating  cart with ' + data.quantity )
-                postCartData(data.product_id, data.quantity)
+                alert('updating  cart with ' + data?.quantity )
+
+                postCartData(data?.product_id, data?.quantity)
                 
             });
             updateCartData();
-            updateFormData(null, null , true )
+            // updateFormData(null, null , true )
         }else{
             console.log('nothing to update')
             alert('clicked but nothing to update')
