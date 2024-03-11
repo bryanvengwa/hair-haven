@@ -4,8 +4,9 @@ import Header from "@/components/Header"
 import '@/scss/checkout.scss'
 import BlogBreadCrub from '@/components/BlogBreadCrub'
 import BlogBreadSection from '@/components/BlogBreadSection'
-import Footer from '@/components/Footer'
 import { BlogContext } from '@/app/context/BlogContext'
+import Footer from '@/components/Footer';
+
 
 
 function Page({params}: any) {

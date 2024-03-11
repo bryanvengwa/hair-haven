@@ -7,7 +7,6 @@ import {BlogContextProvider} from './context/BlogContext';
 import {NotificationContextProvider} from './context/NotificationContext';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // Import core styles
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
