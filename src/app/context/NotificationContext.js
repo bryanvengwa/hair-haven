@@ -18,9 +18,9 @@ export const NotificationContextProvider = ({children})=>{
         return(
             <Notification type={infoType ? infoType : 'info'} header={`${infoType}!`} closable>
             <p> {text} </p>
+            {/* <br/>
             <br/>
-            <br/>
-            <hr />
+            <hr /> */}
      
           </Notification>
         )

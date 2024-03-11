@@ -1,38 +1,33 @@
 'use client'
-import React, {useContext, useState} from 'react'
-import {BlogContext} from './context/BlogContext'
-import Header from "../components/Header"
-import Departments from '../components/Departments'
-import SearchBar from '../components/SearchBar'
-import Support from '../components/Support'
-import Banner from '../components/Banner'
-import Heading from '../components/Heading'
-import Tabbed from '../components/Tabbed'
-import Card from '../components/Card'
-import BlogCard from '../components/BlogCard'
-import Slider from '../components/Slider'
-import Footer from '../components/Footer'
-import Top from '../components/Top'
+import React, {useContext, useState} from 'react';
+import {BlogContext} from './context/BlogContext';
+import Header from "../components/Header";
+import Departments from '../components/Departments';
+import SearchBar from '../components/SearchBar';
+import Support from '../components/Support';
+import Banner from '../components/Banner';
+import Heading from '../components/Heading';
+import Tabbed from '../components/Tabbed';
+import Card from '../components/Card';
+import BlogCard from '../components/BlogCard';
+import Slider from '../components/Slider';
+import Footer from '../components/Footer';
+import Top from '../components/Top';
 import Skeleton from '@mui/material/Skeleton';
 import 'rsuite/dist/rsuite-no-reset.min.css';
-import { Carousel } from 'rsuite';
 import useFetch from '../reducers/productsFetch';
-import bannerImg from '../../public/images/banner.png';
-import Image from 'next/image';
-
-
 
 
 
 
 
 export default function Home() {
-  const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/")
+  const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/");
   const {randomIntArray , blogData } = useContext(BlogContext);
   const [isActive , setIsActive ] = useState(1);
 function toggler (number){
-    setIsActive(number)
-}
+    setIsActive(number);
+};
 
 
 
