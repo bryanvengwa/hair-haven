@@ -56,8 +56,18 @@ $light-green: #7fad39;
 $cairo: "Cairo", sans-serif;
 
 .cart-page{ font-family: $cairo;
- .shoping__cart__item ,   .cart-image{background: $grey;
-    img{display: inline-block;}
+ .shoping__cart__item ,   .cart-image{background: $grey; 
+    height: 99px !important;
+    width: 99px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    img{display: inline-block; object-fit:contain;
+        width: 90%;
+    height: 90%;
+    }
     }
 
     .headings-container{display: flex; margin-top: 1em;    border-bottom: 2px solid #ebebeb; background: unset !important;
