@@ -13,15 +13,16 @@ interface CartItemProps {
     quantity :number;
     removeCartItem: any;
     instanceId : any;
+    image: string;
 }
 // interface FormDataItem {
 //     product_id: string;
 //     quantity: string;
 // }
-export default function CartItem(  {price , title , productId, quantity , removeCartItem , instanceId} : CartItemProps) {
+export default function CartItem(  {price , title , productId, quantity , removeCartItem , instanceId, image} : CartItemProps) {
     const [value, setValue] = useState(quantity ? quantity : 0)
     const {formData, updateFormData} = useContext(CartPageContext)
-
+    const url = 'http://127.0.0.1:8000/'
     useEffect(() => {
         setValue(quantity);
     }, [quantity]); 
@@ -49,7 +50,7 @@ export default function CartItem(  {price , title , productId, quantity , remove
   return (
     <div className='headings-container pb-3' >
     <div className='products  image-container' >
-        <CartImage imageUrl='/images/banner.png' />
+        <CartImage imageUrl={url + image?.substring(1)} />
         <h5> {title} </h5>
         <input type="hidden" name="product_id" value={productId} />
     </div>

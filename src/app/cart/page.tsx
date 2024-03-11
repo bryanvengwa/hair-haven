@@ -72,9 +72,9 @@ export default function Page() {
     </div>
    
     {items && items.map((item : any) =>{
-
+console.log(item.product)
         return (
-            <CartItem key={item.id} productId={item.product.id} price={item.product.unit_price} instanceId={item.id} title={item.product.title} quantity={item.quantity}  removeCartItem={removeCartItem}/>
+            <CartItem key={item.id} image={item.product.image} productId={item.product.id} price={item.product.unit_price} instanceId={item.id} title={item.product.title} quantity={item.quantity}  removeCartItem={removeCartItem}/>
         )
     } )}
 
@@ -83,7 +83,7 @@ export default function Page() {
       
       <div className="container">
         <div className="button-container">
-            <Link href={'/checkout'} ><button>CONTINUE SHOPPING</button></Link>
+            <Link href={'/shop'} ><button>CONTINUE SHOPPING</button></Link>
             <button onClick={handleCartUpdate}  >UPDATE CART</button>
         </div>
         <div className="bottom-container">
