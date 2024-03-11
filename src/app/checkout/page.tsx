@@ -1,10 +1,14 @@
 'use client'
+import React,{useContext} from 'react'
 import BreadCrumb from "@/components/BreadCrumb"
 import Header from "@/components/Header"
-import '@/scss/checkout.scss'
+import '@/scss/checkout.scss';
+import { CartContext } from '../context/CartContext';
+
 
 
 export default function page() {
+   const {items, totalPrice} = useContext(CartContext)
   return (
     <div className="checkout" >
            <Header />
@@ -85,27 +89,28 @@ export default function page() {
                     <h4>Total</h4>
                 </div>
                 <ul>
-                    <li className="flex justify-between" >
-                        <span>     Vaida Dye</span>
-                        <span>$75.00</span>
+
+                    {items && items.map((item : any)=>{
+                        return(
+                            <>
+                                 <li className="flex justify-between" >
+                        <span> ${item.product.title} </span>
+                        <span> ${item.product.unit_price}</span>
                     </li>
-                    <li className="flex justify-between" >
-                        <span>     Vaida Dye</span>
-                        <span>$75.00</span>
-                    </li>
-                    <li className="flex justify-between" >
-                        <span>     Vaida Dye</span>
-                        <span>$75.00</span>
-                    </li>
+                            </>
+                        )
+                    })}
+               
+               
                 </ul>
                 <hr className="pt-3 pb-3" />
                 <div className="heading-container flex justify-between">
                     <h4>Subtotal</h4>
-                    <h4>$450</h4>
+                    <h4>${totalPrice ? totalPrice : 0 } </h4>
                 </div>
                 <div className="heading-container pt-3 flex justify-between">
                     <h4>Total</h4>
-                    <h4 style={{color:'red'}} >$450</h4>
+                    <h4 style={{color:'red'}} >${totalPrice ? totalPrice : 0}</h4>
                 </div>
                 <hr className="pt-3 pb-3" />
 
