@@ -16,17 +16,19 @@ interface blogProps {
   comments : number;
   description : string;
   id: number;
+  image: string;
   
 }
 
 
-export default function BlogCard({title, date, comments, description, id}:blogProps) {
+export default function BlogCard({title, date, comments, description, id, image}:blogProps) {
+  console.log(image)
   return (
     <div>
               <div className='card product-card blog-card ' >
            <Link href={`/blog/${id}`} className='img-container' >
            
-            <Image src={bannerImg} alt=''/>
+            <Image src={image} width={500} height={500} alt='blog image'/>
             
            </Link>
            <div className="body flex flex-col gap-3  pt-3 ">

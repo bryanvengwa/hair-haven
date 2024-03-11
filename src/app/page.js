@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, {useContext, useState} from 'react';
 import {BlogContext} from './context/BlogContext';
 import Header from "../components/Header";
@@ -127,7 +127,7 @@ function toggler (number){
     {randomIntArray && randomIntArray.map(int=>{
           let blog = blogData[int]
     
-      return   <BlogCard key={blog.id} id={blog.id} title={blog.title1} description={blog.exercept} date={blog.date} comments={blog.comment} />
+      return   <BlogCard key={blog.id} id={blog.id} title={blog.title1} description={blog.exercept} date={blog.date} comments={blog.comment} image={blog.Image} />
 
 
     })}
