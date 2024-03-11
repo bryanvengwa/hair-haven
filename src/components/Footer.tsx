@@ -24,9 +24,9 @@ function Footer() {
                         <Image className='logo' src={Logo} alt='Logo' />
                         </div>
                         <ul>
-                        <li>Address: 60-49 Road 11378 New York</li>
+                        <li>Address: 60-49 Road 11378 Ireland</li>
                         <li>Phone: +65 11.188.888</li>
-                        <li>Email: hello@colorlib.com</li>
+                        <li>Email: hello@hairhaven.com</li>
                         </ul>
                     </div>
                 </div>
@@ -43,11 +43,11 @@ function Footer() {
                         </ul>
                         <ul>
                         {/* <li><Link href="#">Who We Are</Link></li> */}
-                        <li><Link href="#">Site Map</Link></li>
-                        <li><Link href="#">Cart</Link></li>
-                        <li><Link href="#">Shop</Link></li>
-                        <li><Link href="#">Checkout</Link></li>
-                        <li><Link href="#">Contact</Link></li>
+                        <li><a href="#">Site Map</a></li>
+                        <li><Link href="/cart">Cart</Link></li>
+                        <li><Link href="/shop">Shop</Link></li>
+                        <li><Link href="/contact">Contact</Link></li>
+                        <li><Link href="/checkout">Checkout</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ function Footer() {
                 <div className="col-lg-12">
                 <div className="footer__copyright">
                 <div className="footer__copyright__text"><p>
-                    Copyright © All rights reserved | This template is made with <i className="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"><span className='colo'>Colorlib</span></a>
+                    Copyright © All rights reserved | Designed and Developed  <i className="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"><span className='colo'>Bryan Vengwa</span></a>
                 </p></div>
                 <div className="footer__copyright__payment"><Image className='logo' src={Logo} alt='Logo' /></div>
             </div>
