@@ -28,7 +28,7 @@ export default function BlogCard({title, date, comments, description, id, image}
               <div className='card product-card blog-card ' >
            <Link href={`/blog/${id}`} className='img-container' >
            
-            <Image src={image} width={500} height={500} alt='blog image'/>
+            <Image src={image} className='img-fluid' width={500} height={500} alt='blog image'/>
             
            </Link>
            <div className="body flex flex-col gap-3  pt-3 ">

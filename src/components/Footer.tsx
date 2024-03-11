@@ -2,7 +2,8 @@ import React, { useEffect, useState }  from 'react'
 import Image from 'next/image'
 import Logo from '../../public/images/logo.png'
 import '@/scss/footer.scss';
-import { FaInstagram , FaFacebook, FaPinterest, FaEnvelope , FaUser , FaLinkedinIn} from 'react-icons/fa';
+import Link from 'next/link';
+import { FaInstagram , FaFacebook, FaPinterest, FaLinkedinIn} from 'react-icons/fa';
 
 
 
@@ -31,22 +32,22 @@ function Footer() {
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                     <div className="footer__widget">
-                        <h6>Useful Links</h6>
+                        <h6>Our Services</h6>
                         <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">About Our Shop</a></li>
-                        <li><a href="#">Secure Shopping</a></li>
-                        <li><a href="#">Delivery infomation</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Our Sitemap</a></li>
+                        {/* <li><Link href="#">About Us</Link></li> */}
+                        <li><Link href="#">Top notch products</Link></li>
+                        <li><Link href="#">Secure Shopping</Link></li>
+                        <li><Link href="#">Swift Deliveries</Link></li>
+                        <li><Link href="#">Promotions</Link></li>
+                        <li><Link href="#">24/7 customer support</Link></li>
                         </ul>
                         <ul>
-                        <li><a href="#">Who We Are</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Innovation</a></li>
-                        <li><a href="#">Testimonials</a></li>
+                        {/* <li><Link href="#">Who We Are</Link></li> */}
+                        <li><Link href="#">##    ##</Link></li>
+                        <li><Link href="#">##    ##</Link></li>
+                        <li><Link href="#">######</Link></li>
+                        <li><Link href="#">##               ##</Link></li>
+                        <li><Link href="#">##               ###</Link></li>
                         </ul>
                     </div>
                 </div>

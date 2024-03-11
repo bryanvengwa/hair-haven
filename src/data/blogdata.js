@@ -37,7 +37,7 @@ export const blogData = [
   {
     id: 1,
     category: "Lifestyle",
-    Image: "/images/blog1.webp",
+    Image: "/images/blog1.jpg",
     exercept: "I share valuable insights on hair care, styling, and achieving healthy, shiny hair based on extensive experience.",
     date: "May 4, 2023",
     comment: "13",
