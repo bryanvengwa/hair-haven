@@ -14,32 +14,38 @@ export default function Page() {
     const { totalPrice , items , removeCartItem, postCartData , updateCartData} = useContext(CartContext);
     const {formData, updateFormData } = useContext(CartPageContext);
 
-    
-
-
-    const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
-        event.preventDefault();
-        alert(formData?.length)
-
-        
-        if(formData.length > 0 ){
-            formData.forEach((data : any)=> {
-                const currentData = data
-                alert('updating  cart with ' + data?.quantity )
-
-                postCartData(data?.product_id, data?.quantity)
-                
-            });
-            // updateFormData(null, null , true )
-        }else{
-            console.log('nothing to update')
-            updateCartData()
-            alert('clicked but nothing to update')
+    useEffect(()=>{
+        if(updateCartData){
+            updateCartData();
         }
-       
+    },[])
+
+
+    const handleCartUpdate = async (event: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
+        event.preventDefault();
+        alert(formData?.length);
     
-      
+        if (formData.length > 0) {
+            // Use Promise.all to wait for all postCartData calls to complete
+            await Promise.all(formData.map((data: any) => {
+                const currentData = data;
+                alert('updating cart with ' + data?.quantity);
+                alert('updating cart for product' + data?.product_id);
+    
+                // Assuming postCartData returns a promise
+                return postCartData(data?.product_id, data?.quantity);
+            }));
+    
+            // After all updates are processed, you might want to update the form data or perform other actions
+            updateFormData(null, null, true);
+            updateCartData();
+        } else {
+            console.log('nothing to update');
+            updateCartData();
+            alert('clicked but nothing to update');
+        }
     };
+    
   return (
     <div className='cart-page' >
                    <Header />
