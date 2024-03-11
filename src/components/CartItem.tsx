@@ -39,7 +39,7 @@ export default function CartItem(  {price , title , productId, quantity , remove
     }
     useEffect(()=>{
 
-        updateFormData(productId, value);
+        updateFormData(productId, value , false) ;
         
    
 

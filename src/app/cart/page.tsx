@@ -23,9 +23,10 @@ export default function Page() {
 
     const handleCartUpdate = async (event: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
         event.preventDefault();
-        alert(formData?.length);
+        alert('form data .length' + formData?.length);
     
         if (formData.length > 0) {
+           
             // Use Promise.all to wait for all postCartData calls to complete
             await Promise.all(formData.map((data: any) => {
                 const currentData = data;
@@ -33,7 +34,7 @@ export default function Page() {
                 alert('updating cart for product' + data?.product_id);
     
                 // Assuming postCartData returns a promise
-                return postCartData(data?.product_id, data?.quantity);
+            postCartData(data?.product_id, data?.quantity);
             }));
     
             // After all updates are processed, you might want to update the form data or perform other actions
