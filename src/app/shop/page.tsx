@@ -11,6 +11,8 @@ import DiscountCard from '@/components/DiscountCard';
 import bannerImg from '../../../public/images/banner.png';
 import useFetch from '../../reducers/productsFetch';
 import Skeleton from '@mui/material/Skeleton';
+import Footer from '@/components/Footer';
+
 
 
 
@@ -181,7 +183,7 @@ export default function Page() {
 
 </div>
     
-      
+      <Footer/>
     </div>
   )
 }

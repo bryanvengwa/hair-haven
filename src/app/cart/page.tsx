@@ -7,6 +7,7 @@ import BreadCrumb from "../../components/BreadCrumb";
 import CartItem from '../../components/CartItem';
 import { CartContext } from '../context/CartContext';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 
 
@@ -125,6 +126,7 @@ console.log(item.product)
         </div>
       
       </div>
+      <Footer/>
     </div>
   )
 }

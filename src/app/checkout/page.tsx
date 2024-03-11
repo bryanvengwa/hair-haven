@@ -4,6 +4,7 @@ import BreadCrumb from "@/components/BreadCrumb"
 import Header from "@/components/Header"
 import '@/scss/checkout.scss';
 import { CartContext } from '../context/CartContext';
+import Footer from '@/components/Footer';
 
 
 
@@ -128,7 +129,7 @@ please login at the top of the page</p>
 
            </div>
          </div>
-      
+      <Footer/>
     </div>
   )
 }
