@@ -16,6 +16,7 @@ export default function Page() {
 
     useEffect(()=>{
         if(updateCartData){
+            alert('random cart update')
             updateCartData();
         }
     },[])
