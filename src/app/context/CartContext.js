@@ -7,7 +7,7 @@ export const CartContext = createContext();
 export const CartContextProvider = ({ children }) => {
     const url = 'http://127.0.0.1:8000/store/carts/';
     const {notify} = useContext(NotificationContext)
-
+    const [updateTrigger, setUpdateTrigger] = useState(0);
     const [CartContextData, setContextData] = useState({
         cartId: null,
         createdAt: 0,
@@ -63,6 +63,7 @@ export const CartContextProvider = ({ children }) => {
             setCart(data);
             localStorage.setItem('cart', JSON.stringify(data));
             notify("Cart has been successfully Updated !!", 'success');
+            setUpdateTrigger(prev => prev + 1);
             
         } catch (error) {
             console.error('Error fetching cart:', error);
@@ -145,6 +146,8 @@ export const CartContextProvider = ({ children }) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }else{
+            updateCartData();
+
                 return true;
             }
         }catch(error){
@@ -207,7 +210,7 @@ export const CartContextProvider = ({ children }) => {
                 removeCartItem,
             });
         }
-    }, [cart]);
+    }, [cart, updateTrigger]);
 
     return (
         <CartContext.Provider value={CartContextData}>

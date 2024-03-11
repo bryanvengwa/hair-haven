@@ -22,6 +22,11 @@ export default function CartItem(  {price , title , productId, quantity , remove
     const [value, setValue] = useState(quantity ? quantity : 0)
     const {formData, updateFormData} = useContext(CartPageContext)
 
+    useEffect(() => {
+        setValue(quantity);
+    }, [quantity]); 
+
+
     function decrease(){
         setValue((value)=> {
             if(value == 0) return value;
@@ -35,6 +40,7 @@ export default function CartItem(  {price , title , productId, quantity , remove
     useEffect(()=>{
 
         updateFormData(productId, value);
+        
    
 
     },[value, productId])

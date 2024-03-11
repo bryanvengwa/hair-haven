@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext  } from 'react';
+import React, { useContext, useEffect  } from 'react';
 import { CartPageContext } from '../context/CartPageContext';
 import Header from "../../components/Header";
 import '@/scss/cart.scss';
@@ -13,6 +13,10 @@ import Link from 'next/link';
 export default function Page() {
     const { totalPrice , items , removeCartItem, postCartData , updateCartData} = useContext(CartContext);
     const {formData, updateFormData } = useContext(CartPageContext);
+
+    
+
+
     const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
         alert(formData?.length)
@@ -26,10 +30,10 @@ export default function Page() {
                 postCartData(data?.product_id, data?.quantity)
                 
             });
-            updateCartData();
             // updateFormData(null, null , true )
         }else{
             console.log('nothing to update')
+            updateCartData()
             alert('clicked but nothing to update')
         }
        
