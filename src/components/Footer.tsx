@@ -43,11 +43,11 @@ function Footer() {
                         </ul>
                         <ul>
                         {/* <li><Link href="#">Who We Are</Link></li> */}
-                        <li><Link href="#">##    ##</Link></li>
-                        <li><Link href="#">##    ##</Link></li>
-                        <li><Link href="#">######</Link></li>
-                        <li><Link href="#">##               ##</Link></li>
-                        <li><Link href="#">##               ###</Link></li>
+                        <li><Link href="#">Site Map</Link></li>
+                        <li><Link href="#">Cart</Link></li>
+                        <li><Link href="#">Shop</Link></li>
+                        <li><Link href="#">Checkout</Link></li>
+                        <li><Link href="#">Contact</Link></li>
                         </ul>
                     </div>
                 </div>
