@@ -125,8 +125,15 @@ export const CartContextProvider = ({ children }) => {
         if(cart == null ){
             getCart();
         }
+        if(value < 1){
+
+            const cartItemId = getCartItemId(key);
+            alert('we are going tp delete the function from cart ' + cartItemId)
+           await removeCartItem(cartItemId);
+           return true;
+
+        }
         // before doing anything i want to clear data from the cart
-        const cartItemId = getCartItemId(key);
         // removeCartItem(CartItemId);
         try{
             alert('running posting code logic with quantity ' + value)
