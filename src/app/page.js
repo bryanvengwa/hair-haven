@@ -110,7 +110,8 @@ function toggler (number){
         </>)
       }
   {error &&     <div>
-        error
+   {     error}
+   {error}
         </div>}
 
       </div>

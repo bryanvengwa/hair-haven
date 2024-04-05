@@ -5,7 +5,7 @@ import { NotificationContext } from "./NotificationContext";
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-    const url = 'http://127.0.0.1:8000/store/carts/';
+    const url = 'http://localhost:8080/store/carts';
     const {notify} = useContext(NotificationContext)
     const [updateTrigger, setUpdateTrigger] = useState(0);
     const [CartContextData, setContextData] = useState({

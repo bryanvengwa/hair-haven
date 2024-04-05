@@ -6,10 +6,11 @@ import {AppUrl}from '@/utils/AppData'
 export const ProductContext = createContext()
 
 export const ProductContextProvider = function({children}){
-    const url = AppUrl + 'store/products/'
+    const url = 'http://localhost:8080/store/products'
 
 const {data , error , isLoading} =  useFetch(url)
 
+console.log(data)
 
 const productsData ={
     products : data,
