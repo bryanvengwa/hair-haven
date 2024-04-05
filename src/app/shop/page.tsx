@@ -22,7 +22,7 @@ const SliderComponent = () => (
   <Carousel autoplay  className="custom-slider ">
 
     <div id="slider-container"  className=' flex items-center justify-center gap-4'   >
-    <div id='slider-item-container flex items-center justify-center'  >
+    <div id='slider-item-container flex items-center justify-center' >
     <DiscountCard  discount={20} title={"Vaida Dye"} image={bannerImg} price={45} product_id={44} />
     </div>
 

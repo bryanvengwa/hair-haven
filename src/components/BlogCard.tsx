@@ -22,7 +22,7 @@ interface blogProps {
 
 
 export default function BlogCard({title, date, comments, description, id, image}:blogProps) {
-  console.log(image)
+
   return (
     <div>
               <div className='card product-card blog-card ' >
