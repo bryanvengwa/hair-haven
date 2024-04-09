@@ -1,8 +1,8 @@
-'use client'
+'use client';
 import { useReducer, useEffect } from 'react';
 
 const fetchReducer = (state, action) => {
- switch (action.type) {
+  switch (action.type) {
     case 'FETCH START':
       return {
         ...state,
@@ -23,39 +23,39 @@ const fetchReducer = (state, action) => {
       };
     default:
       return state;
- }
+  }
 };
 
 const useFetch = (url) => {
- const initialState = {
+  const initialState = {
     data: null,
     isLoading: true,
     error: null,
- };
- const [state, dispatch] = useReducer(fetchReducer, initialState);
+  };
+  const [state, dispatch] = useReducer(fetchReducer, initialState);
 
- useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         dispatch({ type: 'FETCH START' });
 
-	 const response = await fetch('http://localhost:8080/store/products');
+        const response = await fetch('http://localhost:8080/store/products');
         const data = await response.json();
-    
-          dispatch({
-            type: 'FETCH SUCCESS',
-            payload: data,
-          });
-        
+        console.log(data);
+
+        dispatch({
+          type: 'FETCH SUCCESS',
+          payload: data,
+        });
       } catch (e) {
         dispatch({ type: 'FETCH ERROR', payload: e.message });
       }
     };
 
     fetchData();
- }, [url]); // Ensure the effect runs when the URL changes
+  }, [url]);
 
- return state;
+  return state;
 };
 
 export default useFetch;

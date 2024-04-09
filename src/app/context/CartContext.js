@@ -5,7 +5,7 @@ import { NotificationContext } from "./NotificationContext";
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-    const url = 'http://localhost:8080/store/carts';
+    const url = 'http://localhost:8080/store/carts/';
     const {notify} = useContext(NotificationContext)
     const [updateTrigger, setUpdateTrigger] = useState(0);
     const [CartContextData, setContextData] = useState({
@@ -55,7 +55,7 @@ export const CartContextProvider = ({ children }) => {
             });
 
             if (!response.ok) {
-                alert('failed to update cart  because request failedw')
+                alert('failed to update cart  because request failed')
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
@@ -127,7 +127,7 @@ export const CartContextProvider = ({ children }) => {
         }
         if(value < 1){
 
-            const cartItemId = getCartItemId(key);
+        const cartItemId = getCartItemId(key);
             alert('we are going tp delete the function from cart ' + cartItemId)
            await removeCartItem(cartItemId);
            return true;
@@ -137,7 +137,7 @@ export const CartContextProvider = ({ children }) => {
         // removeCartItem(CartItemId);
         try{
             alert('running posting code logic with quantity ' + value)
-            response = await fetch(url + cart.id + '/items/' + cartItemId +'/', {
+            response = await fetch(url + cart.id + '/items/' + cartItemId  +'/', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
