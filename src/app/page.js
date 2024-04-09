@@ -25,6 +25,7 @@ export default function Home() {
   const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/");
   const {randomIntArray , blogData } = useContext(BlogContext);
   const [isActive , setIsActive ] = useState(1);
+  console.log(data)
 function toggler (number){
     setIsActive(number);
 };

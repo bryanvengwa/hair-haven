@@ -26,6 +26,7 @@ interface CardProps {
 export default function Card({image, title, price , product_id , isActive=1, product_type='all'}: CardProps){
     const {addCartItem } = useContext(CartContext);
     const [display , setDisplay] = useState(true)
+    const url = 'http://localhost:8080'
 
     useEffect(()=>{
         if(isActive === 1   ){
@@ -56,14 +57,16 @@ export default function Card({image, title, price , product_id , isActive=1, pro
      
         event.preventDefault(); // Prevent the default form submission
         // Assuming addCartItem takes product_id and quantity as arguments
-        addCartItem(product_id, 1); // Adjust the quantity as needed
+        addCartItem(product_id, 1); 
+        // Adjust the quantity as needed
+        alert(` this is the product id ${product_id}`)
     };
     return (
    <>
    <>
    { display &&      <div className='card product-card'  >
            <div className='img-container' >
-            <Image src={image} layout='fill' alt='product' />
+            <Image src={url + image} layout='fill' alt='product' />
             <div className="icons-container">
             <form action="">
           

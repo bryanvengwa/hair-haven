@@ -188,7 +188,7 @@ export const CartContextProvider = ({ children }) => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    product_id: product_id,
+                    productId: product_id,
                     quantity: quantity,
                 }),
             });
