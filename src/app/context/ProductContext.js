@@ -7,8 +7,8 @@ export const ProductContext = createContext()
 
 export const ProductContextProvider = function({children}){
     const url = AppUrl + 'store/products/'
-
-const {data , error , isLoading} =  useFetch(url)
+    
+    const {data , error , isLoading} =  useFetch(url)
 
 
 const productsData ={

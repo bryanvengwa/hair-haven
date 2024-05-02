@@ -22,13 +22,13 @@ import useFetch from '../reducers/productsFetch';
 
 
 export default function Home() {
-  const {data , isLoading , error } = useFetch("http://127.0.0.1:8000/store/products/");
+  const {data , isLoading , error } = useFetch("http://localhost:3000/store/products/");
   const {randomIntArray , blogData } = useContext(BlogContext);
   const [isActive , setIsActive ] = useState(1);
 function toggler (number){
     setIsActive(number);
 };
-
+alert(data)
 
 
 // console.log(ra)
@@ -104,13 +104,13 @@ function toggler (number){
 
       {
         data && (<>
-        { data.map((product  )=>{
+        { data.items.map((product  )=>{
               return <Card key={product.id} isActive={isActive} title={product.title} image={product.image} price={product.unit_price} product_id={product.id} product_type={product.product_type} />
             })}
         </>)
       }
   {error &&     <div>
-        error
+        error {error}
         </div>}
 
       </div>
