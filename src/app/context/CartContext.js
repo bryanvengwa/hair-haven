@@ -1,11 +1,13 @@
 'use client'
 import { createContext , useEffect, useState, useContext } from "react";
 import { NotificationContext } from "./NotificationContext";
+import { AppUrl } from "@/utils/AppData";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-    const url = 'http://127.0.0.1:8000/store/carts/';
+ 
+    const url = AppUrl + 'store/carts/';
     const {notify} = useContext(NotificationContext)
     const [updateTrigger, setUpdateTrigger] = useState(0);
     const [CartContextData, setContextData] = useState({

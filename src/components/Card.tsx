@@ -8,6 +8,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faRepeat} from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { CartContext } from '@/app/context/CartContext';
+import { AppUrl } from '@/utils/AppData';
 
 
 
@@ -26,6 +27,9 @@ interface CardProps {
 export default function Card({image, title, price , product_id , isActive=1, product_type='all'}: CardProps){
     const {addCartItem } = useContext(CartContext);
     const [display , setDisplay] = useState(true)
+    if(image){
+        image = AppUrl + image;
+    }
 
     useEffect(()=>{
         if(isActive === 1   ){

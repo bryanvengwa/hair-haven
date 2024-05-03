@@ -28,7 +28,7 @@ export default function Home() {
 function toggler (number){
     setIsActive(number);
 };
-alert(data)
+
 
 
 // console.log(ra)

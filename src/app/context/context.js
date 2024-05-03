@@ -2,6 +2,7 @@
 import { createContext , useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { jwtDecode } from "jwt-decode";
+import { AppUrl } from "@/utils/AppData";
 
 
 
@@ -11,7 +12,7 @@ import { jwtDecode } from "jwt-decode";
 
 export const GlobalContextProvider = ({children})=>{
   const router = useRouter();
-    const url = 'http://127.0.0.1:8000'
+    const url = AppUrl;
     const [shouldRedirect, setShouldRedirect] = useState(false);
 
     const [user, setUser] = useState(() => {
