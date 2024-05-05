@@ -57,7 +57,7 @@ export const CartContextProvider = ({ children }) => {
             });
 
             if (!response.ok) {
-                alert('failed to update cart  because request failedw')
+                alert('Failed to update cart  because request failed')
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
@@ -124,12 +124,14 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const postCartData = async function(key , value){
+        let cartItemId;
+        
         if(cart == null ){
             getCart();
         }
         if(value < 1){
 
-            const cartItemId = getCartItemId(key);
+         cartItemId = getCartItemId(key);
             alert('we are going tp delete the function from cart ' + cartItemId)
            await removeCartItem(cartItemId);
            return true;
@@ -177,12 +179,14 @@ export const CartContextProvider = ({ children }) => {
     }, [cart]);
 
     const addCartItem = async (product_id, quantity) => {
+
         if (!cart) {
             getCart();
             return;
         }
 
         const cartItemsurl = url + cart.id + '/items/';
+        alert(product_id, quantity)
         try {
             const response = await fetch(cartItemsurl, {
                 method: 'POST',
@@ -196,6 +200,7 @@ export const CartContextProvider = ({ children }) => {
             });
 
             if (!response.ok) {
+          
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
