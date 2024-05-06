@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 
 function Page() {
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    productType: '',
-    inventory: 0,
-    slug: '',
-    unitPrice: 0,
+    title: "",
+    description: "",
+    product_type: "",
+    inventory: "",
+    slug: "",
+    unit_price:"",
     image: null,
   });
 
@@ -32,19 +32,30 @@ function Page() {
     const formDataToSend = new FormData();
     formDataToSend.append('title', formData.title);
     formDataToSend.append('description', formData.description);
-    formDataToSend.append('product_type', formData.productType);
+    formDataToSend.append('product_type', formData.product_type);
     formDataToSend.append('inventory', formData.inventory);
     formDataToSend.append('slug', formData.slug);
-    formDataToSend.append('unit_price', formData.unitPrice);
+    formDataToSend.append('unit_price', formData.unit_price);
     formDataToSend.append('image', formData.image);
-    alert('submitting ');
-
+    const info  = [...formDataToSend]
+    alert(formData.title)
     // Perform POST request to your controller endpoint with formDataToSend
     // Example using fetch API:
     try{
-        const response = await fetch('http://localhost:8080/store/products', {
-          method: 'POST',  body: formDataToSend,
-        });
+      const response = await fetch('http://localhost:3000/store/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          title: formData.title,
+          product_type: formData.product_type,
+          unit_price:45,
+          image: formData.image,
+          description: formData.description,
+          slug: formData.slug
+        })
+      });
 
 
         // Check if the response is ok
@@ -165,7 +176,7 @@ function Page() {
           <input
             type="number"
             id="unitPrice"
-            name="unitPrice"
+            name="unit_price"
             value={formData.unitPrice}
             onChange={handleChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
