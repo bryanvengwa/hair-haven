@@ -23,13 +23,13 @@ export default function RootLayout({
 
           <Navigation />
             </div>
-          <section className="flex absolute  flex-col left-0 z-0 w-[100%] lg:left-[10%] lg:w-[90%]  xl:left-[7%]  xl:w-[93%] h-full ">
+          <div className="flex absolute  flex-col left-0 z-0 w-[100%] lg:left-[10%] lg:w-[90%]  xl:left-[7%]  xl:w-[93%] h-full ">
                 <div className="layout-container w-full h-full z-0 p-0 md:p-2 ">
                     <DashHeader/>
 
                 {children}
                 </div>
-          </section>
+          </div>
         </main>
 
       </body>
