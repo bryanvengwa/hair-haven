@@ -23,7 +23,10 @@ export default function RootLayout({
           <Navigation />
             </div>
           <section className="flex absolute  flex-col  left-[7%] w-[93%] h-full gap-5">
+                <div className="layout-container w-full h-full  bg-red-700 p-2 ">
+
                 {children}
+                </div>
           </section>
         </main>
 
