@@ -3,9 +3,9 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div className='dashoboard bg-black relative'>
+    <div className=' bg-slate-950 w-full h-full' >
 
-      <SideNavbar/>
+
       <h1>here</h1>
       
     </div>
