@@ -66,7 +66,7 @@ const Navigation = () => {
   };
 
   return (
-    <aside className='fixed' >
+    <aside className='o' >
       <motion.nav
         variants={containerVariants}
         animate={containerControls}
