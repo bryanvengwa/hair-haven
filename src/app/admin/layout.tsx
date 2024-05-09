@@ -19,12 +19,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className="w-full h-screen flex flex-row relative">
-            <div className="side-nav-container w-0  lg:w-[7%] absolute top-0 left-0 h-full bg-black  shadow shadow-neutral-600">
+            <div className="side-nav-container w-0 lg:w-[7%] fixed z-10 top-0 left-0 h-full shadow shadow-neutral-600">
 
           <Navigation />
             </div>
-          <section className="flex absolute  flex-col left-0   lg:left-[7%] w-[100%] lg:w-[93%] h-full ">
-                <div className="layout-container w-full h-full p-0 md:p-2 ">
+          <section className="flex absolute  flex-col left-0 z-0 w-[100%] lg:left-[10%] lg:w-[90%]  xl:left-[7%]  xl:w-[93%] h-full ">
+                <div className="layout-container w-full h-full z-0 p-0 md:p-2 ">
                     <DashHeader/>
 
                 {children}
