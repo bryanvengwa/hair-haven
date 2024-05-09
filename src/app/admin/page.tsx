@@ -1,6 +1,8 @@
 import '@/scss/admin.scss';
 import React from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
+import { BsGraphUpArrow } from 'react-icons/bs';
+import { PiUsersThreeFill } from 'react-icons/pi';
 // import bot from ';
 
 export default function page() {
@@ -9,32 +11,98 @@ export default function page() {
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-7">
-            <div style={{background:'linear-gradient(135deg, rgba(91, 228, 155, 0.2), rgba(0, 167, 111, 0.2)) rgb(255, 255, 255)'}} className='h-[30rem] md:h-[20rem] w-[100%] flex flex-col md:flex-row gap-6 items-center justify-center rounded-[15px] ' >
-            <div className="left md:pl-10 md:text-left  md:w-[50%] flex flex-col gap-3 items-center justify-center ">
-            <h2 className=' text-[1.5rem] text-center md:text-left  md:text-[1.2rem] md:self-start '>Welcome Back 👋🏻 <br /> Bryan Vengwa</h2>
-              
-                  <p className="w-70% md:w-[90%] lg:w-[90%] font-light sm:text-center  md:text-left md:self-start" >Checkout the latest updates from your Hair Haven store</p>
-                  <button className='border-none bg-green-700 text-white rounded-[5px]  md:self-start p-2 pl-3  pr-3' >Check Now</button>
-            </div>
-            <div className="right  flex flex-col items-center justify-center md:w-[50%]">
-              <Image src={'/images/chat-bot.png'} width={300} height={300} className='h-[12rem]  w-[12rem] object-fit' alt='bot' />
+            <div
+              style={{
+                background:
+                  'linear-gradient(135deg, rgba(91, 228, 155, 0.2), rgba(0, 167, 111, 0.2)) rgb(255, 255, 255)',
+              }}
+              className="h-[30rem] md:h-[20rem] w-[100%] flex flex-col md:flex-row gap-6 items-center justify-center rounded-[15px] "
+            >
+              <div className="left md:pl-10 md:text-left  md:w-[50%] flex flex-col gap-3 items-center justify-center ">
+                <h2 className=" text-[1.5rem] text-center md:text-left  md:text-[1.2rem] md:self-start ">
+                  Welcome Back 👋🏻 <br /> Bryan Vengwa
+                </h2>
 
-            </div>
-
+                <p className="w-70% md:w-[90%] lg:w-[90%] font-light sm:text-center  md:text-left md:self-start">
+                  Checkout the latest updates from your Hair Haven store
+                </p>
+                <button className="border-none bg-green-700 text-white rounded-[5px]  md:self-start p-2 pl-3  pr-3">
+                  Check Now
+                </button>
+              </div>
+              <div className="right  flex flex-col items-center justify-center md:w-[50%]">
+                <Image
+                  src={'/images/chat-bot.png'}
+                  width={300}
+                  height={300}
+                  className="h-[12rem]  w-[12rem] object-fit"
+                  alt="bot"
+                />
+              </div>
             </div>
           </div>
           <div className="col-md-5 mt-[2rem] md:mt-[0]">
-          <div style={{background:'linear-gradient(135deg, rgba(91, 228, 155, 0.2), rgba(0, 167, 111, 0.2)) rgb(255, 255, 255)'}} className='h-[20rem] w-[100%] rounded-[15px] ' >
-
-          </div>
+            <div
+              style={{
+                background:
+                  'linear-gradient(135deg, rgba(91, 228, 155, 0.2), rgba(0, 167, 111, 0.2)) rgb(255, 255, 255)',
+              }}
+              className="h-[20rem] w-[100%] rounded-[15px] "
+            ></div>
           </div>
         </div>
       </div>
 
       {/* section 2 */}
+      <div className="container mt-4">
+        <div className="row">
+          <div className="col-md-4">
+            <div className="dash-card1 flex flex-col justify-evenly relative w-full h-[10rem]  text-black rounded-[15px] shadow pl-3">
+              <h4 className="capitalize">Total New Users</h4>
+              <div className="flex gap-2 items-center ">
+                <BsGraphUpArrow className="text-[1,5rem] text-green-700" />
+                <p>2.6 %</p>
+              </div>
 
-      
-     
+              <h2 className="font-bold text-[1.8rem]">18,765</h2>
+              <PiUsersThreeFill
+                size={70}
+                className="absolute right-5 top-[25%] "
+              />
+            </div>
+          </div>
+          <div className="col-md-4 mt-[2rem] md:mt-[0]">
+            <div className="dash-card1 flex flex-col justify-evenly relative w-full h-[10rem]  text-black rounded-[15px] shadow pl-3">
+              <h4 className="capitalize">Total New Users</h4>
+              <div className="flex gap-2 items-center ">
+                <BsGraphUpArrow className="text-[1,5rem] text-green-700" />
+                <p>2.6 %</p>
+              </div>
+
+              <h2 className="font-bold text-[1.8rem]">18,765</h2>
+              <PiUsersThreeFill
+                size={70}
+                className="absolute right-5 top-[25%] "
+              />
+            </div>
+          </div>
+          <div className="col-md-4 mt-[2rem] md:mt-[0]">
+            <div className="dash-card1 flex flex-col justify-evenly relative w-full h-[10rem]  text-black rounded-[15px] shadow pl-3">
+              <h4 className="capitalize">Total New Users</h4>
+              <div className="flex gap-2 items-center ">
+                <BsGraphUpArrow className="text-[1,5rem] text-green-700" />
+                <p>2.6 %</p>
+              </div>
+
+              <h2 className="font-bold text-[1.8rem]">18,765</h2>
+              <PiUsersThreeFill
+                size={70}
+                className="absolute right-5 top-[25%] "
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
