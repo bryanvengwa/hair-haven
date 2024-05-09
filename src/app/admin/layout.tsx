@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navigation from '@/components/Navigation';
 
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -17,20 +16,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
-        <body className={inter.className}>
-        <div className="pos-relative  bg-black left-0 top-0 bg-brown w-full gap-5">
-        <div className=" absolute top-0 left-0 bg-white  h-full ">
-        <Navigation/>
-        </div>
-            <div className='dashboard-side absolute left-50 top-0 h-full w-full flex flex-col items-center justify-center'>
+      <body className={inter.className}>
+        <main className="w-full h-screen flex flex-row relative">
+            <div className=" w-[7%] absolute top-0 left-0 h-full bg-white  shadow shadow-neutral-600">
 
-            {children}
+          <Navigation />
             </div>
+          <section className="flex absolute  flex-col  left-[7%] w-[93%] h-full gap-5">
+                {children}
+          </section>
+        </main>
 
-        </div>
-            </body>
-      
+      </body>
     </html>
   );
 }

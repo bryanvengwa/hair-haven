@@ -65,12 +65,12 @@ const Navigation = () => {
   }
 
   return (
-    <>
+    <aside className="w-[20%]">
       <motion.nav
         variants={containerVariants}
         animate={containerControls}
         initial="close"
-        className=" flex bg-white flex-col z-10 gap-20 p-5 absolute  top-0 left-0 h-full shadow shadow-neutral-600"
+        className=" flex bg-white flex-col z-10 gap-20 p-5 absolute  top-0 it pusleft-0 h-full "
       >
         <div className="flex flex-row w-full justify-between place-items-center">
             <Image src={logo}  height={90} width={140} alt="logo" />
@@ -150,7 +150,7 @@ const Navigation = () => {
           />
         )}
       </AnimatePresence>
-    </>
+    </aside>
   )
 }
 
