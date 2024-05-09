@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navigation from '@/components/Navigation';
+import DashHeader from '@/components/dashHeader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,12 +19,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className="w-full h-screen flex flex-row relative">
-            <div className=" w-[7%] absolute top-0 left-0 h-full bg-white  shadow shadow-neutral-600">
+            <div className="side-nav-container w-0  md:w-[7%] absolute top-0 left-0 h-full bg-white  shadow shadow-neutral-600">
 
           <Navigation />
             </div>
-          <section className="flex absolute  flex-col  left-[7%] w-[93%] h-full gap-5">
-                <div className="layout-container w-full h-full  bg-red-700 p-2 ">
+          <section className="flex absolute  flex-col left-0   md:left-[7%] w-[100%] md:w-[93%] h-full gap-5">
+                <div className="layout-container w-full h-full p-0 md:p-2 ">
+                    <DashHeader/>
 
                 {children}
                 </div>
