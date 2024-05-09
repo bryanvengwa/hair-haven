@@ -58,6 +58,12 @@ $cairo: "Cairo", sans-serif;
     display: none;
     // width: unset;
 }
+.dash{
+    font-family:  $cairo !important;
+}
+.text-textColor {
+    color: rgb(0, 75, 80);
+  }
 
 /*
 ####################################################
