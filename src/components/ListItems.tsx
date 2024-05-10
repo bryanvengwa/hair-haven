@@ -25,6 +25,8 @@ export default function ListItems() {
         </div>
       </div>
       </div>
+
+      <DataTable />
   
     </div>
   );
