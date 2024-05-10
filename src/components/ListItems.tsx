@@ -2,6 +2,7 @@ import { SelectInput } from './selectInput';
 import { HiTrash } from 'react-icons/hi2';
 import { IoMdEye } from 'react-icons/io';
 import { CgExport } from 'react-icons/cg';
+import { DataTable } from './DataTable';
 
 export default function ListItems() {
   return (
