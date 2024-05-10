@@ -20,7 +20,10 @@ export default function page() {
             >
               <div className="left md:pl-10 md:text-left  md:w-[50%] flex flex-col gap-3 items-center justify-center ">
                 <h2 className=" text-[1.5rem] text-center md:text-left  md:text-[1.2rem] md:self-start ">
-                  Welcome Back 👋🏻 <br /> Bryan Vengwa
+                  Welcome Back 👋🏻 
+                </h2>
+                <h2 className=" text-[1.5rem] text-center md:text-left  md:text-[1.2rem] md:self-start mt-[-13px]">
+                   Bryan Vengwa
                 </h2>
 
                 <p className="w-70% md:w-[90%] lg:w-[90%] font-light sm:text-center  md:text-left md:self-start">
