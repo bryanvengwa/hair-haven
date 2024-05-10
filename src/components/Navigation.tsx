@@ -5,6 +5,7 @@ import NavigationLink from './NavigationLink';
 import Image from 'next/image';
 import logo from '../../public/images/logo.png';
 import {
+  ShoppingBagIcon,
   ChartBarIcon,
   ChartPieIcon,
   DocumentCheckIcon,
@@ -106,13 +107,15 @@ const Navigation = () => {
             <ChartBarIcon className="stroke-inherit stroke-[0.75] text-black min-w-8 w-8" />
            
           </NavigationLink>
-          <NavigationLink name="Projects">
-            <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+          <NavigationLink name="Projects" href='/admin/products' >
+            
+            <ShoppingBagIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
-          <NavigationLink name="Tasks">
+          <NavigationLink name="Tasks" href='' >
             <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
           <NavigationLink name="Reporting">
+            {/* <BoxIcon /> */}
             <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
           <NavigationLink name="Users" href='/admin/users'>

@@ -1,4 +1,4 @@
-import '@/scss/admin.scss';
+
 import React from 'react';
 import Image from 'next/image';
 import DashUsers from '@/components/dash-users';
