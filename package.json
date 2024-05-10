@@ -20,6 +20,7 @@
     "@radix-ui/react-select": "^2.0.0",
     "@react-login-page/page11": "^1.0.4",
     "@react-login-page/page8": "^1.0.4",
+    "@tanstack/react-table": "^8.16.0",
     "antd": "^5.14.2",
     "bootstrap": "^5.3.3",
     "class-variance-authority": "^0.7.0",
