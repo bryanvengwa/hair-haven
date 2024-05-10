@@ -102,7 +102,7 @@ const Navigation = () => {
           </button>
         </div>
         <div className="flex flex-col gap-3">
-          <NavigationLink name="Dashboards">
+          <NavigationLink name="Dashboards" href='/admin/'>
             <ChartBarIcon className="stroke-inherit stroke-[0.75] text-black min-w-8 w-8" />
            
           </NavigationLink>
@@ -115,7 +115,7 @@ const Navigation = () => {
           <NavigationLink name="Reporting">
             <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
-          <NavigationLink name="Users">
+          <NavigationLink name="Users" href='/admin/users'>
             <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
         </div>
