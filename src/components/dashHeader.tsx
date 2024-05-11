@@ -1,3 +1,4 @@
+'use client'
 import '@/scss/dashHeader.scss'
 import { RiMenu2Line , } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
