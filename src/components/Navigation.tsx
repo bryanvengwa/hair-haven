@@ -103,11 +103,11 @@ const Navigation = () => {
           </button>
         </div>
         <div className="flex flex-col gap-3">
-          <NavigationLink name="Dashboards" href='/admin/'>
+          <NavigationLink name="Dashboard" href='/admin/'>
             <ChartBarIcon className="stroke-inherit stroke-[0.75] text-black min-w-8 w-8" />
            
           </NavigationLink>
-          <NavigationLink name="Projects" href='/admin/products' >
+          <NavigationLink name="Products" href='/admin/products' >
             
             <ShoppingBagIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
