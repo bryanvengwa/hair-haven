@@ -8,6 +8,7 @@ import { IoSettings } from 'react-icons/io5';
 import avatar from '../../public/images/avatar.jpg';
 import Image from 'next/image';
 import { NotificationSheet } from '@/components/NotificationSheet';
+import { DropMenu } from '@/components/dropDown';
 
 export default function dashHeader() {
   return (
@@ -35,10 +36,11 @@ export default function dashHeader() {
           <IoSettings className="text-[2rem] cursor-pointer md:text-[3rem] settings-icon lg:text-[2rem]" />
         </div>
         <div className="user h-[3rem] w-[3rem] lg:h-[3rem] lg:w-[3rem]  bg-black rounded-full ">
-          <Image
+            <DropMenu component={        <Image
             src={avatar}
             className="h-[3rem] w-[3rem]  lg:h-[3rem] lg:w-[3rem] rounded-full object-cover "
             alt="avatar"
+          />}
           />
         </div>
       </div>
