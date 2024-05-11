@@ -9,9 +9,9 @@ import Image from 'next/image';
 
 export default function CreateProductForm() {
   const [image, setImage] = useState<any>(null);
-  const [fileName, setFileName] = useState('No selected file');
+  const [fileName, setFileName] = useState('Browse Files To Upload');
   return (
-    <div className="flex flex-col gap-2 ">
+    <form className="flex flex-col gap-2 ">
       <div className="flex flex-col gap-2">
         <Label htmlFor="title">Product Name</Label>
         <Input id="title" name="title" required />
@@ -29,7 +29,7 @@ export default function CreateProductForm() {
         <Input id="product_type" type="number" name="product_type" required />
       </div>
       <div
-        className="flex flex-col items-center justify-center image-input h-[200px]   gap-2 cursor-pointer rounded-[5px]"
+        className="flex flex-col-reverse items-center justify-center image-input h-[200px]   gap-2 cursor-pointer rounded-[5px]"
         onClick={() => {
           const fileInput = document.querySelector(
             '.image-input-field'
@@ -39,7 +39,21 @@ export default function CreateProductForm() {
           }
         }}
       >
-        <Label htmlFor="image">Image</Label>
+        {fileName == 'Browse Files To Upload' ? <Label htmlFor="image">Browse Files To Upload</Label> :         
+        <Label>
+          <span className='flex align-center justify-center' >
+            {fileName}
+          <MdDelete
+          className='text-red-700 text-[1rem] cursor-pointer'
+          onClick={()=>{
+          setFileName('Browse Files To Upload')
+          setImage(null)
+
+        }} />
+          </span>
+        </Label>
+        }
+
         <Input
           className="image-input-field bg-red-600 h-full w-full"
           id="iamge"
@@ -56,7 +70,7 @@ export default function CreateProductForm() {
           }}
         />
         {image ? (
-          <Image src={image} alt={fileName} />
+          <Image src={image} className='object-contain h-[80%] w-[80%]' width={90} height={90} alt={fileName} />
         ) : (
           <MdCloudUpload color="#7fad39" size={70} />
         )}
@@ -71,10 +85,10 @@ export default function CreateProductForm() {
         />
       </div>
       <div>
-        <button className="border-none bg-[#7fad39] text-white rounded-[7px] p-[2rem] pt-[1rem]  pb-[1rem] flex align-center gap-2 ">
+        <button type='submit' className="border-none bg-[#7fad39] text-white rounded-[7px] p-[2rem] pt-[1rem]  pb-[1rem] flex align-center gap-2 ">
           Submit
         </button>
       </div>
-    </div>
+    </form>
   );
 }
