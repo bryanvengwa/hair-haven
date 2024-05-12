@@ -1,3 +1,4 @@
+'use client'
 // features/auth/authSlice.ts
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
