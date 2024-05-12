@@ -1,9 +1,10 @@
-'use client'
+'use client';
 // features/auth/authSlice.ts
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { AuthState } from './types'; // Import the AuthState interface
 import { AppUrl } from '@/utils/AppData';
+import { storeAuth } from '@/utils/AuthStorage';
 // Define the initial state using the AuthState interface
 const initialState: AuthState = {
   isAuthenticated: false,
@@ -18,7 +19,7 @@ const initialState: AuthState = {
 export const login = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
-    const response = await axios.post(`${AppUrl}/api/auth/login`, credentials);
+    const response = await axios.post(`${AppUrl}api/auth/login`, credentials);
     // Ensure response.data is not undefined before returning it
     return response.data || {}; // Return an empty object if response.data is undefined
   }
@@ -31,7 +32,7 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 
   // Include the access token in the request header
   const response = await axios.post(
-    `${AppUrl}/api/auth/refresh`,
+    `${AppUrl}api/auth/logout`,
     {},
     {
       headers: {
@@ -47,7 +48,7 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 export const refreshToken = createAsyncThunk(
   'auth/refreshToken',
   async (_, thunkAPI) => {
-    const response = await axios.post(`${AppUrl}/api/auth/refresh`, {
+    const response = await axios.post(`${AppUrl}api/auth/refresh`, {
       refreshToken: (thunkAPI.getState() as AuthState).refreshToken,
     });
     return response.data;
@@ -56,9 +57,14 @@ export const refreshToken = createAsyncThunk(
 // Async thunk for sign-up
 export const signUp = createAsyncThunk(
   'auth/signUp',
-  async (userDetails, thunkAPI) => {
-    const response = await axios.post(`${AppUrl}/api/auth/signup`, userDetails);
-    // Assuming the API redirects the user to the login page after successful sign-up
+  async (userDetails: any) => {
+    const response = await axios.post(`${AppUrl}api/auth/signup`, userDetails);
+    console.log(response);
+    storeAuth({
+      accessToken: response.data.accessToken,
+      refreshToken: response.data.refreshToken,
+    });
+
     return response.data; // This might be an empty object or a redirect URL
   }
 );
@@ -88,6 +94,14 @@ const authSlice = createSlice({
         state.isAuthenticated = false;
         state.user = null;
         state.status = 'idle';
+        state.error = null;
+      })
+      .addCase(signUp.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.isAuthenticated = true; // Assuming the payload includes user details
+        state.user = action.payload.user;
+        state.accessToken = action.payload.accessToken;
+        state.refreshToken = action.payload.refreshToken; // Assuming the payload includes this
         state.error = null;
       });
   },

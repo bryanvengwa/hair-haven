@@ -55,7 +55,8 @@ export const GlobalContextProvider = ({children})=>{
         if(response.status === 200){
             setAuthTokens(data);
             setUser(jwtDecode(data.access))
-            localStorage.setItem('authTokens', JSON.stringify(data ))
+            localStorage.setItem('authTokens', JSON.stringify(data )
+          )
             router.push('/');
         }else{
             alert('something went wrong')
