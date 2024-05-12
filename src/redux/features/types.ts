@@ -3,7 +3,9 @@ export interface AuthState {
     isAuthenticated: boolean;
     user: {
       id: string;
-      email: string;
+      email: string | null;
+      userName: string | null;
+      image : string | null;
       // Add other user properties as needed
     } | null;
     status: 'idle' | 'loading' | 'succeeded' | 'failed';

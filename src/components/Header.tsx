@@ -6,15 +6,15 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Navlinks from '@/components/Navlinks'
 import { useState } from 'react';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';   
 import { FaUser } from 'react-icons/fa';
 import Link from 'next/link';
 import { CartContext } from '@/app/context/CartContext';
 
 
-
-
 export default function Header() {
+
+
 const {totalPrice, items} = useContext(CartContext)
 const [isOpen , setIsOpen] = useState(false)
 const [open , setOpen] = useState(false)
@@ -100,10 +100,10 @@ function toggle(number :  string){
             <div className="line"></div>
                 <p  className=' text-3xl' >🇺🇸</p>
                 <p>English</p>
-                {/* <FontAwesomeIcon icon={faChevronDown} /> */}
+                
                 <div className="line"></div>
                 <div className="login-container flex items-center gap-1">
-                <FaUser/> <p>Login</p>
+                <FaUser/> <p>Login here</p>
 
             </div>
 

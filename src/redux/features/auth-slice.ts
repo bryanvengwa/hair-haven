@@ -5,6 +5,8 @@ import axios from 'axios';
 import { AuthState } from './types'; // Import the AuthState interface
 import { AppUrl } from '@/utils/AppData';
 import { storeAuth } from '@/utils/AuthStorage';
+import { jwtDecode } from "jwt-decode";
+
 // Define the initial state using the AuthState interface
 const initialState: AuthState = {
   isAuthenticated: false,
@@ -57,9 +59,12 @@ export const refreshToken = createAsyncThunk(
 // Async thunk for sign-up
 export const signUp = createAsyncThunk(
   'auth/signUp',
-  async (userDetails: any) => {
+  async (userDetails: any, thunkAPI) => {
     const response = await axios.post(`${AppUrl}api/auth/signup`, userDetails);
     console.log(response);
+     console.log(jwtDecode(response.data.accessToken))
+     const user = jwtDecode(response.data.accessToken)
+
     storeAuth({
       accessToken: response.data.accessToken,
       refreshToken: response.data.refreshToken,
@@ -73,7 +78,15 @@ export const signUp = createAsyncThunk(
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    setUserFromStorage : (state, action  )=>{
+      state.status = 'succeeded';
+      state.isAuthenticated = true
+      state.user = action.payload
+      state.error = null;
+
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(login.pending, (state) => {
@@ -108,3 +121,4 @@ const authSlice = createSlice({
 });
 
 export default authSlice.reducer;
+export const {setUserFromStorage} = authSlice.actions
