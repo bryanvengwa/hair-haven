@@ -15,6 +15,7 @@ import {
 import ProjectLink from './ProjectLink';
 import ProjectNavigation from './ProjectNavigation';
 import { BsBarChart } from "react-icons/bs";
+import Link from 'next/link';
 
 const containerVariants = {
   close: {
@@ -75,7 +76,11 @@ const Navigation = () => {
         className=" flex bg-white flex-col z-10 gap-20 p-5 absolute  top-0  left-0 h-full "
       >
         <div className="flex flex-row w-full justify-between place-items-center">
-          <Image src={logo} height={90} width={140} alt="logo" />
+          
+      <Link href={'/'} >
+      <Image src={logo} height={90} width={140} alt="logo" />
+
+      </Link>
           <button
             className="p-1 rounded-full flex"
             onClick={() => handleOpenClose()}
