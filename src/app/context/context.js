@@ -41,12 +41,12 @@ export const GlobalContextProvider = ({children})=>{
     let loginUser = async (e)=>{
         e.preventDefault();
         
-        let response = await fetch( `${url}/api/token/`, {
+        let response = await fetch( `${url}/auth/login/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-             body: JSON.stringify({username: e.target.username.value , password: e.target.password.value }), 
+             body: JSON.stringify({userName: e.target.username.value , password: e.target.password.value }), 
 
         })
         let data = await response.json();
@@ -68,7 +68,7 @@ export const GlobalContextProvider = ({children})=>{
           throw new Error('Refresh token not found');
         }
   
-        let response = await fetch(`${url}/api/token/refresh/`, {
+        let response = await fetch(`${url}/api/refresh/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
