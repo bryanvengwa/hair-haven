@@ -1,4 +1,6 @@
 'use client';
+
+
 // features/auth/authSlice.ts
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
@@ -86,6 +88,29 @@ const authSlice = createSlice({
       state.error = null;
 
     },
+    initializeAuthFromLocalStorage :(state)=>{
+      const authData = localStorage.getItem('authTokens');
+      if (authData) {
+        // Parse and update authentication state
+        const { accessToken, refreshToken } = JSON.parse(authData);
+        const userData: any = jwtDecode(accessToken!);
+        const user : any = {
+          id: userData.sub,
+          userName: userData.username,
+        };
+        state.user = user;
+        state.status = 'succeeded';
+        state.isAuthenticated = true
+        state.error = null;
+        state.accessToken = accessToken;
+        state.refreshToken = refreshToken;
+        // You might want to set the token in your state as well
+        // state.token = token;
+      }else{
+        state
+      }
+
+    }
   },
   extraReducers: (builder) => {
     builder

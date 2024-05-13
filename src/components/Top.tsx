@@ -16,8 +16,6 @@ import Link from 'next/link';
 import { UseRetrieveAuth } from '@/utils/AuthStorage';
 import { useEffect } from 'react';
 export default function Top() {
-  useEffect(() => {}, []);
-  UseRetrieveAuth();
 
   const authInfo = useSelector((state: RootState) => state.auth);
   console.log(authInfo);
