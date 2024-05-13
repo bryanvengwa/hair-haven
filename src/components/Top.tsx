@@ -8,21 +8,19 @@ import {
   FaUser,
   FaLinkedinIn,
 } from 'react-icons/fa';
-import { faChevronDown, } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '@/redux/store';
 
 import Link from 'next/link';
-import { retrieveAuth } from '@/utils/AuthStorage';
+import { UseRetrieveAuth } from '@/utils/AuthStorage';
 import { useEffect } from 'react';
 export default function Top() {
-    useEffect( ()=>{
+  useEffect(() => {}, []);
+  UseRetrieveAuth();
 
-    },[])
-    retrieveAuth()
-    
   const authInfo = useSelector((state: RootState) => state.auth);
-console.log(authInfo)
+  console.log(authInfo);
   return (
     <div className="top ">
       <div className="container flex items-center  justify-between ">

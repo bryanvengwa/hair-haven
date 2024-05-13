@@ -13,18 +13,18 @@ export const storeAuth = function (token: TokenType) {
   } catch (e) {}
 };
 
-export const retrieveAuth = function () {
+export const UseRetrieveAuth = function () {
   try {
     const dispatch = useDispatch<AppDispatch>();
-    let data  = localStorage.getItem('authTokens');
-    const  userData : any  = jwtDecode(data!)
+    let data = localStorage.getItem('authTokens');
+    const userData: any = jwtDecode(data!);
     const user = {
-      id : userData.sub,
-      userName :userData.username
-    }
+      id: userData.sub,
+      userName: userData.username,
+    };
 
     dispatch(setUserFromStorage(user));
-    
+
     console.log('retreived data');
   } catch (e) {
     return null;
