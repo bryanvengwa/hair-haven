@@ -1,28 +1,59 @@
 'use client';
-import '@/scss/heading.scss'
-import{ useState} from 'react'
+import '@/scss/heading.scss';
+import { useState } from 'react';
 
-interface TabbedProps{
-    isActive: any;
-    toggler: any;
+interface TabbedProps {
+  isActive: any;
+  toggler: any;
 }
 
+export default function Tabbed({ toggler, isActive }: TabbedProps) {
+  'use client';
 
-export default function Tabbed({toggler ,  isActive}: TabbedProps){
-    'use client';
-
-
-
-    return (
-        <div className="tabbed flex align-center justify-center" >
-            <ul className=' flex gap-3'>
-                <li onClick={()=>{toggler(1)}}  className={`${ isActive == 1 ? 'active': " " }`} >All</li>
-                <li onClick={()=>{toggler(2)}}  className={`${ isActive == 2 ? 'active': " " }`}  >Dye</li>
-                <li onClick={()=>{toggler(3)}}  className={`${ isActive == 3 ? 'active': " " }`}  >Shampoo</li>
-                <li onClick={()=>{toggler(4)}}  className={`${ isActive == 4 ? 'active': " " }`}  >Conditioner</li>
-                <li onClick={()=>{toggler(5)}}  className={`${ isActive == 5  ? 'active': " " }`}  >Treaters</li>
-            </ul>
-        </div>
-    )
-
+  return (
+    <div className="tabbed flex align-center justify-center">
+      <ul className=" flex gap-3">
+        <li
+          onClick={() => {
+            toggler(1);
+          }}
+          className={`${isActive == 1 ? 'active' : ' '}`}
+        >
+          All
+        </li>
+        <li
+          onClick={() => {
+            toggler(2);
+          }}
+          className={`${isActive == 2 ? 'active' : ' '}`}
+        >
+          Dye
+        </li>
+        <li
+          onClick={() => {
+            toggler(3);
+          }}
+          className={`${isActive == 3 ? 'active' : ' '}`}
+        >
+          Shampoo
+        </li>
+        <li
+          onClick={() => {
+            toggler(4);
+          }}
+          className={`${isActive == 4 ? 'active' : ' '}`}
+        >
+          Conditioner
+        </li>
+        <li
+          onClick={() => {
+            toggler(5);
+          }}
+          className={`${isActive == 5 ? 'active' : ' '}`}
+        >
+          Treaters
+        </li>
+      </ul>
+    </div>
+  );
 }

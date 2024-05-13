@@ -5,7 +5,7 @@ import DashUsers from '@/components/dash-users';
 
 // import bot from ';
 
-export default function page() {
+export default function Page() {
   return (
     <div className="dashboard text-textColor text-base font-medium    w-full h-full">
       <div className="container mt-4">

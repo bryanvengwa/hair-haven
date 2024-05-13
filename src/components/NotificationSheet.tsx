@@ -19,7 +19,7 @@ interface SheetProps {
 export function NotificationSheet(props: SheetProps) {
   return (
     <Sheet>
-      <SheetTrigger asChild>{props.component}</SheetTrigger>
+      <SheetTrigger >{props.component}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Edit profile</SheetTitle>
