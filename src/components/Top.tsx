@@ -14,7 +14,11 @@ import { AppDispatch, RootState } from '@/redux/store';
 
 import Link from 'next/link';
 import { retrieveAuth } from '@/utils/AuthStorage';
+import { useEffect } from 'react';
 export default function Top() {
+    useEffect( ()=>{
+
+    },[])
     retrieveAuth()
     
   const authInfo = useSelector((state: RootState) => state.auth);
