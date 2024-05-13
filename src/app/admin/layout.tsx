@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+
+
         <main className="w-full h-screen flex flex-row relative">
             <div className="side-nav-container w-0 lg:w-[7%] fixed z-10 top-0 left-0 h-full ">
 
@@ -33,7 +33,7 @@ export default function RootLayout({
           </div>
         </main>
 
-      </body>
-    </html>
+      
+  
   );
 }

@@ -10,7 +10,7 @@ import Image from 'next/image';
 import { NotificationSheet } from '@/components/NotificationSheet';
 import { DropMenu } from '@/components/dropDown';
 
-export default function dashHeader() {
+export default function DashHeader() {
   return (
     <div className="dashHeader  w-full h-20 md:h-25 lg:h25 flex z-0 flex-row justify-between items-center p-2  ">
       <div className="left flex items center gap-2 md:gap-3">
