@@ -14,8 +14,13 @@ import {
 } from '@heroicons/react/24/outline';
 import ProjectLink from './ProjectLink';
 import ProjectNavigation from './ProjectNavigation';
-import { BsBarChart } from "react-icons/bs";
+import { BsBarChart } from 'react-icons/bs';
 import Link from 'next/link';
+
+interface PropTypes {
+  isOpen : boolean;
+  setIsOpen: Function;
+}
 
 const containerVariants = {
   close: {
@@ -68,7 +73,7 @@ const Navigation = () => {
   };
 
   return (
-    <aside className='o' >
+    <aside className="o">
       <motion.nav
         variants={containerVariants}
         animate={containerControls}
@@ -76,11 +81,9 @@ const Navigation = () => {
         className=" flex bg-white flex-col z-10 gap-20 p-5 absolute  top-0  left-0 h-full "
       >
         <div className="flex flex-row w-full justify-between place-items-center">
-          
-      <Link href={'/'} >
-      <Image src={logo} height={90} width={140} alt="logo" />
-
-      </Link>
+          <Link href={'/'}>
+            <Image src={logo} height={90} width={140} alt="logo" />
+          </Link>
           <button
             className="p-1 rounded-full flex"
             onClick={() => handleOpenClose()}
@@ -108,22 +111,20 @@ const Navigation = () => {
           </button>
         </div>
         <div className="flex flex-col gap-3">
-          <NavigationLink name="Dashboard" href='/admin/'>
+          <NavigationLink name="Dashboard" href="/admin/">
             <ChartBarIcon className="stroke-inherit stroke-[0.75] text-black min-w-8 w-8" />
-           
           </NavigationLink>
-          <NavigationLink name="Products" href='/admin/products' >
-            
+          <NavigationLink name="Products" href="/admin/products">
             <ShoppingBagIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
-          <NavigationLink name="Tasks" href='' >
+          <NavigationLink name="Tasks" href="">
             <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
           <NavigationLink name="Reporting">
             {/* <BoxIcon /> */}
             <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
-          <NavigationLink name="Users" href='/admin/users'>
+          <NavigationLink name="Users" href="/admin/users">
             <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           </NavigationLink>
         </div>
@@ -140,7 +141,7 @@ const Navigation = () => {
           >
             <div className="min-w-4 mx-2 border-indigo-600 border rounded-full aspect-square bg-indigo-700" />
           </ProjectLink>
-    
+
           <ProjectLink
             name="Secret Project"
             setSelectedProject={setSelectedProject}
