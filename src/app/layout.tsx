@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { GlobalContextProvider } from './context/context';
+
 import { ProductContextProvider } from './context/ProductContext';
 import { CartContextProvider } from './context/CartContext';
 import { CartPageContextProvider } from './context/CartPageContext';
@@ -30,17 +30,15 @@ export default function RootLayout({
     <NotificationContextProvider>
       <CartContextProvider>
         <BlogContextProvider>
-          <GlobalContextProvider>
-            <ProductContextProvider>
-              <CartPageContextProvider>
-                <Providers>
-                  <html lang="en">
-                    <body className={inter.className}>{children}</body>
-                  </html>
-                </Providers>
-              </CartPageContextProvider>
-            </ProductContextProvider>
-          </GlobalContextProvider>
+          <ProductContextProvider>
+            <CartPageContextProvider>
+              <Providers>
+                <html lang="en">
+                  <body className={inter.className}>{children}</body>
+                </html>
+              </Providers>
+            </CartPageContextProvider>
+          </ProductContextProvider>
         </BlogContextProvider>
       </CartContextProvider>
     </NotificationContextProvider>
