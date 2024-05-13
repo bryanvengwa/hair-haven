@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 
 
 
-export default function page() {
+export default function Page() {
    const {items, totalPrice} = useContext(CartContext)
   return (
     <div className="checkout" >
