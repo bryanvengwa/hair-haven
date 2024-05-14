@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Navigation from '@/components/Navigation';
 import DashHeader from '@/components/dashHeader';
 import '@/scss/admin.scss';
-
+import { NavigationContextProvider } from '../context/NavigationContext';
 
 export const metadata: Metadata = {
   title: 'hair haven admin',
@@ -16,17 +15,19 @@ export default function AdminLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="w-full h-screen flex flex-row relative">
-      <div className="side-nav-container w-0 lg:w-[7%] fixed z-10 top-0 left-0 h-full ">
-        <Navigation />
-      </div>
-      <div className="flex absolute  flex-col left-0 z-0 w-[100%] lg:left-[10%] lg:w-[90%]  xl:left-[7%]  xl:w-[93%] h-full ">
-        <div className="layout-container w-full h-full z-0 p-0 md:p-2 ">
-          <DashHeader />
-
-          {children}
+    <NavigationContextProvider>
+      <main className="w-full h-screen flex flex-row relative">
+        <div className={`side-nav-container    fixed z-10 top-0 left-0 h-full`}>
+          <Navigation />
         </div>
-      </div>
-    </main>
+        <div className="flex absolute  flex-col left-0 z-0 w-[100%] lg:left-[9%] lg:w-[91%]  xl:left-[7.1%]  xl:w-[93%] h-full ">
+          <div className="layout-container w-full h-full z-0 p-0 md:p-2 ">
+            <DashHeader />
+
+            {children}
+          </div>
+        </div>
+      </main>
+    </NavigationContextProvider>
   );
 }

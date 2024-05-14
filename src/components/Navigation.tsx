@@ -1,6 +1,7 @@
 'use client';
 import { motion, useAnimationControls, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { NavigationContext } from '@/app/context/NavigationContext';
 import NavigationLink from './NavigationLink';
 import Image from 'next/image';
 import logo from '../../public/images/logo.png';
@@ -18,13 +19,13 @@ import { BsBarChart } from 'react-icons/bs';
 import Link from 'next/link';
 
 interface PropTypes {
-  isOpen : boolean;
+  isOpen: boolean;
   setIsOpen: Function;
 }
 
 const containerVariants = {
   close: {
-    width: '5rem',
+    width: '7%',
     transition: {
       type: 'spring',
       damping: 15,
@@ -51,7 +52,7 @@ const svgVariants = {
 };
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, toggle } = useContext(NavigationContext);
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   const containerControls = useAnimationControls();
@@ -68,17 +69,18 @@ const Navigation = () => {
   }, [isOpen]);
 
   const handleOpenClose = () => {
-    setIsOpen(!isOpen);
+    toggle();
     setSelectedProject(null);
   };
 
   return (
-    <aside className="o">
+    <aside className={`${!isOpen ? "hidden lg:block" : ''}`}>
       <motion.nav
         variants={containerVariants}
         animate={containerControls}
         initial="close"
-        className=" flex bg-white flex-col z-10 gap-20 p-5 absolute  top-0  left-0 h-full "
+        className=" flex bg-white flex-col z-10 gap-20 p-5 absolute w-full   top-0  left-0 h-full "
+       
       >
         <div className="flex flex-row w-full justify-between place-items-center">
           <Link href={'/'}>
@@ -94,7 +96,7 @@ const Navigation = () => {
               viewBox="0 0 24 24"
               strokeWidth={1}
               stroke="currentColor"
-              className="w-8 h-8 stroke-neutral-200"
+              className="w-8 h-8 stroke-black-200"
             >
               <motion.path
                 strokeLinecap="round"

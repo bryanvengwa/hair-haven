@@ -9,12 +9,19 @@ import avatar from '../../public/images/avatar.jpg';
 import Image from 'next/image';
 import { NotificationSheet } from '@/components/NotificationSheet';
 import { DropMenu } from '@/components/dropDown';
+import { useContext } from 'react';
+import { NavigationContext } from '@/app/context/NavigationContext';
 
 export default function DashHeader() {
+  const { isOpen, toggle } = useContext(NavigationContext);
+
   return (
     <div className="dashHeader  w-full h-20 md:h-25 lg:h25 flex z-0 flex-row justify-between items-center p-2  ">
       <div className="left flex items center gap-2 md:gap-3">
-        <RiMenu2Line className="text-[2rem] cursor-pointer lg:hidden  md:text-[3rem] lg:text-[2rem]" />
+        <RiMenu2Line
+          onClick={() => toggle()}
+          className="text-[2rem] cursor-pointer lg:hidden  md:text-[3rem] lg:text-[2rem]"
+        />
         <CiSearch className="text-[2rem] cursor-pointer md:text-[3rem] lg:text-[2rem]" />
       </div>
 
@@ -36,11 +43,14 @@ export default function DashHeader() {
           <IoSettings className="text-[2rem] cursor-pointer md:text-[3rem] settings-icon lg:text-[2rem]" />
         </div>
         <div className="user h-[3rem] w-[3rem] lg:h-[3rem] lg:w-[3rem]  bg-black rounded-full ">
-            <DropMenu component={        <Image
-            src={avatar}
-            className="h-[3rem] w-[3rem]  lg:h-[3rem] lg:w-[3rem] rounded-full object-cover "
-            alt="avatar"
-          />}
+          <DropMenu
+            component={
+              <Image
+                src={avatar}
+                className="h-[3rem] w-[3rem]  lg:h-[3rem] lg:w-[3rem] rounded-full object-cover "
+                alt="avatar"
+              />
+            }
           />
         </div>
       </div>
