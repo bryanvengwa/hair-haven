@@ -25,11 +25,6 @@ export default function CreateProductForm() {
       if (imageInput && imageInput.files && imageInput.files.length > 0) {
         // formData.append('image', imageInput.files[0]);
       }
-      console.log("start of the logs");
-      for (let [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
-      console.log("start of the logs");
 
       
       const response = await fetch(AppUrl + 'store/products', {
