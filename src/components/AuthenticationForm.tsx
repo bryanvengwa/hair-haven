@@ -95,9 +95,9 @@ export function AuthenticationForm(props: PaperProps) {
               ? 'Already have an account? Login'
               : "Don't have an account? Register"}
           </Anchor>
-          <Button type="submit" radius="xl">
+          <button type="submit" className='bg-[#7fad39] pt-2  pb-2 pl-5 pr-5 rounded-full text-white '>
             {upperFirst(type)}
-          </Button>
+          </button>
         </Group>
       </form>
     </Paper>
