@@ -11,10 +11,11 @@ import {
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '@/redux/store';
-
 import Link from 'next/link';
 import { UseRetrieveAuth } from '@/utils/AuthStorage';
-import { useEffect } from 'react';
+
+
+
 export default function Top() {
 
   const authInfo = useSelector((state: RootState) => state.auth);

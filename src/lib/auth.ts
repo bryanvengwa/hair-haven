@@ -1,24 +1,25 @@
-import { NextAuthOptions, User, getServerSession } from "next-auth";
-import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+'use client'
+import { NextAuthOptions, User, getServerSession } from 'next-auth';
+import { useSession } from 'next-auth/react';
+import { redirect, useRouter } from 'next/navigation';
 
-import CredentialsProvider from "next-auth/providers/credentials";
-import GoogleProvider from "next-auth/providers/google";
-import GithubProvider from "next-auth/providers/github";
+import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
+import GithubProvider from 'next-auth/providers/github';
 
-import prisma from "./prisma";
+import prisma from './prisma';
 
 export const authConfig: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "Sign in",
+      name: 'Sign in',
       credentials: {
         email: {
-          label: "Email",
-          type: "email",
-          placeholder: "example@example.com",
+          label: 'Email',
+          type: 'email',
+          placeholder: 'example@example.com',
         },
-        password: { label: "Password", type: "password" },
+        password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
         if (!credentials || !credentials.email || !credentials.password)
@@ -52,13 +53,13 @@ export const authConfig: NextAuthOptions = {
 
 export async function loginIsRequiredServer() {
   const session = await getServerSession(authConfig);
-  if (!session) return redirect("/");
+  if (!session) return redirect('/');
 }
 
 export function loginIsRequiredClient() {
-  if (typeof window !== "undefined") {
+  if (typeof window !== 'undefined') {
     const session = useSession();
     const router = useRouter();
-    if (!session) router.push("/");
+    if (!session) router.push('/');
   }
 }

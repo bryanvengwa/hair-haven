@@ -3,10 +3,14 @@ import React, { useContext, useState } from 'react';
 import '@/scss/loginPage.scss';
 import loginImg from '../../../public/images/login.jpeg';
 import Image from 'next/image';
-import { GlobalContext, GlobalContextProvider } from '@/app/context/context';
 import { useSelector, useDispatch } from 'react-redux';
 import { signUp, login } from '@/redux/features/auth-slice';
 import { AppDispatch, RootState } from '@/redux/store';
+import {
+  GoogleSignInButton,
+  GithubSignInButton,
+} from '@/components/AuthButtons';
+
 const ImageContainer = () => {
   return (
     <>
@@ -17,6 +21,15 @@ const ImageContainer = () => {
         alt="loginImage"
       />
     </>
+  );
+};
+
+const OauthButtons = () => {
+  return (
+    <div className="flex flex-col  gap-1 ">
+      <GoogleSignInButton />
+      <GithubSignInButton />
+    </div>
   );
 };
 
@@ -40,7 +53,8 @@ const LoginForm = (props: any) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4" action="">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3" action="">
+        <OauthButtons />
         <label htmlFor="firstName" className="flex flex-col gap-2">
           First Name
           <input
@@ -117,10 +131,9 @@ export default function Page() {
   const toggleLogin = () => {
     setLogin(!login);
   };
-  const { user, loginUser, logOutUser } = useContext(GlobalContext);
 
   return (
-    <div className="login-page  bg-red flex items-center justify-center">
+    <div className="login-page   flex items-center justify-center">
       <div className="flex-container  ">
         <div className="left">
           <ImageContainer />
@@ -133,9 +146,9 @@ export default function Page() {
             </button>
           </div>
           {login ? (
-            <LoginForm submitFunction={loginUser} />
+            <LoginForm submitFunction={''} />
           ) : (
-            <SignUpForm submitFunction={logOutUser} />
+            <SignUpForm submitFunction={''} />
           )}
         </div>
       </div>
