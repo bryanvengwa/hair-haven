@@ -16,7 +16,7 @@ import {
   Stack,
 } from '@mantine/core';
 import { GoogleButton } from '@/components/GoogleButton';
-
+import { GithubButton } from './GithubButton';
 
 
 export function AuthenticationForm(props: PaperProps) {
@@ -43,7 +43,7 @@ export function AuthenticationForm(props: PaperProps) {
 
       <Group grow mb="md" mt="md">
         <GoogleButton radius="xl">Google</GoogleButton>
-        <GoogleButton radius="xl">Twitter</GoogleButton>
+        <GithubButton radius="xl">Github</GithubButton>
       </Group>
 
       <Divider label="Or continue with email" labelPosition="center" my="lg" />
