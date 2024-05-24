@@ -17,6 +17,8 @@ import {
 } from '@mantine/core';
 import { GoogleButton } from '@/components/GoogleButton';
 import { GithubButton } from './GithubButton';
+import { signIn } from "next-auth/react";
+
 
 export function AuthenticationForm(props: PaperProps) {
   const [type, toggle] = useToggle(['login', 'register']);
@@ -25,8 +27,10 @@ export function AuthenticationForm(props: PaperProps) {
       email: '',
       name: '',
       password: '',
+      register:'register',
       terms: true,
     },
+
 
     validate: {
       email: (val) => (/^\S+@\S+$/.test(val) ? null : 'Invalid email'),
@@ -36,6 +40,19 @@ export function AuthenticationForm(props: PaperProps) {
           : null,
     },
   });
+  const handleSubmit = async (values : any)=>{
+    if (type == "register" ){
+      values.register = "register";
+    }else{
+      values.register = "login";
+
+    }
+    const signInResponse = await signIn("credentials",{ redirect: false, ...values} )
+    console.log("this is the sign in response", signInResponse)
+ 
+    
+
+  }
 
   return (
     <Paper radius="md" p="xl" withBorder {...props}>
@@ -50,11 +67,11 @@ export function AuthenticationForm(props: PaperProps) {
 
       <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
-      <form onSubmit={form.onSubmit(() => {})}>
+      <form onSubmit={form.onSubmit((values) => {handleSubmit(values)})}>
         <Stack>
           {type === 'register' && 
             <div>
-              <input name='register'  value='register' type='hidden'  />
+              {/* <input name='register' value='register' type='hidden'  /> */}
               <TextInput
                 label="Name"
                 placeholder="Your name"
@@ -77,6 +94,7 @@ export function AuthenticationForm(props: PaperProps) {
             }
             error={form.errors.email && 'Invalid email'}
             radius="md"
+            autoComplete="email"
           />
 
           <PasswordInput

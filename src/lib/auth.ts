@@ -1,8 +1,6 @@
-'use client'; // Only run on client-side
-
 import { NextAuthOptions, User, getServerSession } from 'next-auth';
 import { useSession } from 'next-auth/react';
-import { redirect, useRouter } from 'next/navigation';
+// import { redirect, useRouter } from 'next/navigation';
 
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
@@ -23,31 +21,63 @@ export const authConfig: NextAuthOptions = {
           placeholder: 'example@example.com',
         },
         password: { label: 'Password', type: 'password' },
-        register :{type : 'register'}
+        register: { type: 'register' },
+        name: { label: 'Name', type: 'string' },
       },
       async authorize(credentials) {
-        let url = AppUrl
-        if (!credentials) {
+        let authData;
+
+        let url = AppUrl;
+        if (!credentials || !credentials.email || !credentials.password) {
+          console.log("somethin is misssing from credentials")
           return null;
-        }else{
-          if (credentials.register){
-            url += `auth/signup`
-          }else{
-            url += 'auth/login'
+        } else {
+
+          authData = {
+            email: credentials!.email,
+            password: credentials!.password,
+            
+          };
+          if(credentials.name){
+            authData = {...authData , name : credentials!.name,}
           }
 
+          if (credentials.register === 'register') {
+            url += `api/auth/signup`;
+          } else {
+            url += 'api/auth/login';
+          }
         }
+
         try {
-          const response = await axios.post(url, { ...credentials });
-          if (response.status === 201) return response.data;
-          
+
+   if(authData ){
+
+   }
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(authData),
+          });
+
+
+          // console.log(response)
+          if (!response.ok) {
+            // Handle errors (e.g., display an error message to the user)
+
+            console.error('Error during authentication:', response.statusText);
+            return response.statusText;
+          }
+
+          const data = await response.json();
+          console.log('here is the data ', data);
+          return data;
         } catch (error) {
-          console.error('Error during authentication:', error);
+          // console.error('Error during authentication:', error);
           // Handle the error here (e.g., display an error message to the user)
-          return null;
+          return error;
         }
-      }
-      
+      },
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -62,11 +92,11 @@ export const authConfig: NextAuthOptions = {
 
 export async function loginIsRequiredServer() {
   const session = await getServerSession(authConfig);
-  if (!session) return redirect('/');
+  // if (!session) return redirect('/');
 }
 
 export function loginIsRequiredClient() {
   const session = useSession();
-  const router = useRouter();
-  if (!session) router.push('/');
+  // const router = useRouter();
+  // if (!session) router.push('/');
 }
